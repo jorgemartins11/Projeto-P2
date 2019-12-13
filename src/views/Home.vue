@@ -7,33 +7,16 @@
           <div class="col-12">
             <img src="../assets/logo.png" id="logo" alt="" class="img-fluid pt-5 pb-3">
             <hr>
-            <form>
-              <div class="form-group pt-4">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Email"
-                  required
-                />
-              </div>
-              <div class="form-group pt-1">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="exampleInputPassword1"
-                  placeholder="Palavra-Passe"
-                  required
-                />
-              </div>
-              <button type="submit" class="btn btn-primary mt-4 mb-1">Entrar</button>
-              <small class="form-text text-muted">Recuperar Palavra-passe...</small>
-              <div>
-                <button type="submit" class="btn btn-disabled mt-4 mb-3 mr-1" disabled>Login</button>
-                <button type="submit" class="btn btn-primary mt-4 mb-3 ml-1">Registar</button>
-              </div>
-            </form>
+            <p id="welcomeText" class="paraghaph pt-5 pb-5 mt-4 mb-4">Bem vindo!
+                Este projeto foi realizado em prol
+                da aprovação às disciplinas P2,
+                PW1, BD e AMS, contando com a
+                ajuda do professor José António
+                sendo que o objetivo é implementar
+                um website para o restaurante da
+                Escola Superior de Hotelaria e
+                Turismo que brevemente irá ser inaugurado.
+            </p>
             <hr>
             <img src="../assets/ipplogo.png" id="logo" alt="" class="img-fluid mt-5 mb-4">
             <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
@@ -80,7 +63,7 @@ img#bg{
 
 hr{
   height: 1px;
-  background-color: white;
+  background-color: white
 }
 
 small{
@@ -110,14 +93,8 @@ input:focus{
   box-shadow: unset;
 }
 
-.btn{
-  background-color: #707070;
-  border-color: #707070;
-}
-
-.btn-disabled{
-  border-color: white;
-  color: #707070;
-  background-color: white;
+#welcomeText{
+  color: white;
+  text-align:center;
 }
 </style>
