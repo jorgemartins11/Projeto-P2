@@ -30,7 +30,7 @@
               <router-link to="/home">
                 <button type="submit" class="btn btn-primary mt-4 mb-1">Entrar</button>
               </router-link>
-              <small class="form-text text-muted">Recuperar Palavra-passe...</small>
+              <small class="form-text text-muted">Recuperar Palavra-Passe...</small>
               <div>
                 <button class="btn btn-disabled mt-4 mb-3 mr-1" disabled>Login</button>
                 <router-link to="/register">

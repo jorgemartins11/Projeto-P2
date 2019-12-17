@@ -8,18 +8,18 @@
     </div>
     <div class="col-xs-12 col-md-2 col-lg-4 text-center">
       <ul class="list-unstyled list-inline pt-2">
-        <li class="list-inline-item pr-3" href= "#">Página Inicial</li>
-        <li class="list-inline-item pr-3" href="#">Sobre</li>
-        <li class="list-inline-item pr-3" href="#">Reservar Mesa</li>
-        <li class="list-inline-item pr-3" href="#">Contactos</li><br><br>
-        <li class="list-inline-item" href="#">Andre Lopes, Gonçalo Moreira e Jorge Martins</li>
+        <li class="list-inline-item pr-3">Página Inicial</li>
+        <li class="list-inline-item pr-3">Sobre</li>
+        <li class="list-inline-item pr-3">Reservar Mesa</li>
+        <li class="list-inline-item pr-3">Contactos</li><br><br>
+        <li class="list-inline-item"> &copy; André Lopes, Gonçalo Moreira e Jorge Martins</li>
       </ul>
     </div>
     <div class="col-xs-12 col-md-5 col-lg-4 text-center pt-5">
-      <a href="https://www.facebook.com/" class="pl-2"><img src="../assets/facebook.svg"></a>
-      <a href="https://www.twitter.com/" class="pl-2"><img src="../assets/twitter.svg"></a>
-      <a href="https://www.instagram.com/" class="pl-2"><img src="../assets/instagram.svg"></a>
-      <a href="https://www.youtube.com/" class="pl-2" ><img src="../assets/youtube.svg"></a>
+      <a href="https://www.facebook.com/pporto.esht/" class="pl-2"><img src="../assets/facebook.svg"></a>
+      <a href="https://twitter.com/politecnico" class="pl-2"><img src="../assets/twitter.svg"></a>
+      <a href="https://www.instagram.com/esht_pporto/" class="pl-2"><img src="../assets/instagram.svg"></a>
+      <a href="https://www.youtube.com/user/politecnicodoporto" class="pl-2" ><img src="../assets/youtube.svg"></a>
       
     </div>
     </div>
