@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto" >
+            <ul class="navbar-nav mx-auto">
                 <li class="nav-item ml-lg-5">
                     <a class="nav-link" href="#">Página Inicial</a>
                 </li>
