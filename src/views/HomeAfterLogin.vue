@@ -1,39 +1,19 @@
 <template>
   <div class="home">
-<<<<<<< HEAD
-    <NavBar />
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <Footer />
-  </div>
-</template>
-
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-import NavBar from "@/components/NavBar.vue";
-import Footer from "@/components/Footer.vue";
-
-export default {
-  name: "home",
-  components: {
-    HelloWorld,
-    NavBar,
-    Footer
-  }
-};
-</script>
-=======
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-4" >
                 <li class="nav-item ml-lg-5 mt-3 mr-1">
-                    <router-link to="/Contacts">Contactos</router-link>
+                    <router-link to="/Sobre">Sobre</router-link>
                 </li>
                 <li class="nav-item ml-lg-5 mt-3 mr-1">
-                    <router-link to="/Login">Login / Registo</router-link>
+                    <router-link to="/Reserva">Reservar Mesa</router-link>
+                </li>
+                <li class="nav-item ml-lg-5 mt-3 mr-1">
+                    <router-link to="/Contacts">Contactos</router-link>
                 </li>
             </ul>
+            <img src="../assets/profile_icon.png" class="mr-4 lg-5 pl-sm-5 pl-lg-0  d-inline-block" width="30px" height="30px">
         </div>
     </nav>
     <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
@@ -151,4 +131,3 @@ input:focus {
 }
 
 </style>
->>>>>>> 7b222d85befd06333c99e42e9036eea55503a7b8
