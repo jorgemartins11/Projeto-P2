@@ -149,6 +149,7 @@ small {
 .form-control {
   background-color: #2c3e50;
   border-color: #2c3e50;
+  color: white;
 }
 
 
@@ -156,6 +157,10 @@ input:focus {
   background-color: #2c3e50;
   border: 1px solid black !important;
   box-shadow: unset;
+}
+
+input::placeholder{
+    color: white;
 }
 
 .welcomeText {
