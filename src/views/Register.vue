@@ -56,10 +56,10 @@
               </div>
               <div class="form-group pt-1">
                 <input
-                  type="date"
                   class="form-control"
                   id="exampleInputBirthDate"
                   placeholder="Data de Nascimento"
+                  onfocus="(this.type='date')"
                   required
                 />
               </div>
@@ -74,8 +74,10 @@
               </div>
               <button type="submit" class="btn btn-primary mt-4 mb-1">Criar Conta</button>
               <div>
-                <button type="submit" class="btn btn-primary mt-4 mb-3 mr-1" >Login</button>
-                <button type="submit" class="btn btn-disabled mt-4 mb-3 ml-1" disabled>Registar</button>
+                <router-link to="/login">
+                  <button class="btn btn-primary mt-4 mb-3 mr-1">Login</button>
+                </router-link>
+                <button class="btn btn-disabled mt-4 mb-3 ml-1" disabled>Registar</button>
               </div>
             </form>
             <hr>
@@ -83,7 +85,7 @@
             <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
             <small class="form-text">Rua D. Sancho I, n.º 981</small>
             <small class="form-text">4480-876 Vila do Conde</small>
-            <small class="form-text pb-1">Portugal</small>
+            <small class="form-text mb-3">Portugal</small>
           </div>
         </div>
       </div>
@@ -124,6 +126,7 @@ img#bg{
 
 hr{
   height: 1px;
+  width: 20rem;
   background-color: white;
 }
 

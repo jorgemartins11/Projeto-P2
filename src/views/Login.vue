@@ -27,11 +27,15 @@
                   required
                 />
               </div>
-              <button type="submit" class="btn btn-primary mt-4 mb-1">Entrar</button>
+              <router-link to="/home">
+                <button type="submit" class="btn btn-primary mt-4 mb-1">Entrar</button>
+              </router-link>
               <small class="form-text text-muted">Recuperar Palavra-passe...</small>
               <div>
-                <button type="submit" class="btn btn-disabled mt-4 mb-3 mr-1" disabled>Login</button>
-                <button type="submit" class="btn btn-primary mt-4 mb-3 ml-1">Registar</button>
+                <button class="btn btn-disabled mt-4 mb-3 mr-1" disabled>Login</button>
+                <router-link to="/register">
+                  <button class="btn btn-primary mt-4 mb-3 ml-1">Registar</button>
+                </router-link>
               </div>
             </form>
             <hr>
@@ -39,7 +43,7 @@
             <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
             <small class="form-text">Rua D. Sancho I, n.º 981</small>
             <small class="form-text">4480-876 Vila do Conde</small>
-            <small class="form-text">Portugal</small>
+            <small class="form-text mb-3">Portugal</small>
           </div>
         </div>
       </div>
@@ -55,7 +59,7 @@
 
 .barra {
   background-color: #2c3e50;
-  height: 100%;
+  height: auto;
   width: 30rem;
   opacity: 0.75;
   top: 0;
@@ -80,6 +84,7 @@ img#bg{
 
 hr{
   height: 1px;
+  width: 20rem;
   background-color: white;
 }
 
