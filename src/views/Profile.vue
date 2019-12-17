@@ -1,7 +1,13 @@
 <template>
   <div class="home">
     <NavBar />
+    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+      <div class="row">
+        <div class="col-12">
 
+        </div>
+      </div>
+    </div>
     <Footer />
   </div>
 </template>
