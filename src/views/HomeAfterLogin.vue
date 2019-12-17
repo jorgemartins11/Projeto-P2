@@ -1,20 +1,22 @@
 <template>
   <div class="home">
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto mr-4" >
-                <li class="nav-item ml-lg-5 mt-3 mr-1">
-                    <router-link to="/Sobre">Sobre</router-link>
-                </li>
-                <li class="nav-item ml-lg-5 mt-3 mr-1">
-                    <router-link to="/Reserva">Reservar Mesa</router-link>
-                </li>
-                <li class="nav-item ml-lg-5 mt-3 mr-1">
-                    <router-link to="/Contacts">Contactos</router-link>
-                </li>
-            </ul>
-            <img src="../assets/profile_icon.png" class="mr-4 lg-5 pl-sm-5 pl-lg-0  d-inline-block" width="30px" height="30px">
-        </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mr-4">
+          <li class="nav-item ml-lg-5 mt-3 mr-1">
+            <router-link to="/Sobre">Sobre</router-link>
+          </li>
+          <li class="nav-item ml-lg-5 mt-3 mr-1">
+            <router-link to="/Reserva">Reservar Mesa</router-link>
+          </li>
+          <li class="nav-item ml-lg-5 mt-3 mr-1">
+            <router-link to="/Contacts">Contactos</router-link>
+          </li>
+        </ul>
+        <router-link to="/profile">
+          <img src="../assets/profile_icon.png" class="mr-lg-5 pl-sm-5 pl-lg-0" width="30px" height="30px"/>
+        </router-link>
+      </div>
     </nav>
     <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
       <img src="../assets/background.jpg" id="bg" alt class="img-fluid" />
@@ -23,9 +25,7 @@
           <div class="col-12">
             <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-3" />
             <hr />
-            <p id="welcome" class="welcomeText pt-4 pb-3 ">
-              Bem vindo!
-            </p>
+            <p id="welcome" class="welcomeText pt-4 pb-3">Bem vindo!</p>
             <p class="welcomeText pb-4 mb-4 text-justify pl-lg-5 pr-lg-5 pl-5 pr-5">
               Este projeto foi realizado em prol
               da aprovação às disciplinas P2,
@@ -34,8 +34,9 @@
               sendo que o objetivo é implementar
               um website para o restaurante da
               Escola Superior de Hotelaria e
-              Turismo que brevemente irá ser inaugurado.</p>
-            <hr>
+              Turismo que brevemente irá ser inaugurado.
+            </p>
+            <hr />
             <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-5" />
             <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
             <small class="form-text">Rua D. Sancho I, n.º 981</small>
@@ -65,7 +66,7 @@ a:hover {
 }
 
 #welcome {
-  font-size: 30px
+  font-size: 30px;
 }
 
 .barra {
@@ -93,7 +94,7 @@ img#bg {
   height: auto;
 }
 
-hr{
+hr {
   height: 1px;
   width: 20rem;
   background-color: white;
@@ -129,5 +130,4 @@ input:focus {
 .welcomeText {
   color: white;
 }
-
 </style>

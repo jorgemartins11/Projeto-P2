@@ -59,7 +59,7 @@
 
 .barra {
   background-color: #2c3e50;
-  height: auto;
+  height: 100%;
   width: 30rem;
   opacity: 0.75;
   top: 0;

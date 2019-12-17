@@ -50,10 +50,16 @@ const routes = [
     component: () => import("../views/Reservation/Date.vue")
   },
   {
-    path: "/contactos",
-    name: "contactos",
+    path: "/contacts",
+    name: "contacts",
 
     component: () => import("../views/Contacts.vue")
+  },
+  {
+    path: "/profile",
+    name: "profile",
+
+    component: () => import("../views/Profile.vue")
   }
 ];
 

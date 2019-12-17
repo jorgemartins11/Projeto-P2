@@ -29,12 +29,9 @@
           <router-link to="/Contacts">Contactos</router-link>
         </a>
       </ul>
-      <img
-        src="../assets/profile_icon.png"
-        class="mr-lg-5 pl-sm-5 pl-lg-0"
-        width="30px"
-        heifght="30px"
-      />
+      <router-link to="/profile">
+        <img src="../assets/profile_icon.png" class="mr-lg-5 pl-sm-5 pl-lg-0" width="30px" height="30px"/>
+      </router-link>
     </div>
   </nav>
 </template>
