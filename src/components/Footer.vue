@@ -8,11 +8,19 @@
     </div>
     <div class="col-xs-12 col-md-2 col-lg-4 text-center">
       <ul class="list-unstyled list-inline pt-2">
-        <li class="list-inline-item pr-3">Página Inicial</li>
-        <li class="list-inline-item pr-3">Sobre</li>
-        <li class="list-inline-item pr-3">Reservar Mesa</li>
-        <li class="list-inline-item pr-3">Contactos</li><br><br>
-        <li class="list-inline-item"> &copy; André Lopes, Gonçalo Moreira e Jorge Martins</li>
+        <a class="list-inline-item pr-3">
+          <router-link to="/home">Página Inicial</router-link>
+        </a>
+        <a class="list-inline-item pr-3">
+          <router-link to="/Sobre">Sobre</router-link>
+        </a>
+        <a class="list-inline-item pr-3">
+          <router-link to="/Reserva">Reservar Mesa</router-link>
+        </a>
+        <a class="list-inline-item pr-3">
+          <router-link to="/Contacts">Contactos</router-link>
+        </a><br><br>
+        <a id="copyright" class="list-inline-item"> &copy; André Lopes, Gonçalo Moreira e Jorge Martins</a>
       </ul>
     </div>
     <div class="col-xs-12 col-md-5 col-lg-4 text-center pt-5">
@@ -38,7 +46,12 @@ export default {
     font-family: 'Muli', sans-serif;
     font-size: 1rem;
 }
-li{
+a{
   color: white;
+}
+a:hover {
+  text-decoration: none !important ;
+  color: white !important;
+  font-weight: bolder;
 }
 </style>

@@ -5,19 +5,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item ml-lg-5">
+            <ul class="navbar-nav mx-auto" >
+                <a class="nav-item ml-lg-5">
                     <a class="nav-link" href="#">Página Inicial</a>
-                </li>
-                <li class="nav-item ml-lg-5">
+                </a>
+                <a class="nav-item ml-lg-5">
                     <a class="nav-link" href="#">Sobre</a>
-                </li>
-                <li class="nav-item ml-lg-5">
+                </a>
+                <a class="nav-item ml-lg-5">
                     <a class="nav-link" href="#">Reservar Mesa</a>
-                </li>
-                <li class="nav-item ml-lg-5">
+                </a>
+                <a class="nav-item ml-lg-5">
                     <a class="nav-link" href="#">Contactos</a>
-                </li>
+                </a>
             </ul>
             <img src="../assets/profile_icon.png" class="mr-lg-5 pl-sm-5 pl-lg-0" width="30px" heifght="30px">
         </div>
@@ -37,7 +37,7 @@ export default {
     background-color: #2C3E50;
     height: 80px;
     font-family: 'Muli', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .navbar-brand, 
@@ -49,11 +49,13 @@ export default {
     background-color: #2C3E50;
 }
 
-/* ul{
-    padding-left: 20rem;
-} */
-/* 
-li{
-    padding-left: 2.5rem;
-} */
+a{
+  color: white;
+}
+
+a:hover {
+  text-decoration: none !important ;
+  color: white !important;
+  font-weight: bolder;
+}
 </style>
