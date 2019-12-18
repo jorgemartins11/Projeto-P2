@@ -33,7 +33,7 @@ const routes = [
   },
   {
     path: "/home",
-    name: "home",
+    name: "homeLoged",
 
     component: () => import("../views/HomeAfterLogin.vue")
   },

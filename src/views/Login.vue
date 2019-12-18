@@ -34,7 +34,7 @@
               <div>
                 <button class="btn btn-disabled mt-4 mb-3 mr-1" disabled>Login</button>
                 <router-link to="/register">
-                  <button class="btn btn-primary mt-4 mb-3 ml-1">Registar</button>
+                  <button  id="register" class="btn btn-primary mt-4 mb-3 ml-1">Registar</button>
                 </router-link>
               </div>
             </form>

@@ -8,7 +8,7 @@
             <img src="../assets/andre.png" id="logo" alt="" class="img-fluid pt-5">
             <p class="name">André Lopes</p>
             <p class="email mb-3">9180544@esmad.ipp.pt</p>
-            <p class="edit">Editar Perfil</p>
+            <p class="edit justify-content-start">Editar Perfil</p>
             <form>
               <div class="form-group pt-1">
                 <input

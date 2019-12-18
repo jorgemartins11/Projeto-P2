@@ -1,10 +1,16 @@
 <template>
   <div class="home">
     <NavBar />
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+    <div class="imgContainer position-relative d-flex align-items-center justify-content-center mt-5">
       <div class="row">
-        <div class="col-12">
-
+        <div class="col-12 mb-5">
+            <div class="col-12">
+              <img src="../assets/andre.png" id="logo" alt="" class="img-fluid pt-5 mt-5">
+              <div class="">
+                <p class="name">André Lopes</p>
+                <p class="email mb-3">9180544@esmad.ipp.pt</p>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -29,6 +35,8 @@ export default {
 .imgContainer {
   width: 100%;
   height: 100%;
+  right: 450px;
+  bottom: 30px
 }
 
 a {
@@ -55,13 +63,7 @@ a:hover {
 
 img#logo {
   height: auto;
-  width: 30%;
-}
-
-img#bg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
+  width: 80%;
 }
 
 .img-fluid {
