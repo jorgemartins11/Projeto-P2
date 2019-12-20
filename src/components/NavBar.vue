@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <a class="navbar-brand pl-5" href="#">
-      <img src="../assets/logo.png" />
+      <router-link to="/home"><img src="../assets/logo.png" /></router-link>
     </a>
     <button
       class="navbar-toggler"
@@ -17,13 +17,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
         <a class="list-inline-item pr-3">
-          <router-link to="/home">Página Inicial</router-link>
+          <router-link to="/Reserva">Reservar Mesa</router-link>
         </a>
         <a class="list-inline-item pr-3">
           <router-link to="/Sobre">Sobre</router-link>
-        </a>
-        <a class="list-inline-item pr-3">
-          <router-link to="/Reserva">Reservar Mesa</router-link>
         </a>
         <a class="list-inline-item pr-3">
           <router-link to="/Contacts">Contactos</router-link>

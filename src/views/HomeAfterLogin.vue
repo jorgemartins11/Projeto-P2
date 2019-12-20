@@ -1,24 +1,7 @@
 <template>
   <div class="home">
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto mr-4">
-          <li class="nav-item ml-lg-5 mt-3 mr-1">
-            <router-link to="/Sobre">Sobre</router-link>
-          </li>
-          <li class="nav-item ml-lg-5 mt-3 mr-1">
-            <router-link to="/Reserva">Reservar Mesa</router-link>
-          </li>
-          <li class="nav-item ml-lg-5 mt-3 mr-1">
-            <router-link to="/Contacts">Contactos</router-link>
-          </li>
-        </ul>
-        <router-link to="/profile">
-          <img src="../assets/profile_icon.png" class="mr-lg-5 pl-sm-5 pl-lg-0" width="30px" height="30px"/>
-        </router-link>
-      </div>
-    </nav>
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+    <NavBar />
+    <div class="imgContainer mt-5 position-relative d-flex align-items-center justify-content-center">
       <img src="../assets/background.jpg" id="bg" alt class="img-fluid" />
       <div class="barra d-flex justify-content-center">
         <div class="row">
@@ -37,7 +20,7 @@
               Turismo que brevemente irá ser inaugurado.
             </p>
             <hr />
-            <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-5" />
+            <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5" />
             <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
             <small class="form-text">Rua D. Sancho I, n.º 981</small>
             <small class="form-text">4480-876 Vila do Conde</small>
@@ -46,13 +29,27 @@
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
+
+<script>
+import Footer from "@/components/Footer.vue"
+import NavBar from "@/components/NavBar.vue"
+
+export default {
+  name: "about",
+  components:{
+    Footer,
+    NavBar
+  }
+}
+</script>
 
 <style scoped>
 .imgContainer {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
 }
 
 a {
