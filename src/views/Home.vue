@@ -122,4 +122,8 @@ input:focus {
   background-color: #707070;
   border-color: #707070;
 }
+
+.btn:hover{
+  border: 1px solid white !important;
+}
 </style>

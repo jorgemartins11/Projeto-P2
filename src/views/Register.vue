@@ -72,20 +72,22 @@
                   required
                 />
               </div>
-              <button type="submit" class="btn btn-primary mt-4 mb-1">Criar Conta</button>
+              <button type="submit" id="criarConta" class="btn btn-primary btn-lg mt-4 mb-1">Criar Conta</button>
               <div>
                 <router-link to="/login">
-                  <button class="btn btn-primary mt-4 mb-3 mr-1">Login</button>
+                  <button id="login" class="btn btn-primary btn-lg mt-4 mb-5 mr-1">Login</button>
                 </router-link>
-                <button class="btn btn-disabled mt-4 mb-3 ml-1" disabled>Registar</button>
+                <button id="disabled" class="btn btn-disabled btn-lg mt-4 mb-5 ml-1" disabled>Registar</button>
               </div>
             </form>
             <hr>
-            <img src="../assets/ipplogo.png" id="logo" alt="" class="img-fluid mt-5 mb-4">
-            <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
-            <small class="form-text">Rua D. Sancho I, n.º 981</small>
-            <small class="form-text">4480-876 Vila do Conde</small>
-            <small class="form-text mb-3">Portugal</small>
+            <div class="eshtInfo pt-5">
+              <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-4" />
+              <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
+              <small class="form-text">Rua D. Sancho I, n.º 981</small>
+              <small class="form-text">4480-876 Vila do Conde</small>
+              <small class="form-text mb-3">Portugal</small>
+            </div>
           </div>
         </div>
       </div>
@@ -151,6 +153,7 @@ input::placeholder{
 input:active{
   background-color: #707070;
 }
+
 input:focus{
   background-color: #707070;
   border: 1px solid black !important;
@@ -166,5 +169,15 @@ input:focus{
   border-color: white;
   color: #707070;
   background-color: white;
+}
+
+#login:hover{
+  border: 1px solid white !important;
+  background-color: #007bff;
+}
+
+#criarConta:hover{
+  border: 1px solid white !important;
+  background-color: #007bff;
 }
 </style>

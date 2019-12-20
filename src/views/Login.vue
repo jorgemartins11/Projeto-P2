@@ -5,10 +5,10 @@
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <img src="../assets/logo.png" id="logo" alt="" class="img-fluid pt-5 pb-3">
-            <hr>
+            <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-5" />
+            <hr />
             <form>
-              <div class="form-group pt-4">
+              <div class="form-group pt-5">
                 <input
                   type="email"
                   class="form-control"
@@ -28,22 +28,24 @@
                 />
               </div>
               <router-link to="/home">
-                <button type="submit" class="btn btn-primary mt-4 mb-1">Entrar</button>
+                <button type="submit" id="entrar" class="btn btn-primary btn-lg mt-4 mb-1">Entrar</button>
               </router-link>
               <small class="form-text text-muted">Recuperar Palavra-Passe...</small>
               <div>
-                <button class="btn btn-disabled mt-4 mb-3 mr-1" disabled>Login</button>
+                <button class="btn btn-disabled mt-4 mb-5 btn-lg mr-1" disabled>Login</button>
                 <router-link to="/register">
-                  <button  id="register" class="btn btn-primary mt-4 mb-3 ml-1">Registar</button>
+                  <button id="register" class="btn btn-primary mt-4 mb-5 btn-lg ml-1">Registar</button>
                 </router-link>
               </div>
             </form>
-            <hr>
-            <img src="../assets/ipplogo.png" id="logo" alt="" class="img-fluid mt-5 mb-4">
-            <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
-            <small class="form-text">Rua D. Sancho I, n.º 981</small>
-            <small class="form-text">4480-876 Vila do Conde</small>
-            <small class="form-text mb-3">Portugal</small>
+            <hr />
+            <div class="eshtInfo pt-5">
+              <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-4" />
+              <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
+              <small class="form-text">Rua D. Sancho I, n.º 981</small>
+              <small class="form-text">4480-876 Vila do Conde</small>
+              <small class="form-text mb-3">Portugal</small>
+            </div>
           </div>
         </div>
       </div>
@@ -66,12 +68,12 @@
   position: absolute;
 }
 
-img#logo{
+img#logo {
   height: auto;
   width: 50%;
 }
 
-img#bg{
+img#bg {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -82,47 +84,57 @@ img#bg{
   height: auto;
 }
 
-hr{
+hr {
   height: 1px;
   width: 20rem;
   background-color: white;
 }
 
-small{
-  font-family: 'Muli', sans-serif;
+small {
+  font-family: "Muli", sans-serif;
   font-size: 0.9rem;
   font-weight: bold;
   color: white;
   opacity: 1;
 }
 
-.form-control{
+.form-control {
   background-color: #707070;
   border-color: #707070;
 }
 
-input::placeholder{
-    color: white;
+input::placeholder {
+  color: white;
 }
 
-input:active{
+input:active {
   background-color: #707070;
 }
 
-input:focus{
+input:focus {
   background-color: #707070;
   border: 1px solid black !important;
   box-shadow: unset;
 }
 
-.btn{
+.btn {
   background-color: #707070;
   border-color: #707070;
 }
 
-.btn-disabled{
+.btn-disabled {
   border-color: white;
   color: #707070;
   background-color: white;
+}
+
+#register:hover {
+  border: 1px solid white !important;
+  background-color: #007bff;
+}
+
+#entrar:hover {
+  border: 1px solid white !important;
+  background-color: #007bff;
 }
 </style>
