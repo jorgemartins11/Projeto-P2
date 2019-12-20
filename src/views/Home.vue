@@ -1,27 +1,13 @@
 <template>
   <div class="home">
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto mr-4" >
-                <li class="nav-item ml-lg-5 mt-3 mr-1">
-                    <router-link to="/Contacts">Contactos</router-link>
-                </li>
-                <li class="nav-item ml-lg-5 mt-3 mr-1">
-                    <router-link to="/Login">Login / Registo</router-link>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
       <img src="../assets/background.jpg" id="bg" alt class="img-fluid" />
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-3" />
+            <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-4" />
             <hr />
-            <p id="welcome" class="welcomeText pt-4 pb-3 ">
-              Bem vindo!
-            </p>
+            <p id="welcome" class="welcomeText pt-4 pb-4">Bem vindo!</p>
             <p class="welcomeText pb-4 mb-4 text-justify pl-lg-5 pr-lg-5 pl-5 pr-5">
               Este projeto foi realizado em prol
               da aprovação às disciplinas P2,
@@ -30,13 +16,19 @@
               sendo que o objetivo é implementar
               um website para o restaurante da
               Escola Superior de Hotelaria e
-              Turismo que brevemente irá ser inaugurado.</p>
-            <hr>
-            <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-5" />
-            <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
-            <small class="form-text">Rua D. Sancho I, n.º 981</small>
-            <small class="form-text">4480-876 Vila do Conde</small>
-            <small class="form-text">Portugal</small>
+              Turismo que brevemente irá ser inaugurado.
+            </p>
+            <router-link to="/Login">
+              <button id="register" class="btn btn-primary btn-lg mt-5 mb-5 ml-1">Login / Registar</button>
+            </router-link>
+            <hr />
+            <div class>
+              <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-5" />
+              <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
+              <small class="form-text">Rua D. Sancho I, n.º 981</small>
+              <small class="form-text">4480-876 Vila do Conde</small>
+              <small class="form-text">Portugal</small>
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +53,7 @@ a:hover {
 }
 
 #welcome {
-  font-size: 30px
+  font-size: 30px;
 }
 
 .barra {
@@ -89,7 +81,7 @@ img#bg {
   height: auto;
 }
 
-hr{
+hr {
   height: 1px;
   width: 20rem;
   background-color: white;
@@ -126,4 +118,8 @@ input:focus {
   color: white;
 }
 
+.btn {
+  background-color: #707070;
+  border-color: #707070;
+}
 </style>
