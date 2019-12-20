@@ -20,7 +20,7 @@
               Turismo que brevemente irá ser inaugurado.
             </p>
             <hr />
-            <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5" />
+            <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-5" />
             <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
             <small class="form-text">Rua D. Sancho I, n.º 981</small>
             <small class="form-text">4480-876 Vila do Conde</small>

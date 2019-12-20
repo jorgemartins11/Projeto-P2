@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <a class="navbar-brand pl-5" href="#">
-      <router-link to="/home"><img src="../assets/logo.png" /></router-link>
+      <router-link to="/home">
+        <img src="../assets/logo.png" />
+      </router-link>
     </a>
     <button
       class="navbar-toggler"
@@ -15,7 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto">
+      <ul class="navbar-nav mx-auto text-center">
         <a class="list-inline-item pr-3">
           <router-link to="/Reserva">Reservar Mesa</router-link>
         </a>
@@ -27,7 +29,12 @@
         </a>
       </ul>
       <router-link to="/profile">
-        <img src="../assets/profile_icon.png" class="mr-lg-5 pl-sm-5 pl-lg-0" width="30px" height="30px"/>
+        <img
+          src="../assets/profile_icon.png"
+          class="mr-lg-5 pl-sm-5 pl-lg-0"
+          width="30px"
+          height="30px"
+        />
       </router-link>
     </div>
   </nav>
