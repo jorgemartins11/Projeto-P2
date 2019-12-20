@@ -7,6 +7,9 @@
             <div class="row">
                 <div class="col-12">
                     <p id="reservationText" class="reservationText pt-5 pb-5">RESERVAR MESA</p>
+                    <router-link to="/data">
+                        <img src="../../assets/seta.png" id="arrow" alt class="img-fluid" />
+                    </router-link>  
                 </div>
             </div>
       </div>
@@ -58,6 +61,13 @@ img#bg {
   height: 100%;
   width: 100%;
   filter:brightness(75%);
+}
+
+img#arrow {
+  height:60px;
+  width: 60px;
+  margin-bottom:auto;
+  margin-top: 100px;
 }
 
 .img-fluid {

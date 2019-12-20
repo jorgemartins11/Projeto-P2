@@ -66,6 +66,12 @@ const routes = [
     name: "editProfile",
 
     component: () => import("../views/EditProfile.vue")
+  },
+  {
+    path: "/data",
+    name: "data",
+
+    component: () => import("../views/Reservation/Date.vue")
   }
 ];
 
