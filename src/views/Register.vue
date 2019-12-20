@@ -5,10 +5,10 @@
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <img src="../assets/logo.png" id="logo" alt="" class="img-fluid pt-5 pb-3">
+            <img src="../assets/logo.png" id="logo" alt="" class="img-fluid pt-5 pb-5">
             <hr>
             <form>
-              <div class="form-group pt-4">
+              <div class="form-group pt-5">
                 <input
                   type="text"
                   class="form-control"
