@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import PageNotFound from "../views/Error.vue";
 
 Vue.use(VueRouter);
 
@@ -74,10 +75,9 @@ const routes = [
     component: () => import("../views/Reservation/Date.vue")
   },
   {
-    path: "/error",
-    name: "error",
-
-    component: () => import("../views/Error.vue")
+    path: "*",
+    name: "PageNotFound",
+    component: PageNotFound
   }
 ];
 
