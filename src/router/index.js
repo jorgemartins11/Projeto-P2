@@ -72,6 +72,12 @@ const routes = [
     name: "data",
 
     component: () => import("../views/Reservation/Date.vue")
+  },
+  {
+    path: "/error",
+    name: "error",
+
+    component: () => import("../views/Error.vue")
   }
 ];
 
