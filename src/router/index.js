@@ -14,65 +14,67 @@ const routes = [
   {
     path: "/about",
     name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    component: () => import("../views/About.vue")
   },
   {
     path: "/login",
     name: "login",
-
     component: () => import("../views/Login.vue")
   },
   {
     path: "/register",
     name: "registo",
-
     component: () => import("../views/Register.vue")
   },
   {
     path: "/home",
     name: "homeLoged",
-
-    component: () => import("../views/HomeAfterLogin.vue")
+    component: () => import("../views/HomeAfterLogin.vue"),
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: "/sobre",
     name: "sobre",
-
     component: () => import("../views/About.vue")
   },
   {
     path: "/reserva",
     name: "reserva",
-
-    component: () => import("../views/Reservation/Reservation.vue")
+    component: () => import("../views/Reservation/Reservation.vue"),
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: "/contacts",
     name: "contacts",
-
     component: () => import("../views/Contacts.vue")
   },
   {
     path: "/profile",
     name: "profile",
-
-    component: () => import("../views/Profile.vue")
+    component: () => import("../views/Profile.vue"),
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: "/editProfile",
     name: "editProfile",
-
-    component: () => import("../views/EditProfile.vue")
+    component: () => import("../views/EditProfile.vue"),
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: "/data",
     name: "data",
-
-    component: () => import("../views/Reservation/Date.vue")
+    component: () => import("../views/Reservation/Date.vue"),
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: "*",
