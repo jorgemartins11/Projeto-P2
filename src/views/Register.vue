@@ -14,7 +14,8 @@
                   class="form-control"
                   id="exampleInputName"
                   placeholder="Nome Próprio"
-                  required
+                  required 
+                  v-model="name"
                 />
               </div>
               <div class="form-group pt-1">
@@ -24,6 +25,7 @@
                   id="exampleInputUsername"
                   placeholder="Nome de Utilizador"
                   required
+                  v-model="username"
                 />
               </div>
               <div class="form-group pt-1">
@@ -34,6 +36,7 @@
                   aria-describedby="emailHelp"
                   placeholder="Email"
                   required
+                  v-model="email"
                 />
               </div>
               <div class="form-group pt-1">
@@ -52,6 +55,7 @@
                   id="exampleInputPassword2"
                   placeholder="Repetir Palavra-Passe"
                   required
+                  v-model="password"
                 />
               </div>
               <div class="form-group pt-1">
@@ -61,6 +65,7 @@
                   placeholder="Data de Nascimento"
                   onfocus="(this.type='date')"
                   required
+                  v-model="birthDate"
                 />
               </div>
               <div class="form-group pt-1">
@@ -70,6 +75,7 @@
                   id="exampleInputUserType"
                   placeholder="Tipo de Utilizador"
                   required
+                  v-model="userType"
                 />
               </div>
               <button type="submit" id="criarConta" class="btn btn-primary btn-lg mt-4 mb-1">Criar Conta</button>
@@ -181,3 +187,5 @@ input:focus{
   background-color: #007bff;
 }
 </style>
+
+<script src="../../account.js"></script>

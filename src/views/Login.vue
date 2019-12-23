@@ -16,6 +16,7 @@
                   aria-describedby="emailHelp"
                   placeholder="Email"
                   required
+                  v-model="email"
                 />
               </div>
               <div class="form-group pt-1">
@@ -25,6 +26,7 @@
                   id="exampleInputPassword1"
                   placeholder="Palavra-Passe"
                   required
+                  v-model="password"
                 />
               </div>
               <router-link to="/home">
@@ -52,6 +54,8 @@
     </div>
   </div>
 </template>
+
+<script src="../../account.js"></script>
 
 <style scoped>
 .imgContainer {
