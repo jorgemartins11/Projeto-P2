@@ -56,6 +56,9 @@
 </template>
 
 <script src="../../account.js"></script>
+<script>
+  
+</script>
 
 <style scoped>
 .imgContainer {
