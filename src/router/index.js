@@ -77,6 +77,38 @@ const routes = [
     }
   },
   {
+    path: "/homeAdmin",
+    name: "HomeAdmin",
+    component: () => import("../views/Admin/HomeAdmin.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/reservationsAdmin",
+    name: "reservationsAdmin",
+    component: () => import("../views/Admin/ReservationsAdmin.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/stockAdmin",
+    name: "stockAdmin",
+    component: () => import("../views/Admin/StockAdmin.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/usersAdmin",
+    name: "usersAdmin",
+    component: () => import("../views/Admin/UsersAdmin.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: "*",
     name: "PageNotFound",
     component: PageNotFound
