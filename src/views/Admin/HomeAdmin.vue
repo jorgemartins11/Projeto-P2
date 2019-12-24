@@ -1,42 +1,82 @@
 <template>
   <div class="home">
     <AdminNavBar />
-
+    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+        <div class="btn1 mr-lg-5 pl-sm-5 pl-lg-0">
+            <router-link to="/reservationsAdmin">
+            <img src="../../assets/reservas.png" />
+            <hr>
+            <p class="p">Reservas</p>
+            <br />
+            </router-link>
+        </div>
+        <div class="btn2 mr-lg-5 pl-sm-5 pl-lg-0">
+            <router-link to="/usersAdmin">
+            <img src="../../assets/users.png" />
+            <hr>
+            <p class="p">Utilizadores</p>
+            <br />
+            </router-link>
+        </div>
+        <div class="btn3 mr-lg-5 pl-sm-5 pl-lg-0">
+            <router-link to="/stockAdmin">
+            <img src="../../assets/stock.png" />
+            <hr>
+            <p class="p">Gestão de Stock</p>
+            <br />
+            </router-link>
+        </div>
+    </div>
     <AdminFooter />
   </div>
 </template>
 
 <script>
-import AdminFooter from "@/components/AdminFooter.vue"
-import AdminNavBar from "@/components/AdminNavBar.vue"
+import AdminFooter from "@/components/AdminFooter.vue";
+import AdminNavBar from "@/components/AdminNavBar.vue";
 
 export default {
   name: "about",
-  components:{
+  components: {
     AdminFooter,
     AdminNavBar
   }
-}
+};
 </script>
 
 <style scoped>
-.imgContainer {
-  width: 100%;
-  height: 100%;
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    position: absolute;
+}
+
+.btn1, .btn2, .btn3 {
+    width: 600px;
+    height: 600px;
+    float:left;
+    background-color: #707070;
+    margin-top: 125px;
+    margin-left: 40px;
+    padding: 10px;
+    border: 10px solid #2c3e50;
 }
 
 a {
   text-decoration: none !important ;
   color: white !important;
+  font-size: 1.2rem;
 }
 
 a:hover {
   text-decoration: none !important ;
   color: #2c3e50 !important;
+  font-size: 20px;
 }
 
 #welcome {
-  font-size: 30px
+  font-size: 30px;
 }
 
 .barra {
@@ -63,7 +103,7 @@ img#bg {
   height: auto;
 }
 
-hr{
+hr {
   height: 1px;
   width: 20rem;
   background-color: #2c3e50;
@@ -81,7 +121,6 @@ small {
   background-color: #707070;
   border-color: #707070;
 }
-
 
 input:focus {
   background-color: #707070;
