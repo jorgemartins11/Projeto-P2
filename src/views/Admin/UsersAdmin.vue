@@ -12,12 +12,13 @@
       <div class="container-fluid userFilter">
         <form class="form-inline">
           <div class="form-group mt-4">
-            <label for="stlOrder" class="mr-3">Filtrar Por:</label>
+            <label for="stlOrder" class="filter mr-3">Filtrar Por:</label>
             <select class="form-control" id="stlOrder">
               <option value="A-Z" selected>Ordem Alfabética Crescente</option>
               <option value="Z-A">Ordem Alfabética Decrescente</option>
             </select>
-            <button type="button" class="btn btn-primary filterUsers ml-4">Filtrar</button>
+            <input type="text" class="text ml-4" rows="1" cols="25" placeholder="Nome de Utilizador..." maxlength="20">
+            <button type="button" class="btn btn-primary filterUsers ml-5">Filtrar</button>
             <button type="button" id="addUser" class="btn btn-primary filterUsers ml-5">Adicionar Utilizador</button>
           </div>
         </form>
@@ -83,8 +84,8 @@ div {
   height: 20px;
 }
 
-.container-fluid {
-  background-color: #2980b9 !important;
+.container-fluid{
+  background-color: #2980b9;
 }
 
 .form-control {
@@ -115,11 +116,25 @@ div {
 }
 
 .form-control:hover{
-    background-color: #007bff;
+    background-color: #707070;
     color: white;
 }
 
-#addUser{
-    align-self: right;
+.text{
+    max-width: 200px;
+    resize: none;
+    background-color: #2c3e50;
+    max-lines: 1;
+    color: white;
+    border: 2px solid  #707070;
+}
+
+.text::placeholder{
+    color: white;
+}
+
+.filter{
+    color: #2c3e50;
+    font-size: 20px;
 }
 </style>
