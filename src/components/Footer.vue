@@ -10,13 +10,13 @@
       </div>
       <div class="col-xs-12 col-md-2 col-lg-4 text-center">
         <ul class="list-unstyled list-inline pt-2">
-          <a class="list-inline-item pr-3">
+          <a class="navegable list-inline-item pr-3">
             <router-link to="/Reserva">Reservar Mesa</router-link>
           </a>
-          <a class="list-inline-item pr-3">
+          <a class="navegable list-inline-item pr-3">
             <router-link to="/Sobre">Sobre</router-link>
           </a>
-          <a class="list-inline-item pr-3">
+          <a class="navegable list-inline-item pr-3">
             <router-link to="/Contacts">Contactos</router-link>
           </a>
           <br />
@@ -62,13 +62,18 @@ export default {
   font-size: 1rem;
 }
 a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
-a:hover {
+
+#copyright{
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.navegable:hover {
   text-decoration: none !important ;
   color: white !important;
   font-weight: bolder;
 }
-
-
 </style>
