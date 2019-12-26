@@ -1,29 +1,43 @@
 <template>
   <div class="home">
     <AdminNavBar />
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+      <div class="row">
+        <div class="col-12 text-center users pb-5 pt-5">
+          <img src="../../assets/logoBook.png" class="img-fluid mb-4 mt-5" />
+          <h1 class="display-5">Reservas</h1>
+        </div>
+      </div>
 
-    </div>
     <AdminFooter />
   </div>
 </template>
 
 <script>
-
-import AdminFooter from "@/components/AdminFooter.vue"
-import AdminNavBar from "@/components/AdminNavBar.vue"
+import AdminFooter from "@/components/AdminFooter.vue";
+import AdminNavBar from "@/components/AdminNavBar.vue";
 
 export default {
   name: "about",
-  components:{
+  components: {
     AdminFooter,
     AdminNavBar
   }
-}
+};
 </script>
 
 <style scoped>
-p{
-  color: black;
+div{
+  overflow-x: hidden;
+}
+
+.img-fluid{
+    height: 150px;
+}
+
+.row{
+    background-color: #2980B9;
+    height: 350px;
+    overflow-y: hidden;
+    color: white;
 }
 </style>
