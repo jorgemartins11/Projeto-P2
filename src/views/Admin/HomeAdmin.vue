@@ -161,7 +161,6 @@ p{
   height: 50px;
   color: white;
   font-size: 30px;
-  font-family: "Garamont Amsterdam Expert BQ";
   position: relative;
 }
 
@@ -169,7 +168,6 @@ p:hover{
   height: 50px;
   color: white;
   font-size: 35px;
-  font-family: "Garamont Amsterdam Expert BQ";
 }
 
 a {

@@ -199,3 +199,19 @@ input:focus{
 
 <script src="../scripts/account.js"></script>
 <script src="../scripts/validation.js"></script>
+<script>
+export default {
+  data: function() {
+    return {
+      txtName: "",
+      txtUsername: "",
+      txtEmail: "",
+      txtPassword: "",
+      txtRepeatPassword: "",
+      birthDate: "",
+      userType: ""
+    };
+  },
+  methods:{},
+  computed:{}
+};
