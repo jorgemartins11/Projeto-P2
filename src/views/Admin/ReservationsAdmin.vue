@@ -42,6 +42,10 @@ export default {
 
 <style scoped>
 
+.home{
+    overflow-x: hidden;
+}
+
 .img-fluid {
   height: 150px;
 }
