@@ -51,6 +51,7 @@
                   placeholder="Palavra-Passe"
                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                   required
+                  v-model="password"
                 />
               </div>
               <div class="form-group pt-1">
@@ -62,7 +63,7 @@
                   placeholder="Repetir Palavra-Passe"
                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                   required
-                  v-model="password"
+                  v-model="repeatedPassword"
                 />
               </div>
               <div class="form-group pt-1">
@@ -87,7 +88,7 @@
                   v-model="userType"
                 />
               </div>
-              <button type="submit" id="criarConta" class="btn btn-primary btn-lg mt-4 mb-1">Criar Conta</button>
+              <button v-on:click="addTask()" id="criarConta" class="btn btn-primary btn-lg mt-4 mb-1">Criar Conta</button>
               <div>
                 <router-link to="/login">
                   <button id="login" class="btn btn-primary btn-lg mt-4 mb-5 mr-1">Login</button>
@@ -109,6 +110,69 @@
     </div>
   </div>
 </template>
+
+
+<script src="../scripts/account.js"></script>
+<script src="../scripts/validation.js"></script>
+<script>
+// export default {
+//   data: function() {
+//     return {
+//       name: "",
+//       username: "",
+//       email: "",
+//       password: "",
+//       repeatPassword: "",
+//       birthDate: "",
+//       userType: ""
+//     };
+//   },
+//   created() {
+//     //regista um listener quando o browser ou o separador é fechado
+//     window.addEventListener("unload", this.saveStorage);
+
+//     //recupera os dados da local storage (se existirem)
+//     if (localStorage.getItem("accounts")) {
+//       this.accounts = JSON.parse(localStorage.getItem("accounts"));
+//     }
+//   },
+//   methods:{
+//     //criar uma conta
+//     addTask() {
+//       //condiçao para avaliar se uma conta ja existe no array accounts
+//       if (!this.accounts.some(task => task.name === this.name)) {
+//         this.accounts.push({
+//           id: this.getLastId() + 1,
+//           name: this.name,
+//           username: this.username,
+//           email: this.email,
+//           password: this.password,
+//           birthDate: this.birthDate,
+//           userType: this.userType
+//         });
+//       } else {
+//         alert("Conta já adicionada!");
+//         this.username = "";
+//       }
+//     },
+
+//     //devove o ultimo id da conta
+//     getLastId() {
+//       if (this.accounts.length) {
+//         return this.accounts[this.accounts.length - 1].id;
+//       } else {
+//         return 0;
+//       }
+//     },
+
+//     //guardar na local storage do browser as contas
+//     saveStorage() {
+//       localStorage.setItem("accounts", JSON.stringify(this.accounts));
+//     }
+//   },
+//   computed:{}
+// };
+</script>
 
 <style scoped>
 .imgContainer {
@@ -196,22 +260,3 @@ input:focus{
   background-color: #007bff;
 }
 </style>
-
-<script src="../scripts/account.js"></script>
-<script src="../scripts/validation.js"></script>
-<script>
-export default {
-  data: function() {
-    return {
-      txtName: "",
-      txtUsername: "",
-      txtEmail: "",
-      txtPassword: "",
-      txtRepeatPassword: "",
-      birthDate: "",
-      userType: ""
-    };
-  },
-  methods:{},
-  computed:{}
-};

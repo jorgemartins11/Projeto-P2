@@ -109,6 +109,22 @@ const routes = [
     }
   },
   {
+    path: "/reservationByDateAdmin",
+    name: "reservationByDateAdmin",
+    component: () => import("../views/Admin/ReservationByDate.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/reservationByUserAdmin",
+    name: "reservationByUserAdmin",
+    component: () => import("../views/Admin/ReservationByUser.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: "*",
     name: "PageNotFound",
     component: PageNotFound

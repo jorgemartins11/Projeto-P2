@@ -14,8 +14,8 @@
           <div class="form-group mt-4">
             <label for="stlOrder" class="filter mr-3">Filtrar Por:</label>
             <select class="form-control" id="stlOrder">
-              <option value="A-Z" selected>Ordem Alfabética Crescente</option>
-              <option value="Z-A">Ordem Alfabética Decrescente</option>
+              <option value="A-Z" selected>Utilizador - Ordem Alfabética Crescente</option>
+              <option value="Z-A">Utilizador - Ordem Alfabética Decrescente</option>
             </select>
             <input type="text" class="text ml-4" rows="1" cols="25" placeholder="Nome de Utilizador..." maxlength="20">
             <button type="button" class="btn btn-primary filterUsers ml-5">Filtrar</button>
