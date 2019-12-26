@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <a class="navbar-brand pl-5" href="#">
-      <router-link to="/home">
+      <router-link to="/homeAdmin">
         <img src="../assets/logo.png" />
       </router-link>
     </a>

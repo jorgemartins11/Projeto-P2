@@ -2,7 +2,7 @@
   <div class="home">
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
       <a class="navbar-brand pl-5" href="#">
-        <router-link to="/home">
+        <router-link to="/homeAdmin">
           <img src="../../assets/logo.png" />
         </router-link>
       </a>
@@ -33,25 +33,22 @@
     <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
       <div class="btn1 mr-lg-5 pl-sm-5 pl-lg-0">
         <router-link to="/reservationsAdmin">
-          <img src="../../assets/reservas.png" />
-          <hr />
-          <p class="p">Reservas</p>
+          <img class="img" src="../../assets/logoBook.png" />
+          <p class="p">RESERVAS</p>
           <br />
         </router-link>
       </div>
       <div class="btn2 mr-lg-5 pl-sm-5 pl-lg-0">
         <router-link to="/usersAdmin">
-          <img src="../../assets/users.png" />
-          <hr />
-          <p class="p">Utilizadores</p>
+          <img class="img" src="../../assets/users2.png" />
+          <p class="p mb-4">UTILIZADORES</p>
           <br />
         </router-link>
       </div>
       <div class="btn3 mr-lg-5 pl-sm-5 pl-lg-0">
         <router-link to="/stockAdmin">
-          <img src="../../assets/stock.png" />
-          <hr />
-          <p class="p">Gestão de Stock</p>
+          <img class="img" src="../../assets/stock.png" />
+          <p class="p">GESTÃO DE STOCK</p>
           <br />
         </router-link>
       </div>
@@ -102,6 +99,7 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url(//db.onlinewebfonts.com/c/3ddbc782020026a9a930f7a134dce21d?family=Garamont+Amsterdam+Expert+BQ);
 
 .Footer-custom {
   background-color: #2c3e50;
@@ -135,14 +133,43 @@ export default {
 .btn1,
 .btn2,
 .btn3 {
-  width: 600px;
+  width: 500px;
   height: 600px;
   float: left;
-  background-color: #707070;
+  background-color:#2980B9;
   margin-top: 125px;
   margin-left: 40px;
   padding: 10px;
-  border: 10px solid #2c3e50;
+  border: 12px solid #2c3e50;
+}
+
+.img{
+    width: 400px;
+    height: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.img:hover{
+    width: 410px;
+    height: 410px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+p{
+  height: 50px;
+  color: white;
+  font-size: 30px;
+  font-family: "Garamont Amsterdam Expert BQ";
+  position: relative;
+}
+
+p:hover{
+  height: 50px;
+  color: white;
+  font-size: 35px;
+  font-family: "Garamont Amsterdam Expert BQ";
 }
 
 a {
@@ -152,8 +179,6 @@ a {
 }
 
 a:hover {
-  text-decoration: none !important ;
-  color: #2c3e50 !important;
   font-weight: bolder;
 }
 
