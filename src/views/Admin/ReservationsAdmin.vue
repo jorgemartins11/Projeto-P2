@@ -11,14 +11,14 @@
       <div class="btn1 mr-lg-5 pl-sm-5 pl-lg-0 mt-5 mb-5">
         <router-link to="/reservationByDateAdmin">
           <img class="img" src="../../assets/calendar.png" />
-          <p class="p">Escolher por Data...</p>
+          <p class="p">Escolher Reservas por Data...</p>
           <br />
         </router-link>
       </div>
       <div class="btn2 mr-lg-5 pl-sm-5 pl-lg-0 mt-5 mb-5">
         <router-link to="/reservationByUserAdmin">
           <img class="img" src="../../assets/users3.png" />
-          <p class="p">Escolher por Utilizador...</p>
+          <p class="p">Escolher Reservas por Utilizador...</p>
           <br />
         </router-link>
       </div>
@@ -89,14 +89,14 @@ export default {
 p{
   height: 50px;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   position: relative;
 }
 
 p:hover{
   height: 50px;
   color: white;
-  font-size: 35px;
+  font-size: 28px;
 }
 
 a {
