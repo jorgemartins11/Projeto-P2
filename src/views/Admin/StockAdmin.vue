@@ -14,12 +14,23 @@
           <div class="form-group mt-4">
             <label for="stlOrder" class="filter mr-3">Filtrar Por:</label>
             <select class="form-control" id="stlOrder">
-              <option value="A-Z" selected>Ordem Alfabética Crescente</option>
-              <option value="Z-A">Ordem Alfabética Decrescente</option>
+              <option value="A-Z" selected>Categoria - Ordem Alfabética Crescente</option>
+              <option value="Z-A">Categoria - Ordem Alfabética Decrescente</option>
             </select>
-            <input type="text" class="text ml-4" rows="1" cols="25" placeholder="Nome do Produto..." maxlength="20">
+            <input
+              type="text"
+              class="text ml-4"
+              rows="1"
+              cols="25"
+              placeholder="Nome do Produto..."
+              maxlength="20"
+            />
             <button type="button" class="btn btn-primary filterUsers ml-5">Filtrar</button>
-            <button type="button" id="addUser" class="btn btn-primary filterUsers ml-5">Adicionar Produto</button>
+            <button
+              type="button"
+              id="addProduct"
+              class="btn btn-primary filterUsers"
+            >Adicionar Produto</button>
           </div>
         </form>
       </div>
@@ -36,9 +47,9 @@
                   <th scope="col">Nome do Produto</th>
                   <th scope="col">Categoria</th>
                   <th scope="col">Quantidade Atual</th>
-                  <th scope="col">Stock minimo</th>
-                  <th scope="col">Incrementar</th>
-                  <th scope="col">Decrementar</th>
+                  <th scope="col">Stock Mínimo</th>
+                  <th scope="col">Incrementar Quantidade</th>
+                  <th scope="col">Decrementar Quantidade</th>
                 </tr>
               </thead>
               <tbody id="usersTableBody"></tbody>
@@ -85,7 +96,7 @@ div {
   height: 20px;
 }
 
-.container-fluid{
+.container-fluid {
   background-color: #2980b9;
 }
 
@@ -97,12 +108,12 @@ div {
   color: white;
 }
 
-.form-group{
-    color: #2c3e50;
+.form-group {
+  color: #2c3e50;
 }
 
 .btn {
-  background-color:#2c3e50;
+  background-color: #2c3e50;
   border-color: #707070;
 }
 
@@ -111,31 +122,31 @@ div {
   background-color: #007bff;
 }
 
-.form-control{
-    background-color: #2c3e50;
-    color: white;
+.form-control {
+  background-color: #2c3e50;
+  color: white;
 }
 
-.form-control:hover{
-    background-color: #707070;
-    color: white;
+.form-control:hover {
+  background-color: #707070;
+  color: white;
 }
 
-.text{
-    max-width: 200px;
-    resize: none;
-    background-color: #2c3e50;
-    max-lines: 1;
-    color: white;
-    border: 2px solid  #707070;
+.text {
+  max-width: 200px;
+  resize: none;
+  background-color: #2c3e50;
+  max-lines: 1;
+  color: white;
+  border: 2px solid #707070;
 }
 
-.text::placeholder{
-    color: white;
+.text::placeholder {
+  color: white;
 }
 
-.filter{
-    color: #2c3e50;
-    font-size: 20px;
+.filter {
+  color: #2c3e50;
+  font-size: 20px;
 }
 </style>
