@@ -15,8 +15,11 @@
               <h5 class="card-title">aclopes2000</h5>
               <p class="card-text d-flex justify-content-left">Data:</p>
               <p class="card-text d-flex justify-content-left">Hora:</p>
-              <button type="button" id="check" class="btn btn-primary mr-4">Confirmar</button>
-              <button type="button" id="cancel" class="btn btn-primary">Cancelar</button>
+              <button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#myModal">Ver mais</button>
+              <div class="">
+                <button type="button" id="check" class="btn btn-primary mr-4">Confirmar</button>
+                <button type="button" id="cancel" class="btn btn-primary">Cancelar</button>
+              </div>
             </div>
           </div>
       </div>
@@ -83,6 +86,11 @@ div {
 .btn {
   background-color: #2c3e50;
   border-color: #707070;
+}
+
+.btn:hover {
+  border: 1px solid white !important;
+  background-color: #007bff;
 }
 
 #check:hover {

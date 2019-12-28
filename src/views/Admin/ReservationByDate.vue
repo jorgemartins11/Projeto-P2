@@ -18,8 +18,11 @@
               <h5 class="card-title">02/03/2020</h5>
               <p class="card-text d-flex justify-content-left">Utilizador:</p>
               <p class="card-text d-flex justify-content-left">Hora:</p>
-              <button type="button" id="check1" class="btn btn-primary mr-4">Confirmar</button>
-              <button type="button" id="cancel1" class="btn btn-primary">Cancelar</button>
+              <button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#myModal">Ver mais</button>
+              <div class="">
+                <button type="button" id="check1" class="btn btn-primary mr-4">Confirmar</button>
+                <button type="button" id="cancel1" class="btn btn-primary">Cancelar</button>
+              </div>
             </div>
           </div>
       </div>
