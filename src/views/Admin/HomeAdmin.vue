@@ -18,8 +18,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto text-center">
-        </ul>
+        <ul class="navbar-nav mx-auto text-center"></ul>
         <router-link to="/profile">
           <img
             src="../../assets/profile_icon.png"
@@ -29,8 +28,14 @@
           />
         </router-link>
       </div>
-    </nav>
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+    </nav>´
+    <div class="row1">
+      <div class="col-12 text-center users pb-2 pt-5">
+        <img src="../../assets/admin.png" class="img-fluid mb-4 mt-5" />
+        <h1 class="display-5">Área de Administração</h1>
+      </div>
+    </div>
+    <div class="imgContainer position-relative d-flex align-items-center justify-content-center mb-5">
       <div class="btn1 mr-lg-5 pl-sm-5 pl-lg-0">
         <router-link to="/reservationsAdmin">
           <img class="img" src="../../assets/logoBook.png" />
@@ -53,7 +58,7 @@
         </router-link>
       </div>
     </div>
-    <div class="container-fluid Footer-custom fixed-bottom pb-3 pt-3">
+    <div class="container-fluid Footer-custom pb-5 pt-3">
       <div class="row row-no-gutters" id="bottom-footer">
         <div class="col-xs-12 col-md-5 col-lg-4 text-center">
           <ul class="vertical-aligned small pt-5 mr-5">
@@ -123,6 +128,21 @@ export default {
   background-color: #2c3e50;
 }
 
+.home {
+  overflow-x: hidden;
+}
+
+.img-fluid {
+  height: 150px;
+}
+
+.row1 {
+  background-color: #2980b9;
+  height: 350px;
+  overflow-y: hidden;
+  color: white;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -136,35 +156,35 @@ export default {
   width: 500px;
   height: 600px;
   float: left;
-  background-color:#2980B9;
+  background-color: #2980b9;
   margin-top: 125px;
   margin-left: 40px;
   padding: 10px;
   border: 12px solid #2c3e50;
 }
 
-.img{
-    width: 400px;
-    height: 400px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.img {
+  width: 400px;
+  height: 400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.img:hover{
-    width: 410px;
-    height: 410px;
-    margin-top: 40px;
-    margin-bottom: 50px;
+.img:hover {
+  width: 410px;
+  height: 410px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 
-p{
+p {
   height: 50px;
   color: white;
   font-size: 30px;
   position: relative;
 }
 
-p:hover{
+p:hover {
   height: 50px;
   color: white;
   font-size: 35px;
@@ -180,13 +200,13 @@ a:hover {
   font-weight: bolder;
 }
 
-#copyright:hover{
+#copyright:hover {
   text-decoration: none !important ;
   color: white !important;
-  font-weight:normal !important;
+  font-weight: normal !important;
 }
 
-#copyright{
- margin-top: 40px;
+#copyright {
+  margin-top: 40px;
 }
 </style>
