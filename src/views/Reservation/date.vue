@@ -37,7 +37,6 @@ export default {
   margin-top: 120px;
   font-size: 30px;
   color: #2c3e50;
-
 }
 
 .imgContainer {
