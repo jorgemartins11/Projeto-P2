@@ -6,9 +6,7 @@
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <router-link to="/table">
-              <img src="../../assets/seta.png" id="arrow" alt class="img-fluid" />
-            </router-link>
+
           </div>
         </div>
       </div>
