@@ -13,7 +13,7 @@
       </div>
         <div class="col-12">
           <div class="card mb-5 ml-5" style="width: 18rem;">
-            <img src="../../assets/calendar.png" class="card-img-top" alt="..." />
+            <img src="../../assets/users3.png" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">02/03/2020</h5>
               <p class="card-text d-flex justify-content-left">Utilizador:</p>

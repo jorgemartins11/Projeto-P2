@@ -8,54 +8,56 @@
       </div>
     </div>
     <div class="container-fluid users mt-3">
-      <!-- FILTER -->
-      <div class="container-fluid userFilter">
-        <form class="form-inline">
-          <div class="form-group mt-4">
-            <label for="stlOrder" class="filter mr-3">Filtrar Por:</label>
-            <select class="form-control" id="stlOrder">
-              <option value="A-Z" selected>Categoria - Ordem Alfabética Crescente</option>
-              <option value="Z-A">Categoria - Ordem Alfabética Decrescente</option>
-            </select>
-            <input
-              type="text"
-              class="text ml-4"
-              rows="1"
-              cols="25"
-              placeholder="Nome do Produto..."
-              maxlength="20"
-            />
-            <button type="button" class="btn btn-primary filterUsers ml-5">Filtrar</button>
-            <button
-              type="button"
-              id="addProduct"
-              class="btn btn-primary filterUsers"
-            >Adicionar Produto</button>
-          </div>
-        </form>
-      </div>
-      <br />
-      <br />
-      <!-- TABLE -->
       <div class="row">
         <div class="col-12">
-          <div class="table-responsive">
-            <table class="table table-bordered usersTable">
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Nome do Produto</th>
-                  <th scope="col">Categoria</th>
-                  <th scope="col">Quantidade Atual</th>
-                  <th scope="col">Stock Mínimo</th>
-                  <th scope="col">Incrementar Quantidade</th>
-                  <th scope="col">Decrementar Quantidade</th>
-                </tr>
-              </thead>
-              <tbody id="usersTableBody">
-
-              </tbody>
-            </table>
+          <form class="form-inline mb-4 mt-4">
+            <div class="col-8 d-flex justify-content-center">
+              <div class="form-group">
+                <label for="stlOrder" class="filter mr-3">Filtrar Por:</label>
+                <select class="form-control mr-3" id="stlOrder">
+                  <option value="A-Z" selected>Categoria - Ordem Alfabética Crescente</option>
+                  <option value="Z-A">Categoria - Ordem Alfabética Decrescente</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="text ml-5 mr-3"
+                  rows="1"
+                  cols="25"
+                  placeholder="Nome do Produto..."
+                  maxlength="20"
+                />
+              </div>
+              <button type="button" class="btn btn-primary filterUsers">Filtrar</button>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <button type="button" id="addUser" class="btn btn-primary filterUsers">
+                Adicionar
+                Produto
+              </button>
+            </div>
+          </form>
+          <!-- TABLE -->
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table table-bordered usersTable">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Nome do Produto</th>
+                      <th scope="col">Categoria</th>
+                      <th scope="col">Quantidade Atual</th>
+                      <th scope="col">Stock Mínimo</th>
+                      <th scope="col">Incrementar Quantidade</th>
+                      <th scope="col">Decrementar Quantidade</th>
+                    </tr>
+                  </thead>
+                  <tbody id="usersTableBody"></tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -78,8 +80,7 @@ export default {
 </script>
 
 <style scoped>
-
-.container-fluid{
+.container-fluid {
   height: auto;
 }
 
