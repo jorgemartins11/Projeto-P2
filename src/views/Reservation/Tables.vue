@@ -6,8 +6,12 @@
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
+            <router-link to="/data">
+              <img src="../../assets/arrow.png" id="arrow" alt class="img-fluid" />
+            </router-link>
+            <p id="Chosing2" class="p">Escolha a Mesa</p>
             <router-link to="/menu">
-              <img src="../../assets/seta.png" id="arrow" alt class="img-fluid" />
+              <img src="../../assets/arrow2.png" id="arrow" alt class="img-fluid" />
             </router-link>
           </div>
         </div>
@@ -31,8 +35,10 @@ export default {
 </script>
 
 <style scoped>
-p {
-  color: black;
+#Chosing2 {
+  margin-top: 10px;
+  font-size: 30px;
+  color: #2c3e50;
 }
 
 .imgContainer {

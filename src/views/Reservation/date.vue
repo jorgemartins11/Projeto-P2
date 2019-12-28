@@ -6,9 +6,11 @@
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
+            <p id="Chosing" class="p">Escolha a Data da Reserva</p>
             <router-link to="/table">
-              <img src="../../assets/seta.png" id="arrow" alt class="img-fluid" />
+              <img src="../../assets/arrow2.png" id="arrow" alt class="img-fluid" />
             </router-link>
+
           </div>
         </div>
       </div>
@@ -31,8 +33,11 @@ export default {
 </script>
 
 <style scoped>
-p {
-  color: black;
+#Chosing{
+  margin-top: 120px;
+  font-size: 30px;
+  color: #2c3e50;
+
 }
 
 .imgContainer {

@@ -6,7 +6,11 @@
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-
+            <router-link to="/menu">
+              <img src="../../assets/arrow.png" id="arrow" alt class="img-fluid" />
+            </router-link>
+            <p id="Chosing4" class="p">Observações</p>
+            <button type="button" id="submitReservation" class="btn btn-primary btn-lg">Confirmar Reserva</button>
           </div>
         </div>
       </div>
@@ -29,8 +33,25 @@ export default {
 </script>
 
 <style scoped>
-p {
-  color: black;
+#Chosing4 {
+  margin-top: 10px;
+  font-size: 30px;
+  color: #2c3e50;
+}
+
+#arrow{
+    margin-top: 120px;
+}
+
+.btn {
+  background-color: #2c3e50;
+  border-color: black;
+  opacity: 1;
+}
+
+#submitReservation:hover {
+  border: 3px solid black !important;
+  background-color: #007bff;
 }
 
 .imgContainer {
