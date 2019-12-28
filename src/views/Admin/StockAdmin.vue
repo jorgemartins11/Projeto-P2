@@ -52,7 +52,9 @@
                   <th scope="col">Decrementar Quantidade</th>
                 </tr>
               </thead>
-              <tbody id="usersTableBody"></tbody>
+              <tbody id="usersTableBody">
+
+              </tbody>
             </table>
           </div>
         </div>
@@ -76,6 +78,11 @@ export default {
 </script>
 
 <style scoped>
+
+.container-fluid{
+  height: auto;
+}
+
 div {
   overflow-x: hidden;
 }

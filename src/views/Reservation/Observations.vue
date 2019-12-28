@@ -6,12 +6,16 @@
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <router-link to="/menu">
-              <img src="../../assets/arrow.png" id="arrow" alt class="img-fluid" />
-            </router-link>
-            <p id="Chosing4" class="p">Observações</p>
-            <button type="submit" id="submitReservation" class="btn btn-primary btn-lg mr-2">Confirmar Reserva</button>
-            <button type="submit" id="cancelReservation" class="btn btn-danger btn-lg ml-2">Cancelar Reserva</button>
+            <form>
+              <router-link to="/menu">
+                <img src="../../assets/arrow.png" id="arrow" alt class="img-fluid" />
+              </router-link>
+              <p id="Chosing4" class="p">Observações</p>
+              <textarea type="text" id="observacao" name="fname" class="textbox mb-4" maxlength="1000" 
+              placeholder="Caso queira avisar de alguma intolerância ou pretenda escrever qualquer indicação adicional que gostaria de acrescentar ao seu pedido, sinta-se livre de nos avisar através deste campo de observações..."></textarea><br>
+              <button type="submit" id="submitReservation" class="btn btn-primary btn-lg mr-2">Confirmar Reserva</button>
+              <button type="submit" id="cancelReservation" class="btn btn-danger btn-lg ml-2">Cancelar Reserva</button>
+            </form>
           </div>
         </div>
       </div>
@@ -20,9 +24,10 @@
   </div>
 </template>
 
+
 <script>
 import Footer from "@/components/Footer.vue";
-import NavBar from "@/components/NavBar.vue";
+import NavBar from "@/components/NavBar.vue"; 
 
 export default {
   name: "about",
@@ -40,8 +45,26 @@ export default {
   color: #2c3e50;
 }
 
+#info{
+  font-size: 18px;
+  color: #2c3e50;
+}
+
 #arrow{
     margin-top: 120px;
+}
+
+.textbox{
+  width: 600px;
+  height: 400px;
+  resize: none;
+  border: 3px solid #2c3e50;
+  color:#2c3e50;
+}
+
+.textbox::placeholder{
+  color: #2c3e50;
+  font-size: 20px;
 }
 
 .btn {
