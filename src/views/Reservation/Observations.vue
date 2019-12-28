@@ -10,7 +10,8 @@
               <img src="../../assets/arrow.png" id="arrow" alt class="img-fluid" />
             </router-link>
             <p id="Chosing4" class="p">Observações</p>
-            <button type="button" id="submitReservation" class="btn btn-primary btn-lg">Confirmar Reserva</button>
+            <button type="submit" id="submitReservation" class="btn btn-primary btn-lg mr-2">Confirmar Reserva</button>
+            <button type="submit" id="cancelReservation" class="btn btn-danger btn-lg ml-2">Cancelar Reserva</button>
           </div>
         </div>
       </div>
@@ -52,6 +53,11 @@ export default {
 #submitReservation:hover {
   border: 3px solid black !important;
   background-color: #007bff;
+}
+
+#cancelReservation:hover {
+  border: 3px solid black !important;
+  background-color: #dc3545;
 }
 
 .imgContainer {
