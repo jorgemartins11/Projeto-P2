@@ -40,14 +40,6 @@ const routes = [
     component: () => import("../views/About.vue")
   },
   {
-    path: "/reserva",
-    name: "reserva",
-    component: () => import("../views/Reservation/Reservation.vue"),
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
     path: "/contacts",
     name: "contacts",
     component: () => import("../views/Contacts.vue")
@@ -69,9 +61,41 @@ const routes = [
     }
   },
   {
+    path: "/reserva",
+    name: "reserva",
+    component: () => import("../views/Reservation/Reservation.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: "/data",
     name: "data",
     component: () => import("../views/Reservation/Date.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/table",
+    name: "table",
+    component: () => import("../views/Reservation/Tables.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/menu",
+    name: "menu",
+    component: () => import("../views/Reservation/Menus.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/observation",
+    name: "observation",
+    component: () => import("../views/Reservation/Observations.vue"),
     meta: {
       requiresAuth: true
     }

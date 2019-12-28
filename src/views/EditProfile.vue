@@ -5,10 +5,10 @@
       <div class="barra d-flex justify-content-center mt-5">
         <div class="row">
           <div class="col-12">
-            <img src="../assets/andre.png" id="logo" alt="" class="img-fluid pt-5">
-            <p class="name">André Lopes</p>
-            <p class="email mb-3">9180544@esmad.ipp.pt</p>
-            <p class="edit justify-content-start">Editar Perfil</p>
+            <img src="../assets/andre.png" id="logo" alt="" class="img-fluid mt-5">
+            <p class="name mt-2">Nome: André Lopes</p>
+            <p class="name mt-2">Nome de Utilizador: André Lopes</p>
+            <p class="email mt-3 mb-5">Email: 9180544@esmad.ipp.pt</p>
             <form>
               <div class="form-group pt-1">
                 <input
@@ -103,6 +103,10 @@ a:hover {
   color: #2c3e50 !important;
 }
 
+p{
+  font-size: 18px;
+}
+
 #welcome {
   font-size: 30px;
 }
@@ -118,7 +122,7 @@ a:hover {
 
 img#logo {
   height: auto;
-  width:40%;
+  width:60%;
 }
 
 img#bg {
