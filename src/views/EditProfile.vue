@@ -5,7 +5,7 @@
       <div class="barra d-flex justify-content-center mt-5">
         <div class="row">
           <div class="col-12">
-            <img src="../assets/andre.png" id="logo" alt="" class="img-fluid mt-5">
+            <img src="../assets/andre.png" id="logo" alt class="img-fluid mt-5" />
             <p class="name mt-2">Nome: André Lopes</p>
             <p class="name mt-2">Nome de Utilizador: André Lopes</p>
             <p class="email mt-3 mb-5">Email: 9180544@esmad.ipp.pt</p>
@@ -75,16 +75,16 @@
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue"
-import NavBar from "@/components/NavBar.vue"
+import Footer from "@/components/Footer.vue";
+import NavBar from "@/components/NavBar.vue";
 
 export default {
   name: "about",
-  components:{
+  components: {
     Footer,
     NavBar
   }
-}
+};
 </script>
 
 <style scoped>
@@ -103,7 +103,7 @@ a:hover {
   color: #2c3e50 !important;
 }
 
-p{
+p {
   font-size: 18px;
 }
 
@@ -122,7 +122,7 @@ p{
 
 img#logo {
   height: auto;
-  width:60%;
+  width: 60%;
 }
 
 img#bg {
@@ -136,7 +136,7 @@ img#bg {
   height: auto;
 }
 
-hr{
+hr {
   height: 1px;
   width: 20rem;
   background-color: #2c3e50;
@@ -156,15 +156,14 @@ small {
   color: white;
 }
 
-
 input:focus {
   background-color: #2c3e50;
   border: 1px solid black !important;
   box-shadow: unset;
 }
 
-input::placeholder{
-    color: white;
+input::placeholder {
+  color: white;
 }
 
 .welcomeText {

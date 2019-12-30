@@ -5,9 +5,11 @@
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <img src="../assets/logo.png" id="logo" alt="" class="img-fluid pt-5 pb-5">
+            <router-link to="/">
+              <img src="../assets/logo.png" id="logo" alt="" class="img-fluid pt-5 pb-5">
+            </router-link>
             <hr>
-            <form>
+            <form @submit.prevent="Register">
               <div class="form-group pt-5">
                 <input
                   type="text"
@@ -115,63 +117,63 @@
 <script src="../scripts/account.js"></script>
 <script src="../scripts/validation.js"></script>
 <script>
-// export default {
-//   data: function() {
-//     return {
-//       name: "",
-//       username: "",
-//       email: "",
-//       password: "",
-//       repeatPassword: "",
-//       birthDate: "",
-//       userType: ""
-//     };
-//   },
-//   created() {
-//     //regista um listener quando o browser ou o separador é fechado
-//     window.addEventListener("unload", this.saveStorage);
+export default {
+  data: function() {
+    return {
+      name: "",
+      username: "",
+      email: "",
+      password: "",
+      repeatPassword: "",
+      birthDate: "",
+      userType: ""
+    };
+  },
+  created() {
+    //regista um listener quando o browser ou o separador é fechado
+    window.addEventListener("unload", this.saveStorage);
 
-//     //recupera os dados da local storage (se existirem)
-//     if (localStorage.getItem("accounts")) {
-//       this.accounts = JSON.parse(localStorage.getItem("accounts"));
-//     }
-//   },
-//   methods:{
-//     //criar uma conta
-//     addTask() {
-//       //condiçao para avaliar se uma conta ja existe no array accounts
-//       if (!this.accounts.some(task => task.name === this.name)) {
-//         this.accounts.push({
-//           id: this.getLastId() + 1,
-//           name: this.name,
-//           username: this.username,
-//           email: this.email,
-//           password: this.password,
-//           birthDate: this.birthDate,
-//           userType: this.userType
-//         });
-//       } else {
-//         alert("Conta já adicionada!");
-//         this.username = "";
-//       }
-//     },
+    //recupera os dados da local storage (se existirem)
+    if (localStorage.getItem("accounts")) {
+      this.accounts = JSON.parse(localStorage.getItem("accounts"));
+    }
+  },
+  methods:{
+    //criar uma conta
+    addTask() {
+      //condiçao para avaliar se uma conta ja existe no array accounts
+      if (!this.accounts.some(task => task.name === this.name)) {
+        this.accounts.push({
+          id: this.getLastId() + 1,
+          name: this.name,
+          username: this.username,
+          email: this.email,
+          password: this.password,
+          birthDate: this.birthDate,
+          userType: this.userType
+        });
+      } else {
+        alert("Conta já adicionada!");
+        this.username = "";
+      }
+    },
 
-//     //devove o ultimo id da conta
-//     getLastId() {
-//       if (this.accounts.length) {
-//         return this.accounts[this.accounts.length - 1].id;
-//       } else {
-//         return 0;
-//       }
-//     },
+    //devove o ultimo id da conta
+    getLastId() {
+      if (this.accounts.length) {
+        return this.accounts[this.accounts.length - 1].id;
+      } else {
+        return 0;
+      }
+    },
 
-//     //guardar na local storage do browser as contas
-//     saveStorage() {
-//       localStorage.setItem("accounts", JSON.stringify(this.accounts));
-//     }
-//   },
-//   computed:{}
-// };
+    //guardar na local storage do browser as contas
+    saveStorage() {
+      localStorage.setItem("accounts", JSON.stringify(this.accounts));
+    }
+  },
+  computed:{}
+};
 </script>
 
 <style scoped>

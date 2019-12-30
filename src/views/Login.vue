@@ -5,7 +5,9 @@
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-5" />
+            <router-link to="/">
+              <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-5" />
+            </router-link>
             <hr />
             <form>
               <div class="form-group pt-5">
@@ -57,7 +59,6 @@
 
 <script src="../../account.js"></script>
 <script>
-  
 </script>
 
 <style scoped>
