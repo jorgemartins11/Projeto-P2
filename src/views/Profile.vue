@@ -1,33 +1,41 @@
 <template>
   <div class="home">
     <NavBar />
-    <div
-      class="imgContainer position-relative d-flex align-items-center justify-content-center mt-5"
-    >
-      <div class="row">
-        <div class="col-12 mb-5">
-          <div class="col-12">
-            <img src="../assets/andre.png" id="logo" alt class="img-fluid pt-5 mt-5" />
-            <div class>
-              <p class="name">André Lopes</p>
-              <p class="email mb-3">9180544@esmad.ipp.pt</p>
-            </div>
-            <div class="btn-group btn-lg" role="group">
-              <button type="button" class="btn btn-primary">
-                <router-link to="/editProfile">
-                  Editar Perfil
-                </router-link>
-              </button>
-              <button type="button" id="settingButton" class="btn btn-link">
-                <router-link to="/editProfile">
-                  <img src="../assets/settings.png" id="setting"/>
-                </router-link>
-              </button>
-            </div>
-          </div>
+    <div class="row mt-3">
+      <div class="col-6">
+        <img src="../assets/andre.png" id="logo" alt class="img-fluid pt-5 mt-5" />
+        <p class="name">André Lopes</p>
+        <p class="email mb-3">9180544@esmad.ipp.pt</p>
+      </div>
+      <div class="col-6 d-flex align-items-center justify-content-center">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-primary">
+            <router-link to="/editProfile">Editar Perfil</router-link>
+          </button>
+          <button type="button" id="settingButton" class="btn btn-link">
+            <router-link to="/editProfile">
+              <img src="../assets/settings.png" id="setting" />
+            </router-link>
+          </button>
         </div>
       </div>
     </div>
+    <div class="row text-center mt-5">
+      <div class="bar col-4 text-right">
+        <button type="button" class="names col-4 text-right">Histórico de Reservas</button>
+      </div>
+      <div class="bar col-4 text-center">
+        <button type="button" class="names col-4 text-center">Próximas Refeições</button>
+      </div>
+      <div class="bar col-4 text-left">
+        <button type="button" class="names col-4 text-left">Avaliações Realizadas</button>
+      </div>
+    </div>  
+    <div class="row text-center mt-4">
+      <div class="bg col-12">
+
+      </div>
+    </div>  
     <Footer />
   </div>
 </template>
@@ -53,17 +61,37 @@ export default {
   bottom: 30px;
 }
 
-#setting{
-  width: 30px;
-  height: 30px;;
+.home {
+  overflow-x: hidden;
 }
 
-.btn{
+.names {
+  background-color: transparent;
+  border: none;
+  color: #2c3e50;
+  font-size: 19px;
+  font-weight: bolder;
+}
+
+.names:hover {
+  background-color: transparent;
+  border: none;
+  color: #2c3e50;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+#setting {
+  width: 30px;
+  height: 30px;
+}
+
+.btn {
   border: 1px solid #2c3e50;
 }
 
-.btn-group{
-  
+.btn-group {
 }
 
 a {
@@ -90,7 +118,7 @@ a:hover {
 
 img#logo {
   height: auto;
-  width: 80%;
+  width: 180px;
 }
 
 .img-fluid {
@@ -125,5 +153,9 @@ input:focus {
 
 .welcomeText {
   color: #2c3e50;
+}
+
+.bar {
+  text-align: center;
 }
 </style>
