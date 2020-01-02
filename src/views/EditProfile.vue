@@ -1,86 +1,97 @@
 <template>
   <div class="home">
     <NavBar />
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
-      <div class="barra d-flex justify-content-center mt-5">
-        <div class="row mt-4">
-          <div class="col-12">
-            <form class="md-form">
-              <div class="file-field">
-                <div class="mb-4 mt-5">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png"
-                    class="rounded-circle z-depth-1-half avatar-pic"
-                    alt="example placeholder avatar"
-                    id="profilePic"
-                  />
+    <div class="imgContainer mt-5">
+      <div class="row mt-2">
+        <div class="col-12">
+          <form class="md-form">
+            <div class="file-field">
+              <div class="mb-3 mt-5">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png"
+                  class="rounded-circle z-depth-1-half avatar-pic"
+                  alt="example placeholder avatar"
+                  id="profilePic"
+                />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-mdb-color btn-rounded float-left">
+                  <span class="span">Escolha a sua fotografia de Perfil...</span>
+                  <br>
+                  <input type="file" id="avatar" accept="image/*" />
                 </div>
-                <div class="d-flex justify-content-center">
-                  <div class="btn btn-mdb-color btn-rounded float-left">
-                    <span class="span">Choose your Profile Picture...</span>
-                    <input type="file" id="avatar" accept="image/*" />
-                  </div>
-                </div>
               </div>
-            </form>
-            <form>
-              <div class="form-group pt-5">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleInputName"
-                  placeholder="Nome Próprio"
-                  required
-                />
-              </div>
-              <div class="form-group pt-1">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleInputUsername"
-                  placeholder="Nome de Utilizador"
-                  required
-                />
-              </div>
-              <div class="form-group pt-1">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Email"
-                  required
-                />
-              </div>
-              <div class="form-group pt-1">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="exampleInputPassword1"
-                  placeholder="Palavra-Passe"
-                  required
-                />
-              </div>
-              <div class="form-group pt-1">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="exampleInputPassword2"
-                  placeholder="Repetir Palavra-Passe"
-                  required
-                />
-              </div>
-              <div class="form-group pt-1">
-                <input
-                  class="form-control"
-                  id="exampleInputBirthDate"
-                  placeholder="Data de Nascimento"
-                  onfocus="(this.type='date')"
-                  required
-                />
-              </div>
-            </form>
-          </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 position-relative d-flex align-items-center justify-content-center">
+          <form>
+            <div class="form-group pt-5">
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputName"
+                placeholder="Nome Próprio"
+                required
+              />
+            </div>
+            <div class="form-group pt-1">
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputUsername"
+                placeholder="Nome de Utilizador"
+                required
+              />
+            </div>
+            <div class="form-group pt-1">
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="form-group pt-1">
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Palavra-Passe"
+                required
+              />
+            </div>
+            <div class="form-group pt-1">
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword2"
+                placeholder="Repetir Palavra-Passe"
+                required
+              />
+            </div>
+            <div class="form-group pt-1">
+              <input
+                class="form-control"
+                id="exampleInputBirthDate"
+                placeholder="Data de Nascimento"
+                onfocus="(this.type='date')"
+                required
+              />
+            </div>
+          </form>
+        </div>
+        <div class="col-6 flex-column align-items-center justify-content-center">
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button type="button" id="save" class="btn btn-success mb-3">Guardar Alterações</button>
         </div>
       </div>
     </div>
@@ -123,9 +134,26 @@ export default {
   height: 100%;
 }
 
+.home{
+  overflow-x:hidden;
+}
+
 .avatar-pic {
   width: 150px;
   background-color: #2c3e50;
+}
+
+#save{
+  background-color: #2c3e50;
+  color: white;
+  border: 1px solid #2c3e50
+}
+
+#save:hover{
+  background-color: #93C700;
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  font-weight: bolder;
 }
 
 a {
@@ -189,11 +217,13 @@ small {
   background-color: #2c3e50;
   border-color: #2c3e50;
   color: white;
+  width: 500px;
 }
 
 #avatar {
   background-color: #2c3e50;
   border-color: #2c3e50;
+    border: 1px solid #2c3e50;
   color: white;
 }
 
