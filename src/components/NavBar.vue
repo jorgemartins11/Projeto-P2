@@ -28,14 +28,26 @@
           <router-link to="/Contacts">Contactos</router-link>
         </a>
       </ul>
-      <router-link to="/profile">
-        <img
+      <div class="dropdown mr-5">
+        <button
+          class="btn btn-secondary btn-lg dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        ><img
           src="../assets/profile_icon.png"
           class="mr-lg-5 pl-sm-5 pl-lg-0"
           width="30px"
           height="30px"
-        />
-      </router-link>
+        /></button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <router-link to="/profile" class="router ml-3">Perfil</router-link>
+          <div class="dropdown-divider"></div>
+          <router-link to="/" class="router ml-3">Terminar Sessão</router-link>
+        </div>
+      </div>
     </div>
   </nav>
 </template>
@@ -73,5 +85,13 @@ a:hover {
   text-decoration: none !important ;
   color: white !important;
   font-weight: bolder;
+}
+
+.dropdown-menu{
+  background-color: #2c3e50;
+}
+
+.dropdown-toggle{
+  background-color: #2c3e50;
 }
 </style>

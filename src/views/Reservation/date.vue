@@ -151,14 +151,18 @@ img#arrow {
 }
 
 .header {
-  color: #2c3e50;
+  color: white;
   font-size: 20px;
   font-weight: bolder;
 }
 
 .dayPicker {
-  color: #2c3e50;
+  color: white;
   font-weight: bolder;
   font-size: 18px;
+}
+
+#date-picker{
+  background-color: #2c3e50;
 }
 </style>
