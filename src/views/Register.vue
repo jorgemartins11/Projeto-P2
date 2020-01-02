@@ -147,57 +147,6 @@ export default {
       saveStorage();
     }
   },
-  methods: {
-      //criar uma conta
-      createAccount: function() {
-        //condiçao para avaliar se uma conta ja existe no array accounts
-        if (accounts.length === 0) {
-          if (!this.accounts.some(account => account.username === this.username)) {
-          this.accounts.push({
-            id: 1,
-            name: this.name,
-            username: this.username,
-            email: this.email,
-            password: this.password,
-            birthDate: this.birthDate,
-            userType: this.userType
-          })
-        }
-        else{
-          if (!this.accounts.some(account => account.username === this.username)) {
-            this.accounts.push({
-              id: this.getLastId() + 1,
-              name: this.name,
-              username: this.username,
-              email: this.email,
-              password: this.password,
-              birthDate: this.birthDate,
-              userType: this.userType
-            })
-          }
-          else {
-            alert("Conta já adicionada!");
-            this.username = "";
-          }
-        }
-      }
-
-      //devove o ultimo id da conta
-      function getLastId () {
-        if (this.accounts.length) {
-          return this.accounts[this.accounts.length - 1].id
-        } else {
-          return 0;
-        }
-      }
-
-      //guardar na local storage do browser as contas
-      function saveStorage() {
-        localStorage.setItem("accounts", JSON.stringify(this.accounts));
-      }
-      
-      // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-  }
 }
 </script>
 
