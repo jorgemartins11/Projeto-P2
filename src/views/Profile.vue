@@ -3,9 +3,13 @@
     <NavBar />
     <div class="row mt-3">
       <div class="col-6">
-        <img src="../assets/andre.png" id="logo" alt class="img-fluid pt-5 mt-5" />
-        <p class="name">André Lopes</p>
-        <p class="email mb-3">9180544@esmad.ipp.pt</p>
+        <div class="d-inline-block mr-4">
+          <img src="../assets/andre.png" id="logo" alt class="img-fluid pt-5 mt-5" />
+        </div>
+        <div class="d-inline-block">
+          <p class="name">André Lopes</p>
+          <p class="email">9180544@esmad.ipp.pt</p>
+        </div>
       </div>
       <div class="col-6 d-flex align-items-center justify-content-center">
         <div class="btn-group" role="group">
@@ -30,12 +34,10 @@
       <div class="bar col-4 text-left">
         <button type="button" class="names col-4 text-left">Avaliações Realizadas</button>
       </div>
-    </div>  
+    </div>
     <div class="row text-center mt-4">
-      <div class="bg col-12">
-
-      </div>
-    </div>  
+      <div class="bg col-12"></div>
+    </div>
     <Footer />
   </div>
 </template>
@@ -54,12 +56,6 @@ export default {
 </script>
 
 <style scoped>
-.imgContainer {
-  width: 100%;
-  height: 100%;
-  right: 450px;
-  bottom: 30px;
-}
 
 .home {
   overflow-x: hidden;

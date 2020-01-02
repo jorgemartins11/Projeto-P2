@@ -3,14 +3,28 @@
     <NavBar />
     <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
       <div class="barra d-flex justify-content-center mt-5">
-        <div class="row">
+        <div class="row mt-4">
           <div class="col-12">
-            <img src="../assets/andre.png" id="logo" alt class="img-fluid mt-5" />
-            <p class="name mt-2">Nome: André Lopes</p>
-            <p class="name mt-2">Nome de Utilizador: André Lopes</p>
-            <p class="email mt-3 mb-5">Email: 9180544@esmad.ipp.pt</p>
+            <form class="md-form">
+              <div class="file-field">
+                <div class="mb-4 mt-5">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png"
+                    class="rounded-circle z-depth-1-half avatar-pic"
+                    alt="example placeholder avatar"
+                    id="profilePic"
+                  />
+                </div>
+                <div class="d-flex justify-content-center">
+                  <div class="btn btn-mdb-color btn-rounded float-left">
+                    <span class="span">Choose your Profile Picture...</span>
+                    <input type="file" id="avatar" accept="image/*" />
+                  </div>
+                </div>
+              </div>
+            </form>
             <form>
-              <div class="form-group pt-1">
+              <div class="form-group pt-5">
                 <input
                   type="text"
                   class="form-control"
@@ -85,12 +99,33 @@ export default {
     NavBar
   }
 };
+
+// const vm = new Vue; {
+//   methods:{
+//     profilepic: function changeProfilePic(){
+//       var profilePic = document.getElementById("#profilePic")
+//       var avatar = document.getElementById("#avatar")
+
+//       if (avatar.value == "") {
+//         profilePic.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png"
+//       }
+//       else{
+//         profilePic.src = avatar.value
+//       }
+//     }
+//   }
+// }
 </script>
 
 <style scoped>
 .imgContainer {
   width: 100%;
   height: 100%;
+}
+
+.avatar-pic {
+  width: 150px;
+  background-color: #2c3e50;
 }
 
 a {
@@ -120,7 +155,7 @@ p {
   position: absolute;
 }
 
-img#logo {
+.custom-file {
   height: auto;
   width: 60%;
 }
@@ -151,6 +186,12 @@ small {
 }
 
 .form-control {
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+  color: white;
+}
+
+#avatar {
   background-color: #2c3e50;
   border-color: #2c3e50;
   color: white;
