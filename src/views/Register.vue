@@ -51,7 +51,6 @@
                   id="exampleInputPassword1"
                   name="pwd1"
                   placeholder="Palavra-Passe"
-                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                   required
                   v-model="password"
                 />
@@ -63,7 +62,6 @@
                   id="exampleInputPassword2"
                   name="pwd2"
                   placeholder="Repetir Palavra-Passe"
-                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                   required
                   v-model="repeatedPassword"
                 />
@@ -91,7 +89,7 @@
                 </select>
               </div>
               <button
-                v-on:click="addAccount()"
+                v-on:click="createAccount"
                 id="criarConta"
                 class="btn btn-primary btn-lg mt-4 mb-1"
               >Criar Conta</button>
@@ -150,41 +148,57 @@ export default {
     }
   },
   methods: {
-    //criar uma conta
-    addAccount() {
-      //condiçao para avaliar se uma conta ja existe no array accounts
-      if (!this.accounts.some(account => account.username === this.username)) {
-        this.accounts.push({
-          id: this.getLastId() + 1,
-          name: this.name,
-          username: this.username,
-          email: this.email,
-          password: this.password,
-          birthDate: this.birthDate,
-          userType: this.userType
-        });
-      } else {
-        alert("Conta já adicionada!");
-        this.username = "";
+      //criar uma conta
+      createAccount: function() {
+        //condiçao para avaliar se uma conta ja existe no array accounts
+        if (accounts.length === 0) {
+          if (!this.accounts.some(account => account.username === this.username)) {
+          this.accounts.push({
+            id: 1,
+            name: this.name,
+            username: this.username,
+            email: this.email,
+            password: this.password,
+            birthDate: this.birthDate,
+            userType: this.userType
+          })
+        }
+        else{
+          if (!this.accounts.some(account => account.username === this.username)) {
+            this.accounts.push({
+              id: this.getLastId() + 1,
+              name: this.name,
+              username: this.username,
+              email: this.email,
+              password: this.password,
+              birthDate: this.birthDate,
+              userType: this.userType
+            })
+          }
+          else {
+            alert("Conta já adicionada!");
+            this.username = "";
+          }
+        }
       }
-    },
 
-    //devove o ultimo id da conta
-    getLastId() {
-      if (this.accounts.length) {
-        return this.accounts[this.accounts.length - 1].id;
-      } else {
-        return 0;
+      //devove o ultimo id da conta
+      function getLastId () {
+        if (this.accounts.length) {
+          return this.accounts[this.accounts.length - 1].id
+        } else {
+          return 0;
+        }
       }
-    },
 
-    //guardar na local storage do browser as contas
-    saveStorage() {
-      localStorage.setItem("accounts", JSON.stringify(this.accounts));
-    }
-  },
-  computed: {}
-};
+      //guardar na local storage do browser as contas
+      function saveStorage() {
+        localStorage.setItem("accounts", JSON.stringify(this.accounts));
+      }
+      
+      // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+  }
+}
 </script>
 
 <style scoped>
