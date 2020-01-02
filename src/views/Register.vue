@@ -6,9 +6,9 @@
         <div class="row">
           <div class="col-12">
             <router-link to="/">
-              <img src="../assets/logo.png" id="logo" alt="" class="img-fluid pt-5 pb-5">
+              <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-5" />
             </router-link>
-            <hr>
+            <hr />
             <form @submit.prevent="Register">
               <div class="form-group pt-5">
                 <input
@@ -17,7 +17,7 @@
                   id="exampleInputName"
                   name="name"
                   placeholder="Nome Próprio"
-                  required 
+                  required
                   v-model="name"
                 />
               </div>
@@ -80,25 +80,33 @@
                 />
               </div>
               <div class="form-group pt-1">
-                <input
-                  type="select"
-                  class="form-control"
-                  id="exampleInputUserType"
+                <select class="browser-default custom-select" id="exampleInputUserType"
                   name="userType"
-                  placeholder="Tipo de Utilizador"
                   required
-                  v-model="userType"
-                />
+                  v-model="userType">
+                  <option value="" select disabled>Tipo de Utilizador</option>
+                  <option value="aluno">Aluno</option>
+                  <option value="docente">Docente</option>
+                  <option value="funcionario">Funcionário</option>
+                </select>
               </div>
-              <button v-on:click="addTask()" id="criarConta" class="btn btn-primary btn-lg mt-4 mb-1">Criar Conta</button>
+              <button
+                v-on:click="addAccount()"
+                id="criarConta"
+                class="btn btn-primary btn-lg mt-4 mb-1"
+              >Criar Conta</button>
               <div>
                 <router-link to="/login">
                   <button id="login" class="btn btn-primary btn-lg mt-4 mb-5 mr-1">Login</button>
                 </router-link>
-                <button id="disabled" class="btn btn-disabled btn-lg mt-4 mb-5 ml-1" disabled>Registar</button>
+                <button
+                  id="disabled"
+                  class="btn btn-disabled btn-lg mt-4 mb-5 ml-1"
+                  disabled
+                >Registar</button>
               </div>
             </form>
-            <hr>
+            <hr />
             <div class="eshtInfo pt-5">
               <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-4" />
               <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
@@ -136,13 +144,16 @@ export default {
     //recupera os dados da local storage (se existirem)
     if (localStorage.getItem("accounts")) {
       this.accounts = JSON.parse(localStorage.getItem("accounts"));
+    } else {
+      let accounts = [];
+      saveStorage();
     }
   },
-  methods:{
+  methods: {
     //criar uma conta
-    addTask() {
+    addAccount() {
       //condiçao para avaliar se uma conta ja existe no array accounts
-      if (!this.accounts.some(task => task.name === this.name)) {
+      if (!this.accounts.some(account => account.username === this.username)) {
         this.accounts.push({
           id: this.getLastId() + 1,
           name: this.name,
@@ -172,7 +183,7 @@ export default {
       localStorage.setItem("accounts", JSON.stringify(this.accounts));
     }
   },
-  computed:{}
+  computed: {}
 };
 </script>
 
@@ -191,12 +202,12 @@ export default {
   position: absolute;
 }
 
-img#logo{
+img#logo {
   height: auto;
   width: 50%;
 }
 
-img#bg{
+img#bg {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -207,57 +218,63 @@ img#bg{
   height: auto;
 }
 
-hr{
+hr {
   height: 1px;
   width: 20rem;
   background-color: white;
 }
 
-small{
-  font-family: 'Muli', sans-serif;
+small {
+  font-family: "Muli", sans-serif;
   font-size: 0.9rem;
   font-weight: bold;
   color: white;
   opacity: 1;
 }
 
-.form-control{
+.form-control {
   background-color: #707070;
   border-color: #707070;
   color: white;
 }
 
-input::placeholder{
-    color: white;
+.browser-default{
+  background-color: #707070;
+  border-color: #707070;
+  color: white;
 }
 
-input:active{
+input::placeholder {
+  color: white;
+}
+
+input:active {
   background-color: #707070;
 }
 
-input:focus{
+input:focus {
   background-color: #707070;
   border: 1px solid black !important;
   box-shadow: unset;
 }
 
-.btn{
+.btn {
   background-color: #707070;
   border-color: #707070;
 }
 
-.btn-disabled{
+.btn-disabled {
   border-color: white;
   color: #707070;
   background-color: white;
 }
 
-#login:hover{
+#login:hover {
   border: 1px solid white !important;
   background-color: #007bff;
 }
 
-#criarConta:hover{
+#criarConta:hover {
   border: 1px solid white !important;
   background-color: #007bff;
 }

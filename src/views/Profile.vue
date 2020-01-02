@@ -4,7 +4,11 @@
     <div class="row mt-3">
       <div class="col-6">
         <div class="d-inline-block mr-4">
-          <img src="../assets/andre.png" id="logo" alt class="img-fluid pt-5 mt-5" />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png"
+            id="logo"
+            class="img-fluid pt-5 mt-5"
+          />
         </div>
         <div class="d-inline-block">
           <p class="name">André Lopes</p>
@@ -56,7 +60,6 @@ export default {
 </script>
 
 <style scoped>
-
 .home {
   overflow-x: hidden;
 }
@@ -87,9 +90,6 @@ export default {
   border: 1px solid #2c3e50;
 }
 
-.btn-group {
-}
-
 a {
   text-decoration: none !important ;
   color: white !important;
@@ -115,7 +115,10 @@ a:hover {
 img#logo {
   height: auto;
   width: 180px;
+  background-color: transparent;
 }
+
+button:focus {outline:0;}
 
 .img-fluid {
   max-width: 100%;
