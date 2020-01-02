@@ -35,6 +35,7 @@
                 id="exampleInputName"
                 placeholder="Nome Próprio"
                 required
+                v-model="name"
               />
             </div>
             <div class="form-group pt-1">
@@ -44,16 +45,7 @@
                 id="exampleInputUsername"
                 placeholder="Nome de Utilizador"
                 required
-              />
-            </div>
-            <div class="form-group pt-1">
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Email"
-                required
+                v-model="username"
               />
             </div>
             <div class="form-group pt-1">
@@ -63,6 +55,7 @@
                 id="exampleInputPassword1"
                 placeholder="Palavra-Passe"
                 required
+                v-model="password1"
               />
             </div>
             <div class="form-group pt-1">
@@ -72,6 +65,7 @@
                 id="exampleInputPassword2"
                 placeholder="Repetir Palavra-Passe"
                 required
+                v-model="password2"
               />
             </div>
             <div class="form-group pt-1">
@@ -81,15 +75,27 @@
                 placeholder="Data de Nascimento"
                 onfocus="(this.type='date')"
                 required
+                v-model="birthDate"
               />
             </div>
           </form>
         </div>
         <div class="col-6 flex-column align-items-center justify-content-center">
-          
+            <div class="form-group pt-5 text-left">
+              <p>Nome: {{name}}</p>
+            </div>
+            <div class="form-group pt-1 text-left">
+              <p>Username: {{username}} </p>
+            </div>
+            <div class="form-group pt-1 text-left">
+              <p>Email: {{email}}</p>
+            </div>
+            <div class="form-group pt-1 text-left">
+              <p>Data de Nascimento: {{birthDate}}</p>
+            </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row mt-4">
         <div class="col-12">
           <button type="button" id="save" class="btn btn-success mb-3">Guardar Alterações</button>
         </div>
@@ -104,28 +110,34 @@ import Footer from "@/components/Footer.vue";
 import NavBar from "@/components/NavBar.vue";
 
 export default {
-  name: "about",
+  data() {
+    return {
+      name: "",
+      username: "",
+      email: "",
+      password1: "",
+      password2: "",
+      birthDate: ""
+    }
+},
   components: {
     Footer,
     NavBar
+  },
+  methods:{
+    profilePic: function changeProfilePic(){
+      var profilePic = document.getElementById("#profilePic")
+      var avatar = document.getElementById("#avatar")
+
+      if (avatar.value == "") {
+        profilePic.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png"
+      }
+      else{
+        profilePic.src = avatar.value
+      }
+    }
   }
-};
-
-// const vm = new Vue; {
-//   methods:{
-//     profilepic: function changeProfilePic(){
-//       var profilePic = document.getElementById("#profilePic")
-//       var avatar = document.getElementById("#avatar")
-
-//       if (avatar.value == "") {
-//         profilePic.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png"
-//       }
-//       else{
-//         profilePic.src = avatar.value
-//       }
-//     }
-//   }
-// }
+}
 </script>
 
 <style scoped>
