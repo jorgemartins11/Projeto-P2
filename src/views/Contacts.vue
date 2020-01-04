@@ -1,7 +1,11 @@
 <template>
   <div class="home">
     <NavBar />
+    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+      <div id=“myMap” style=“width:500px; height:500px”>
 
+      </div>
+    </div>
     <Footer />
   </div>
 </template>
@@ -17,6 +21,16 @@ export default {
     NavBar
   }
 }
+
+  // let map
+  // let myMap = document.getElementById("myMap")
+  // function initMap() {
+  // let mapProp = {
+  // center: new google.maps.LatLng(37.508742,-0.420850),
+  // zoom: 5
+  // }
+  // map = new google.maps.Map(myMap, mapProp)
+  // }
 </script>
 
 <style scoped>
