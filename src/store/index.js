@@ -28,7 +28,10 @@ export default new Vuex.Store({
       else{
         alert("Já existe uma conta associada a esse email... Tente de novo.")
       }
-    }
+    },
+    // LOGIN(state, payload){
+
+    // }
   },
   getters: {}
 });

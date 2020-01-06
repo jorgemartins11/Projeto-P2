@@ -57,6 +57,46 @@
   </div>
 </template>
 
+<script>
+export default {
+  data: function() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+
+  created: function() {
+    //regista um listener quando o browser ou o separador é fechado
+    window.addEventListener("unload", this.saveStorage);
+
+    //recupera os dados da local storage (se existirem)
+    if (localStorage.getItem("accounts")) {
+      this.$store.state.accounts = JSON.parse(localStorage.getItem("accounts"));
+    }
+    if (localStorage.getItem("loggedUser")) {
+      this.$store.state.accounts = JSON.parse(localStorage.getItem("loggedUser"));
+    }
+  },
+
+  methods: {
+    //criar uma conta
+    login() {
+      this.$store.commit('LOGIN',{
+        email: this.email,
+        password: this.password,
+      });
+    },
+
+    //guardar na local storage do browser as contas
+    saveStorage() {
+      localStorage.setItem("accounts", JSON.stringify(this.$store.state.accounts));
+      localStorage.setItem("loggedUser", JSON.stringify(this.$store.state.accounts));
+    }
+  }
+}
+</script>
+
 <style scoped>
 .imgContainer {
   width: 100%;
