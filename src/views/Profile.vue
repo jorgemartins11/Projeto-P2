@@ -78,7 +78,7 @@ export default {
   color: #2c3e50;
   font-weight: bolder;
   text-decoration: underline;
-  text-decoration-color: red;
+  text-decoration-color: #2c3e50;
 }
 
 #setting {

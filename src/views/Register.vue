@@ -130,23 +130,55 @@ export default {
       username: "",
       email: "",
       password: "",
-      repeatPassword: "",
+      repeatedPassword: "",
       birthDate: "",
       userType: ""
     };
   },
-  created() {
+
+  created: function() {
     //regista um listener quando o browser ou o separador é fechado
     window.addEventListener("unload", this.saveStorage);
 
     //recupera os dados da local storage (se existirem)
     if (localStorage.getItem("accounts")) {
-      this.accounts = JSON.parse(localStorage.getItem("accounts"));
-    } else {
-      let accounts = [];
-      saveStorage();
+      this.$store.state.accounts = JSON.parse(localStorage.getItem("accounts"));
+    }
+    if (localStorage.getItem("loggedUser")) {
+      this.$store.state.accounts = JSON.parse(localStorage.getItem("loggedUser"));
     }
   },
+
+  methods: {
+    //criar uma conta
+    addUser() {
+      this.$store.commit('ADD_USER',{
+        id: this.getLastId() + 1,
+        name: this.name,
+        username: this.username,
+        email: this.email,
+        password: this.password,
+        repeatedPassword: this.repeatedPassword,
+        birthDate: this.birthDate,
+        userType: this.userType
+      });
+    },
+
+    //devove o ultimo id da conta
+    getLastId() {
+      if (this.accounts.length) {
+        return this.accounts[this.accounts.length - 1].id;
+      } else {
+        return 0;
+      }
+    },
+
+    //guardar na local storage do browser as contas
+    saveStorage() {
+      localStorage.setItem("accounts", JSON.stringify(this.$store.state.accounts));
+      localStorage.setItem("loggedUser", JSON.stringify(this.$store.state.accounts));
+    }
+  }
 }
 </script>
 
