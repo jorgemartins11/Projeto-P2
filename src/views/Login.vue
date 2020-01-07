@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import { log } from 'util';
+//import { log } from 'util';
 export default {
   data: function() {
     return {
@@ -127,7 +127,7 @@ export default {
             username: "andrelopes",
             email: "9180544@esmad.ipp.pt",
             password: "123",
-            birthDate: "",
+            birthDate: "2000-08-05",
             userTyoe: "aluno"
           },
           {
