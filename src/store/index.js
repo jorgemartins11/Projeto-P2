@@ -5,15 +5,10 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-<<<<<<< HEAD
-=======
-  //STATE
->>>>>>> e50ffc09afe5db219c9fced728132f3fcff24a62
   state: {
     users: [],
     loggedUser: {}
   },
-<<<<<<< HEAD
   getters: {
     getAllUser: state => {
       return state.users
@@ -24,31 +19,6 @@ export default new Vuex.Store({
     getLastId(state) {
       if (state.users.length > 0) {
         return state.users[state.users.length - 1].id + 1;
-=======
-
-  //MUTATIONS
-  mutations: {
-    ADD_USER(state, payload) {
-      if (!state.users.some(account => account.email === payload.email)) {
-        if (payload.password != payload.repeatedPassword) {
-          alert("As Palavras-Passe não correspondem!");
-        }
-        else{
-          state.users.push({
-            id: payload.id,
-            name: payload.name,
-            username: payload.username,
-            email: payload.email,
-            password: payload.password,
-            repeatedPassword: payload.repeatedPassword,
-            birthDate: payload.birthDate,
-            userType: payload.userType
-          })
-        }
-      }
-      else{
-        alert("Já existe uma conta associada a esse email... Tente de novo.")
->>>>>>> e50ffc09afe5db219c9fced728132f3fcff24a62
       }
       return 1;
     },
@@ -60,7 +30,6 @@ export default new Vuex.Store({
       );
     }
   },
-<<<<<<< HEAD
   mutations: {
     NEW_USER(state, payload){
       state.users.push(payload)
@@ -76,9 +45,3 @@ export default new Vuex.Store({
     }
   }
 });
-=======
-
-  //GETTERS
-  getters: {}
-});
->>>>>>> e50ffc09afe5db219c9fced728132f3fcff24a62
