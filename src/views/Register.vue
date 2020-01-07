@@ -152,7 +152,9 @@ export default {
       password: "",
       repeatedPassword: "",
       birthDate: "",
-      userType: ""
+      userType: "",
+      photo: "",
+      blocked: false
     };
   },
   created() {
@@ -172,7 +174,9 @@ export default {
             email: this.email,
             password: this.password,
             birthDate: this.birthDate,
-            userType: this.userType
+            userType: this.userType,
+            photo: this.photo,
+            blocked: this.blocked
           });
           this.emptyForm();
           alert("Conta criada com sucesso!");
@@ -181,7 +185,7 @@ export default {
           });
         } else {
           alert(
-            "Username indisponível! Já se encontra uma conta registada com este"
+            "Username indisponível! Já se encontra uma conta registada com este username"
           );
         }
       } else if (this.checkPasswords()) {

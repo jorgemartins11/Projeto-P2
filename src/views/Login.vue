@@ -23,7 +23,7 @@
                   class="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
-                  placeholder="Email"
+                  placeholder="Email ou Username"
                   required
                   v-model="usernameOrEmail"
                 />
@@ -160,7 +160,7 @@ export default {
           if (this.loggedUser.userType === "administrador") {
             this.$router.push({ name: "HomeAdmin" });
           } else {
-            alert("Login Efetuado");
+            alert("Login Efetuado com sucesso!");
             this.emptyForm();
             this.$router.push({ name: "homeLoged" });
           }
@@ -226,6 +226,7 @@ small {
 .form-control {
   background-color: #707070;
   border-color: #707070;
+  color: white;
 }
 
 input::placeholder {
@@ -236,8 +237,13 @@ input:active {
   background-color: #707070;
 }
 
+input:hover{
+  color: white;
+}
+
 input:focus {
   background-color: #707070;
+  color: white;
   border: 1px solid black !important;
   box-shadow: unset;
 }
