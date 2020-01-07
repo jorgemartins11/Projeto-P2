@@ -184,12 +184,6 @@ p {
   position: relative;
 }
 
-p:hover {
-  height: 50px;
-  color: white;
-  font-size: 35px;
-}
-
 a {
   text-decoration: none !important ;
   color: white !important;
