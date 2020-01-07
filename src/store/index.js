@@ -6,17 +6,20 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   //STATE
-  state: {},
+  state: {
+    users: [],
+    loggedUser: {}
+  },
 
   //MUTATIONS
   mutations: {
     ADD_USER(state, payload) {
-      if (!state.accounts.some(account => account.email === payload.email)) {
+      if (!state.users.some(account => account.email === payload.email)) {
         if (payload.password != payload.repeatedPassword) {
           alert("As Palavras-Passe não correspondem!");
         }
         else{
-          state.accounts.push({
+          state.users.push({
             id: payload.id,
             name: payload.name,
             username: payload.username,

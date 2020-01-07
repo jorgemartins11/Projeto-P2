@@ -145,11 +145,11 @@ export default {
     window.addEventListener("unload", this.saveStorage);
 
     //recupera os dados da local storage (se existirem)
-    if (localStorage.getItem("accounts")) {
-      this.$store.state.accounts = JSON.parse(localStorage.getItem("accounts"));
+    if (localStorage.getItem("users")) {
+      this.$store.state.users = JSON.parse(localStorage.getItem("users"));
     }
     if (localStorage.getItem("loggedUser")) {
-      this.$store.state.accounts = JSON.parse(localStorage.getItem("loggedUser"));
+      this.$store.state.users = JSON.parse(localStorage.getItem("loggedUser"));
     }
   },
 
@@ -182,8 +182,8 @@ export default {
 
     //devove o ultimo id da conta
     getLastId() {
-      if (this.accounts.length) {
-        return this.accounts[this.accounts.length - 1].id;
+      if (this.users.length) {
+        return this.users[this.users.length - 1].id;
       } else {
         return 0;
       }
@@ -191,8 +191,8 @@ export default {
 
     //guardar na local storage do browser as contas
     saveStorage() {
-      localStorage.setItem("accounts", JSON.stringify(this.$store.state.accounts));
-      localStorage.setItem("loggedUser", JSON.stringify(this.$store.state.accounts));
+      localStorage.setItem("users", JSON.stringify(this.$store.state.users));
+      localStorage.setItem("loggedUser", JSON.stringify(this.$store.state.users));
     }
   }
 }
