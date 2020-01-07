@@ -1,15 +1,22 @@
 <template>
   <div class="home">
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+    <div
+      class="imgContainer position-relative d-flex align-items-center justify-content-center"
+    >
       <img src="../assets/background.jpg" id="bg" alt class="img-fluid" />
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
             <router-link to="/">
-              <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-5" />
+              <img
+                src="../assets/logo.png"
+                id="logo"
+                alt
+                class="img-fluid pt-5 pb-5"
+              />
             </router-link>
             <hr />
-            <form>
+            <form @submit.prevent="loginVerifications()">
               <div class="form-group pt-5">
                 <input
                   type="email"
@@ -18,7 +25,7 @@
                   aria-describedby="emailHelp"
                   placeholder="Email"
                   required
-                  v-model="email"
+                  v-model="usernameOrEmail"
                 />
               </div>
               <div class="form-group pt-1">
@@ -31,21 +38,41 @@
                   v-model="password"
                 />
               </div>
-              <router-link to="/home">
-                <button type="submit" id="entrar" class="btn btn-primary btn-lg mt-4 mb-1">Entrar</button>
-              </router-link>
-              <small class="form-text text-muted">Recuperar Palavra-Passe...</small>
+              <button
+                type="submit"
+                id="entrar"
+                class="btn btn-primary btn-lg mt-4 mb-1"
+              >
+                Entrar
+              </button>
+              <small class="form-text text-muted"
+                >Recuperar Palavra-Passe...</small
+              >
               <div>
-                <button class="btn btn-disabled mt-4 mb-5 btn-lg mr-1" disabled>Login</button>
+                <button class="btn btn-disabled mt-4 mb-5 btn-lg mr-1" disabled>
+                  Login
+                </button>
                 <router-link to="/register">
-                  <button id="register" class="btn btn-primary mt-4 mb-5 btn-lg ml-1">Registar</button>
+                  <button
+                    id="register"
+                    class="btn btn-primary mt-4 mb-5 btn-lg ml-1"
+                  >
+                    Registar
+                  </button>
                 </router-link>
               </div>
             </form>
             <hr />
             <div class="eshtInfo pt-5">
-              <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-4" />
-              <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
+              <img
+                src="../assets/ipplogo.png"
+                id="logo"
+                alt
+                class="img-fluid mt-5 mb-4"
+              />
+              <small class="form-text mt-3"
+                >Escola Superior de Hotelaria e Turismo</small
+              >
               <small class="form-text">Rua D. Sancho I, n.º 981</small>
               <small class="form-text">4480-876 Vila do Conde</small>
               <small class="form-text mb-3">Portugal</small>
@@ -61,40 +88,94 @@
 export default {
   data: function() {
     return {
-      email: "",
+      usernameOrEmail: "",
       password: "",
+      loggedUser: {}
     };
   },
-
-  created: function() {
-    //regista um listener quando o browser ou o separador é fechado
-    window.addEventListener("unload", this.saveStorage);
-
-    //recupera os dados da local storage (se existirem)
-    if (localStorage.getItem("accounts")) {
-      this.$store.state.accounts = JSON.parse(localStorage.getItem("accounts"));
-    }
-    if (localStorage.getItem("loggedUser")) {
-      this.$store.state.accounts = JSON.parse(localStorage.getItem("loggedUser"));
+  created() {
+    if (JSON.parse(localStorage.getItem("users"))) {
+      this.$store.commit("SET_USERS", {
+        users: JSON.parse(localStorage.getItem("users"))
+      });
+    } else {
+      this.$store.commit("SET_USERS", {
+        users: [
+          {
+            id: 1,
+            name: "Admin",
+            username: "admin",
+            email: "admin@admin",
+            password: "admin",
+            birthDate: "",
+            userType: "administrador"
+          },
+          {
+            id: 2,
+            name: "Jorge Martins",
+            username: "jojo",
+            email: "9180266@esmad.ipp.pt",
+            password: "123",
+            birthDate: "2000-05-11",
+            userType: "aluno"
+          },
+          {
+            id: 3,
+            name: "André Lopes",
+            username: "andrelopes",
+            email: "9180544@esmad.ipp.pt",
+            password: "123",
+            birthDate: "",
+            userTyoe: "aluno"
+          },
+          {
+            id: 4,
+            name: "Gonçalo Moreira",
+            username: "goncalomoreira",
+            email: "9180216@esmad.ipp.pt",
+            password: "123",
+            birthDate: "",
+            userType: "aluno"
+          }
+        ]
+      });
     }
   },
-
   methods: {
-    //criar uma conta
-    login() {
-      this.$store.commit('LOGIN',{
-        email: this.email,
-        password: this.password,
-      });
-    },
+    loginVerifications() {
+      if (this.$store.getters.getUserByInput(this.usernameOrEmail)) {
+        if (
+          !this.$store.getters.getUserToLogin(
+            this.usernameOrEmail,
+            this.password
+          )
+        ) {
+          alert("Email/Username ou password errada!");
+        } else {
+          this.loggedUser = this.$store.getters.getUserByInput(
+            this.usernameOrEmail
+          );
+          this.$store.commit("SET_LOGGED_USER", this.loggedUser);
 
-    //guardar na local storage do browser as contas
-    saveStorage() {
-      localStorage.setItem("accounts", JSON.stringify(this.$store.state.accounts));
-      localStorage.setItem("loggedUser", JSON.stringify(this.$store.state.accounts));
+          if (this.loggedUser.userType === "administrador") {
+            this.$router.push({ name: "HomeAdmin" });
+          } else {
+            alert("Login Efetuado");
+            this.emptyForm();
+            this.$router.push({ name: "homeLoged" });
+          }
+        }
+      } else {
+        alert("Credênciais inválidas!");
+      }
+    },
+    emptyForm() {
+      this.usernameOrEmail = "";
+      this.password = "";
+      this.loggedUser = {};
     }
   }
-}
+};
 </script>
 
 <style scoped>

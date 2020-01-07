@@ -1,15 +1,22 @@
 <template>
   <div class="home">
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+    <div
+      class="imgContainer position-relative d-flex align-items-center justify-content-center"
+    >
       <img src="../assets/background.jpg" id="bg" alt class="img-fluid" />
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
             <router-link to="/">
-              <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-5" />
+              <img
+                src="../assets/logo.png"
+                id="logo"
+                alt
+                class="img-fluid pt-5 pb-5"
+              />
             </router-link>
             <hr />
-            <form @submit.prevent="Register">
+            <form @submit.prevent="registerVerifications()">
               <div class="form-group pt-5">
                 <input
                   type="text"
@@ -78,36 +85,51 @@
                 />
               </div>
               <div class="form-group pt-1">
-                <select class="browser-default custom-select" id="exampleInputUserType"
+                <select
+                  class="browser-default custom-select"
+                  id="exampleInputUserType"
                   name="userType"
                   required
-                  v-model="userType">
-                  <option value="" select disabled>Tipo de Utilizador</option>
+                  v-model="userType"
+                >
+                  <option value select disabled>Tipo de Utilizador</option>
                   <option value="aluno">Aluno</option>
                   <option value="docente">Docente</option>
                   <option value="funcionario">Funcionário</option>
                 </select>
               </div>
-              <button
-                v-on:click="createAccount"
-                id="criarConta"
-                class="btn btn-primary btn-lg mt-4 mb-1"
-              >Criar Conta</button>
+              <button id="criarConta" class="btn btn-primary btn-lg mt-4 mb-1">
+                Criar Conta
+              </button>
               <div>
                 <router-link to="/login">
-                  <button id="login" class="btn btn-primary btn-lg mt-4 mb-5 mr-1">Login</button>
+                  <button
+                    id="login"
+                    class="btn btn-primary btn-lg mt-4 mb-5 mr-1"
+                  >
+                    Login
+                  </button>
                 </router-link>
                 <button
                   id="disabled"
                   class="btn btn-disabled btn-lg mt-4 mb-5 ml-1"
                   disabled
-                >Registar</button>
+                >
+                  Registar
+                </button>
               </div>
             </form>
             <hr />
             <div class="eshtInfo pt-5">
-              <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-4" />
-              <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
+              <img
+                src="../assets/ipplogo.png"
+                id="logo"
+                alt
+                class="img-fluid mt-5 mb-4"
+              />
+              <small class="form-text mt-3"
+                >Escola Superior de Hotelaria e Turismo</small
+              >
               <small class="form-text">Rua D. Sancho I, n.º 981</small>
               <small class="form-text">4480-876 Vila do Conde</small>
               <small class="form-text mb-3">Portugal</small>
@@ -119,13 +141,11 @@
   </div>
 </template>
 
-
-<script src="../scripts/account.js"></script>
-<script src="../scripts/validation.js"></script>
 <script>
 export default {
   data: function() {
     return {
+      users: [],
       name: "",
       username: "",
       email: "",
@@ -135,51 +155,58 @@ export default {
       userType: ""
     };
   },
-
-  created: function() {
-    //regista um listener quando o browser ou o separador é fechado
-    window.addEventListener("unload", this.saveStorage);
-
-    //recupera os dados da local storage (se existirem)
-    if (localStorage.getItem("accounts")) {
-      this.$store.state.accounts = JSON.parse(localStorage.getItem("accounts"));
-    }
-    if (localStorage.getItem("loggedUser")) {
-      this.$store.state.accounts = JSON.parse(localStorage.getItem("loggedUser"));
-    }
+  created() {
+    this.users = this.$store.state.users;
   },
-
   methods: {
-    //criar uma conta
-    addUser() {
-      this.$store.commit('ADD_USER',{
-        id: this.getLastId() + 1,
-        name: this.name,
-        username: this.username,
-        email: this.email,
-        password: this.password,
-        repeatedPassword: this.repeatedPassword,
-        birthDate: this.birthDate,
-        userType: this.userType
-      });
-    },
-
-    //devove o ultimo id da conta
-    getLastId() {
-      if (this.accounts.length) {
-        return this.accounts[this.accounts.length - 1].id;
-      } else {
-        return 0;
+    registerVerifications() {
+      if (
+        !this.$store.getters.getUserByInput(this.email) &&
+        this.checkPasswords()
+      ) {
+        if (!this.$store.getters.getUserByInput(this.username)) {
+          this.$store.commit("NEW_USER", {
+            id: this.$store.getters.getLastId,
+            name: this.name,
+            username: this.username,
+            email: this.email,
+            password: this.password,
+            birthDate: this.birthDate,
+            userType: this.userType
+          });
+          this.emptyForm();
+          alert("Conta criada com sucesso!");
+          this.$router.push({
+            name: "login"
+          });
+        } else {
+          alert(
+            "Username indisponível! Já se encontra uma conta registada com este"
+          );
+        }
+      } else if (this.checkPasswords()) {
+        alert("Já existe uma conta registada com o email introduzido!");
       }
     },
-
-    //guardar na local storage do browser as contas
-    saveStorage() {
-      localStorage.setItem("accounts", JSON.stringify(this.$store.state.accounts));
-      localStorage.setItem("loggedUser", JSON.stringify(this.$store.state.accounts));
+    checkPasswords() {
+      if (this.password == this.repeatedPassword) {
+        return true;
+      } else {
+        alert("Palavras passe não coincidem!");
+        return false;
+      }
+    },
+    emptyForm() {
+      this.name = "";
+      this.username = "";
+      this.email = "";
+      this.password = "";
+      this.repeatedPassword = "";
+      this.birthDate = "";
+      this.userType = "";
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -233,7 +260,7 @@ small {
   color: white;
 }
 
-.browser-default{
+.browser-default {
   background-color: #707070;
   border-color: #707070;
   color: white;
