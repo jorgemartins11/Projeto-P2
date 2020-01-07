@@ -5,7 +5,10 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  //STATE
   state: {},
+
+  //MUTATIONS
   mutations: {
     ADD_USER(state, payload) {
       if (!state.accounts.some(account => account.email === payload.email)) {
@@ -33,5 +36,7 @@ export default new Vuex.Store({
 
     // }
   },
+
+  //GETTERS
   getters: {}
 });

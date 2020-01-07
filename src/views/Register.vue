@@ -126,13 +126,17 @@
 export default {
   data: function() {
     return {
+      id: "",
       name: "",
       username: "",
       email: "",
       password: "",
       repeatedPassword: "",
       birthDate: "",
-      userType: ""
+      userType: "",
+      photo: "",
+      blocked: false
+
     };
   },
 
@@ -158,10 +162,22 @@ export default {
         username: this.username,
         email: this.email,
         password: this.password,
-        repeatedPassword: this.repeatedPassword,
         birthDate: this.birthDate,
-        userType: this.userType
+        userType: this.userType,
+        photo: this.photo,
+        blocked: this.blocked
       });
+    },
+
+    //verificar se as palavras passe coincidem
+    confirmPassword(){
+      if (this.password == this.repeatedPassword) {
+        return true;
+      } 
+      else {
+        alert("The password doesn't match the confimation");
+        return false;
+      }
     },
 
     //devove o ultimo id da conta

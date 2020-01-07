@@ -63,6 +63,7 @@ export default {
     return {
       email: "",
       password: "",
+      loggedUser: ""
     };
   },
 
@@ -80,7 +81,7 @@ export default {
   },
 
   methods: {
-    //criar uma conta
+    //fazer login
     login() {
       this.$store.commit('LOGIN',{
         email: this.email,
