@@ -85,6 +85,7 @@
 </template>
 
 <script>
+import { log } from 'util';
 export default {
   data: function() {
     return {
@@ -98,7 +99,8 @@ export default {
       this.$store.commit("SET_USERS", {
         users: JSON.parse(localStorage.getItem("users"))
       });
-    } else {
+    }
+    else {
       this.$store.commit("SET_USERS", {
         users: [
           {
@@ -151,7 +153,8 @@ export default {
           )
         ) {
           alert("Email/Username ou password errada!");
-        } else {
+        } 
+        else {
           this.loggedUser = this.$store.getters.getUserByInput(
             this.usernameOrEmail
           );
@@ -159,13 +162,15 @@ export default {
 
           if (this.loggedUser.userType === "administrador") {
             this.$router.push({ name: "HomeAdmin" });
-          } else {
+          } 
+          else {
             alert("Login Efetuado com sucesso!");
             this.emptyForm();
             this.$router.push({ name: "homeLoged" });
           }
         }
-      } else {
+      } 
+      else {
         alert("Credênciais inválidas!");
       }
     },
