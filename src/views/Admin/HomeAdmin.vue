@@ -19,14 +19,28 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto text-center"></ul>
-        <router-link to="/profile">
-          <img
-            src="../../assets/profile_icon.png"
-            class="mr-lg-5 pl-sm-5 pl-lg-0"
-            width="30px"
-            height="30px"
-          />
-        </router-link>
+        <div class="dropdown mr-5">
+          <button
+            class="btn btn-secondary btn-lg dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img
+              src="../../assets/profile_icon.png"
+              class="mr-lg-5 pl-sm-5 pl-lg-0"
+              width="30px"
+              height="30px"
+            />
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <router-link to="/profile" class="router ml-3">Perfil</router-link>
+            <div class="dropdown-divider"></div>
+            <a @click="logOut()" class="router ml-3">Terminar Sessão</a>
+          </div>
+        </div>
       </div>
     </nav>´
     <div class="row1">
@@ -35,7 +49,9 @@
         <h1 class="display-5">Área de Administração</h1>
       </div>
     </div>
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center mb-5">
+    <div
+      class="imgContainer position-relative d-flex align-items-center justify-content-center mb-5"
+    >
       <div class="btn1 mr-lg-5 pl-sm-5 pl-lg-0">
         <router-link to="/reservationsAdmin">
           <img class="img" src="../../assets/logoBook.png" />
@@ -97,7 +113,37 @@
 <script>
 export default {
   name: "about",
-  components: {}
+  components: {},
+
+  data: function() {
+    return {
+      user: {},
+    }
+  },
+
+  computed: {
+    getLoggedUser: "getLoggedUser",
+  },
+
+  created() {
+    this.$store.commit("SET_USERS", {
+      users: JSON.parse(localStorage.getItem("users"))
+    });
+
+    this.$store.commit(
+      "SET_LOGGED_USER",
+      JSON.parse(localStorage.getItem("loggedUser"))
+    );
+
+    this.user = this.getLoggedUser;
+  },
+
+  methods: {
+    logOut() {
+    localStorage.removeItem("loggedUser");
+    this.$router.push({ name: "login" });
+    }
+  }
 };
 </script>
 
@@ -110,6 +156,14 @@ export default {
   background-color: #2c3e50;
   font-family: "Muli", sans-serif;
   font-size: 1rem;
+}
+
+.dropdown-menu{
+  background-color: #2c3e50;
+}
+
+.dropdown-toggle{
+  background-color: #2c3e50;
 }
 
 .navbar-custom {

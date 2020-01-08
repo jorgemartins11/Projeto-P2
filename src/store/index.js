@@ -28,7 +28,10 @@ export default new Vuex.Store({
           (user.username === usernameOrEmail || user.email === usernameOrEmail) &&
           user.password === password
       );
-    }
+    },
+    getLoggedUser: state => {
+      return state.loggedUser;
+    },
   },
   mutations: {
     NEW_USER(state, payload){

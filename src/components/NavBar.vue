@@ -45,7 +45,7 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <router-link to="/profile" class="router ml-3">Perfil</router-link>
           <div class="dropdown-divider"></div>
-          <router-link to="/" class="router ml-3">Terminar Sessão</router-link>
+          <a @click="logOut()" class="router ml-3">Terminar Sessão</a>
         </div>
       </div>
     </div>
@@ -54,7 +54,37 @@
 
 <script>
 export default {
-  name: "NavBar"
+  name: "NavBar",
+
+  data: function() {
+    return {
+      user: {},
+    }
+  },
+
+  computed: {
+    getLoggedUser: "getLoggedUser",
+  },
+
+  created() {
+    this.$store.commit("SET_USERS", {
+      users: JSON.parse(localStorage.getItem("users"))
+    });
+
+    this.$store.commit(
+      "SET_LOGGED_USER",
+      JSON.parse(localStorage.getItem("loggedUser"))
+    );
+
+    this.user = this.getLoggedUser;
+  },
+
+  methods: {
+    logOut() {
+    localStorage.removeItem("loggedUser");
+    this.$router.push({ name: "login" });
+    }
+  }
 };
 </script>
 
