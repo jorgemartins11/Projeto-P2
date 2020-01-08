@@ -203,6 +203,7 @@ img#bg {
   position: fixed;
   height: 100%;
   width: 100%;
+  filter: brightness(75%);
 }
 
 .img-fluid {

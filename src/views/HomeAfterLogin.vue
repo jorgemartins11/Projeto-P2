@@ -1,27 +1,40 @@
 <template>
   <div class="home">
     <NavBar />
-    <div class="imgContainer mt-5 position-relative d-flex align-items-center justify-content-center">
+    <div
+      class="imgContainer mt-5 position-relative d-flex align-items-center justify-content-center"
+    >
       <img src="../assets/background.jpg" id="bg" alt class="img-fluid" />
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-3" />
+            <img
+              src="../assets/logo.png"
+              id="logo"
+              alt
+              class="img-fluid pt-5 pb-3"
+            />
             <hr />
             <p id="welcome" class="welcomeText pt-4 pb-3">Bem vindo!</p>
-            <p class="welcomeText pb-4 mb-4 text-justify pl-lg-5 pr-lg-5 pl-5 pr-5">
-              Este projeto foi realizado em prol
-              da aprovação às disciplinas P2,
-              PW1, BD e AMS, contando com a
-              ajuda do professor José António
-              sendo que o objetivo é implementar
-              um website para o restaurante da
-              Escola Superior de Hotelaria e
-              Turismo que brevemente irá ser inaugurado.
+            <p
+              class="welcomeText pb-4 mb-4 text-justify pl-lg-5 pr-lg-5 pl-5 pr-5"
+            >
+              Este projeto foi realizado em prol da aprovação às disciplinas P2,
+              PW1, BD e AMS, contando com a ajuda do professor José António
+              sendo que o objetivo é implementar um website para o restaurante
+              da Escola Superior de Hotelaria e Turismo que brevemente irá ser
+              inaugurado.
             </p>
             <hr />
-            <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-5" />
-            <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
+            <img
+              src="../assets/ipplogo.png"
+              id="logo"
+              alt
+              class="img-fluid mt-5 mb-5"
+            />
+            <small class="form-text mt-3"
+              >Escola Superior de Hotelaria e Turismo</small
+            >
             <small class="form-text">Rua D. Sancho I, n.º 981</small>
             <small class="form-text">4480-876 Vila do Conde</small>
             <small class="form-text">Portugal</small>
@@ -34,16 +47,16 @@
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue"
-import NavBar from "@/components/NavBar.vue"
+import Footer from "@/components/Footer.vue";
+import NavBar from "@/components/NavBar.vue";
 
 export default {
   name: "about",
-  components:{
+  components: {
     Footer,
     NavBar
   }
-}
+};
 </script>
 
 <style scoped>
@@ -84,6 +97,7 @@ img#bg {
   position: fixed;
   height: 100%;
   width: 100%;
+  filter: brightness(75%);
 }
 
 .img-fluid {

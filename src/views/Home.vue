@@ -1,30 +1,48 @@
 <template>
   <div class="home">
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+    <div
+      class="imgContainer position-relative d-flex align-items-center justify-content-center"
+    >
       <img src="../assets/background.jpg" id="bg" alt class="img-fluid" />
       <div class="barra d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <img src="../assets/logo.png" id="logo" alt class="img-fluid pt-5 pb-4" />
+            <img
+              src="../assets/logo.png"
+              id="logo"
+              alt
+              class="img-fluid pt-5 pb-4"
+            />
             <hr />
             <p id="welcome" class="welcomeText pt-4 pb-4">Bem vindo!</p>
-            <p class="welcomeText pb-4 mb-4 text-justify pl-lg-5 pr-lg-5 pl-5 pr-5">
-              Este projeto foi realizado em prol
-              da aprovação às disciplinas P2,
-              PW1, BD e AMS, contando com a
-              ajuda do professor José António
-              sendo que o objetivo é implementar
-              um website para o restaurante da
-              Escola Superior de Hotelaria e
-              Turismo que brevemente irá ser inaugurado.
+            <p
+              class="welcomeText pb-4 mb-4 text-justify pl-lg-5 pr-lg-5 pl-5 pr-5"
+            >
+              Este projeto foi realizado em prol da aprovação às disciplinas P2,
+              PW1, BD e AMS, contando com a ajuda do professor José António
+              sendo que o objetivo é implementar um website para o restaurante
+              da Escola Superior de Hotelaria e Turismo que brevemente irá ser
+              inaugurado.
             </p>
             <router-link to="/Login">
-              <button id="register" class="btn btn-primary btn-lg mt-5 mb-5 ml-1">Login / Registar</button>
+              <button
+                id="register"
+                class="btn btn-primary btn-lg mt-5 mb-5 ml-1"
+              >
+                Login / Registar
+              </button>
             </router-link>
             <hr />
             <div class>
-              <img src="../assets/ipplogo.png" id="logo" alt class="img-fluid mt-5 mb-5" />
-              <small class="form-text mt-3">Escola Superior de Hotelaria e Turismo</small>
+              <img
+                src="../assets/ipplogo.png"
+                id="logo"
+                alt
+                class="img-fluid mt-5 mb-5"
+              />
+              <small class="form-text mt-3"
+                >Escola Superior de Hotelaria e Turismo</small
+              >
               <small class="form-text">Rua D. Sancho I, n.º 981</small>
               <small class="form-text">4480-876 Vila do Conde</small>
               <small class="form-text">Portugal</small>
@@ -74,6 +92,7 @@ img#bg {
   position: fixed;
   height: 100%;
   width: 100%;
+  filter: brightness(75%);
 }
 
 .img-fluid {
@@ -123,7 +142,7 @@ input:focus {
   border-color: #707070;
 }
 
-.btn:hover{
+.btn:hover {
   border: 1px solid white !important;
 }
 </style>
