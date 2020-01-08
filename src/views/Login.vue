@@ -19,7 +19,7 @@
             <form @submit.prevent="loginVerifications()">
               <div class="form-group pt-5">
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
