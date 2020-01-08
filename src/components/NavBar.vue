@@ -36,12 +36,14 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-        ><img
-          src="../assets/profile_icon.png"
-          class="mr-lg-5 pl-sm-5 pl-lg-0"
-          width="30px"
-          height="30px"
-        /></button>
+        >
+          <img
+            src="../assets/profile_icon.png"
+            class="mr-lg-5 pl-sm-5 pl-lg-0"
+            width="30px"
+            height="30px"
+          />
+        </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <router-link to="/profile" class="router ml-3">Perfil</router-link>
           <div class="dropdown-divider"></div>
@@ -58,14 +60,10 @@ export default {
 
   data: function() {
     return {
-      user: {},
-    }
+      users: [],
+      loggedUser: {}
+    };
   },
-
-  computed: {
-    getLoggedUser: "getLoggedUser",
-  },
-
   created() {
     this.$store.commit("SET_USERS", {
       users: JSON.parse(localStorage.getItem("users"))
@@ -76,13 +74,13 @@ export default {
       JSON.parse(localStorage.getItem("loggedUser"))
     );
 
-    this.user = this.getLoggedUser;
+    this.loggedUser = this.$store.getters.getLoggedUser;
   },
 
   methods: {
     logOut() {
-    localStorage.removeItem("loggedUser");
-    this.$router.push({ name: "login" });
+      localStorage.removeItem("loggedUser");
+      this.$router.push({ name: "landingPage" });
     }
   }
 };
@@ -117,12 +115,12 @@ a:hover {
   font-weight: bolder;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   background-color: #2c3e50;
   color: white;
 }
 
-.dropdown-toggle{
+.dropdown-toggle {
   background-color: #2c3e50;
   color: white;
 }
