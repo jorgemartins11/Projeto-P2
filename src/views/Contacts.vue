@@ -1,42 +1,54 @@
 <template>
   <div class="home">
     <NavBar />
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
-      <div id=“myMap” style=“width:500px; height:500px”>
-
+    <div class="imgContainer position-relative align-items-centre justify-content-center ">
+      <div class="col-12">
+        <div class="col-6 ml-5">
+          <div id="map"></div>
+        </div>
       </div>
     </div>
     <Footer />
   </div>
 </template>
 
+<script async src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"></script>
 <script>
-import Footer from "@/components/Footer.vue"
-import NavBar from "@/components/NavBar.vue"
+import Footer from "@/components/Footer.vue";
+import NavBar from "@/components/NavBar.vue";
 
 export default {
   name: "about",
-  components:{
+  components: {
     Footer,
     NavBar
   }
-}
+};
 
-  // let map
-  // let myMap = document.getElementById("myMap")
-  // function initMap() {
-  // let mapProp = {
-  // center: new google.maps.LatLng(37.508742,-0.420850),
-  // zoom: 5
-  // }
-  // map = new google.maps.Map(myMap, mapProp)
-  // }
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 41.366178, lng: -8.7418871}, //our campus coordinates
+    zoom: 15
+  });
+}
 </script>
 
 <style scoped>
+.home{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .imgContainer {
   width: 100%;
   height: 100%;
+}
+
+#map {
+  margin-top: 130px;
+  height: 600px;
+  width: 800px;
+  background-color: #707070;
 }
 
 a {
@@ -50,7 +62,7 @@ a:hover {
 }
 
 #welcome {
-  font-size: 30px
+  font-size: 30px;
 }
 
 .barra {
@@ -77,7 +89,7 @@ img#bg {
   height: auto;
 }
 
-hr{
+hr {
   height: 1px;
   width: 20rem;
   background-color: #2c3e50;
@@ -95,7 +107,6 @@ small {
   background-color: #707070;
   border-color: #707070;
 }
-
 
 input:focus {
   background-color: #707070;
