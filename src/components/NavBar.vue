@@ -119,9 +119,11 @@ a:hover {
 
 .dropdown-menu{
   background-color: #2c3e50;
+  color: white;
 }
 
 .dropdown-toggle{
   background-color: #2c3e50;
+  color: white;
 }
 </style>

@@ -160,10 +160,12 @@ export default {
 
 .dropdown-menu{
   background-color: #2c3e50;
+  color: white;
 }
 
 .dropdown-toggle{
   background-color: #2c3e50;
+  color: white;
 }
 
 .navbar-custom {
@@ -241,7 +243,6 @@ p {
 a {
   text-decoration: none !important ;
   color: white !important;
-  font-size: 1.2rem;
 }
 
 a:hover {
