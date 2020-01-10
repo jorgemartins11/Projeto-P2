@@ -36,8 +36,6 @@
             />
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <router-link to="/profile" class="router ml-3">Perfil</router-link>
-            <div class="dropdown-divider"></div>
             <a @click="logOut()" class="router ml-3">Terminar Sessão</a>
           </div>
         </div>
