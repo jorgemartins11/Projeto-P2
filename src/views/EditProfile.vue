@@ -27,7 +27,7 @@
       </div>
       <div class="row">
         <div class="col-12 position-relative d-flex align-items-center justify-content-center">
-          <form>
+          <form @submit.prevent="changeProfile()">
             <div class="form-group pt-5">
               <input
                 type="text"
@@ -132,7 +132,7 @@ export default {
   //       }
   //     }
   //   },
-  //   profilePic: function changeProfilePic() {
+  //   changeProfile() {
   //     var profilePic = document.getElementById("#profilePic");
   //     var avatar = document.getElementById("#avatar");
 
