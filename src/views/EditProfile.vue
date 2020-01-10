@@ -17,7 +17,7 @@
               <div class="d-flex justify-content-center">
                 <div class="btn btn-mdb-color btn-rounded float-left">
                   <span class="span">Escolha a sua fotografia de Perfil...</span>
-                  <br>
+                  <br />
                   <input type="file" id="avatar" accept="image/*" />
                 </div>
               </div>
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-6 position-relative d-flex align-items-center justify-content-center">
+        <div class="col-12 position-relative d-flex align-items-center justify-content-center">
           <form>
             <div class="form-group pt-5">
               <input
@@ -80,20 +80,6 @@
             </div>
           </form>
         </div>
-        <div class="col-6 flex-column align-items-center justify-content-center">
-            <div class="form-group pt-5 text-left">
-              <p>Nome: {{name}}</p>
-            </div>
-            <div class="form-group pt-1 text-left">
-              <p>Username: {{username}} </p>
-            </div>
-            <div class="form-group pt-1 text-left">
-              <p>Email: {{email}}</p>
-            </div>
-            <div class="form-group pt-1 text-left">
-              <p>Data de Nascimento: {{birthDate}}</p>
-            </div>
-        </div>
       </div>
       <div class="row mt-4">
         <div class="col-12">
@@ -117,27 +103,48 @@ export default {
       email: "",
       password1: "",
       password2: "",
-      birthDate: ""
-    }
-},
+      birthDate: "",
+      photo: ""
+    };
+  },
   components: {
     Footer,
     NavBar
   },
-  methods:{
-    profilePic: function changeProfilePic(){
-      var profilePic = document.getElementById("#profilePic")
-      var avatar = document.getElementById("#avatar")
-
-      if (avatar.value == "") {
-        profilePic.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png"
-      }
-      else{
-        profilePic.src = avatar.value
-      }
+  created() {
+    if (JSON.parse(localStorage.getItem("users"))) {
+      this.$store.commit("SET_USERS", {
+        users: JSON.parse(localStorage.getItem("users"))
+      });
     }
-  }
-}
+  },
+  // methods: {
+  //   showUserProfileData() {
+  //     if (this.$store.getters.getLoggedUser(this.id)) {
+  //       for (const user of users) {
+  //         if (user._id == id) {
+  //           document.querySelector("#exampleInputName").value = user.name;
+  //           document.querySelector("#exampleInputUsername").value = user._username;
+  //           document.querySelector("#exampleInputPassword1").value = user._password1;
+   //          document.querySelector("#exampleInputPassword2").value = user._password2;
+  //           document.querySelector("#profilePic").src = user._photo;
+  //         }
+  //       }
+  //     }
+  //   },
+  //   profilePic: function changeProfilePic() {
+  //     var profilePic = document.getElementById("#profilePic");
+  //     var avatar = document.getElementById("#avatar");
+
+  //     if (avatar.value == "") {
+  //       profilePic.src =
+  //         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png";
+  //     } else {
+  //       profilePic.src = avatar.value;
+  //     }
+  //   }
+  // }
+};
 </script>
 
 <style scoped>
@@ -146,8 +153,8 @@ export default {
   height: 100%;
 }
 
-.home{
-  overflow-x:hidden;
+.home {
+  overflow-x: hidden;
 }
 
 .avatar-pic {
@@ -155,14 +162,14 @@ export default {
   background-color: #2c3e50;
 }
 
-#save{
+#save {
   background-color: #2c3e50;
   color: white;
-  border: 1px solid #2c3e50
+  border: 1px solid #2c3e50;
 }
 
-#save:hover{
-  background-color: #93C700;
+#save:hover {
+  background-color: #93c700;
   color: #2c3e50;
   border: 2px solid #2c3e50;
   font-weight: bolder;
@@ -235,7 +242,7 @@ small {
 #avatar {
   background-color: #2c3e50;
   border-color: #2c3e50;
-    border: 1px solid #2c3e50;
+  border: 1px solid #2c3e50;
   color: white;
 }
 

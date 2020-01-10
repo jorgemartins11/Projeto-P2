@@ -55,7 +55,43 @@ export default {
   components: {
     Footer,
     NavBar
-  }
+  },
+  data: function() {
+    return {
+      name: "",
+      username: "",
+      email: "",
+      birthDate: "",
+      loggedUser: {}
+    };
+  },
+  // created(){
+  //   if (JSON.parse(localStorage.getItem("users"))) {
+  //     this.$store.commit("SET_USERS", {
+  //       users: JSON.parse(localStorage.getItem("users"))
+  //     })
+  //   }
+  // },
+  // methods:{
+  //   showUserProfileData() {
+  //     if (localStorage.getItem("users")) {
+  //       users = JSON.parse(localStorage.getItem("users"))
+  //     }
+  //     let id = ""
+  //     if (sessionStorage.getItem('loggedUserId')) {
+  //       id = JSON.parse(sessionStorage.getItem("loggedUserId"))
+  //     }
+  //     for (const user of users) {
+  //       if (user._id == id) {
+  //         document.querySelector('#txtUsername').value = user._username
+  //         document.querySelector('#txtPassword').value = user._password
+  //         document.querySelector('#txtDescription').value = user._description
+  //         document.querySelector('.avatar').src = user._avatar
+  //         document.querySelector('#currentPhoto').src = user._avatar
+  //       }
+  //     }
+  //   }
+  // }
 };
 </script>
 
