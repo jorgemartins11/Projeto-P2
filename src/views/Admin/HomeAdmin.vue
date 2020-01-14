@@ -40,7 +40,8 @@
           </div>
         </div>
       </div>
-    </nav>´
+    </nav>
+    ´
     <div class="row1">
       <div class="col-12 text-center users pb-2 pt-5">
         <img src="../../assets/admin.png" class="img-fluid mb-4 mt-5" />
@@ -83,10 +84,9 @@
         </div>
         <div class="col-xs-12 col-md-2 col-lg-4 text-center">
           <ul class="list-unstyled list-inline pt-2">
-            <a
-              id="copyright"
-              class="list-inline-item"
-            >&copy; André Lopes, Gonçalo Moreira e Jorge Martins</a>
+            <a id="copyright" class="list-inline-item"
+              >&copy; André Lopes, Gonçalo Moreira e Jorge Martins</a
+            >
           </ul>
         </div>
         <div class="col-xs-12 col-md-5 col-lg-4 text-center pt-5">
@@ -99,7 +99,10 @@
           <a href="https://www.instagram.com/esht_pporto/" class="pl-2">
             <img src="../../assets/instagram.svg" />
           </a>
-          <a href="https://www.youtube.com/user/politecnicodoporto" class="pl-2">
+          <a
+            href="https://www.youtube.com/user/politecnicodoporto"
+            class="pl-2"
+          >
             <img src="../../assets/youtube.svg" />
           </a>
         </div>
@@ -115,12 +118,12 @@ export default {
 
   data: function() {
     return {
-      user: {},
-    }
+      user: {}
+    };
   },
 
   computed: {
-    getLoggedUser: "getLoggedUser",
+    getLoggedUser: "getLoggedUser"
   },
 
   created() {
@@ -138,8 +141,8 @@ export default {
 
   methods: {
     logOut() {
-    localStorage.removeItem("loggedUser");
-    this.$router.push({ name: "login" });
+      localStorage.removeItem("loggedUser");
+      this.$router.push({ name: "login" });
     }
   }
 };
@@ -156,12 +159,12 @@ export default {
   font-size: 1rem;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   background-color: #2c3e50;
   color: white;
 }
 
-.dropdown-toggle{
+.dropdown-toggle {
   background-color: #2c3e50;
   color: white;
 }

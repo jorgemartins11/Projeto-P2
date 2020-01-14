@@ -30,13 +30,19 @@
     </div>
     <div class="row text-center mt-5">
       <div class="bar col-4 text-right">
-        <button type="button" class="names col-4 text-right">Histórico de Reservas</button>
+        <button type="button" class="names col-4 text-right">
+          Histórico de Reservas
+        </button>
       </div>
       <div class="bar col-4 text-center">
-        <button type="button" class="names col-4 text-center">Próximas Refeições</button>
+        <button type="button" class="names col-4 text-center">
+          Próximas Refeições
+        </button>
       </div>
       <div class="bar col-4 text-left">
-        <button type="button" class="names col-4 text-left">Avaliações Realizadas</button>
+        <button type="button" class="names col-4 text-left">
+          Avaliações Realizadas
+        </button>
       </div>
     </div>
     <div class="row text-center mt-4">
@@ -64,7 +70,7 @@ export default {
       birthDate: "",
       loggedUser: {}
     };
-  },
+  }
   // created(){
   //   if (JSON.parse(localStorage.getItem("users"))) {
   //     this.$store.commit("SET_USERS", {
@@ -154,7 +160,9 @@ img#logo {
   background-color: transparent;
 }
 
-button:focus {outline:0;}
+button:focus {
+  outline: 0;
+}
 
 .img-fluid {
   max-width: 100%;

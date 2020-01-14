@@ -7,21 +7,34 @@
         <h1 class="display-5">Reservas por Utilizador</h1>
       </div>
     </div>
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center mt-4">
-        <div class="col-12">
-          <div class="card mb-5 ml-5" style="width: 18rem;">
-            <img src="../../assets/users3.png" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">aclopes2000</h5>
-              <p class="card-text d-flex justify-content-left">Data:</p>
-              <p class="card-text d-flex justify-content-left">Hora:</p>
-              <button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#myModal">Ver mais</button>
-              <div class="">
-                <button type="button" id="check" class="btn btn-primary mr-4">Confirmar</button>
-                <button type="button" id="cancel" class="btn btn-primary">Cancelar</button>
-              </div>
+    <div
+      class="imgContainer position-relative d-flex align-items-center justify-content-center mt-4"
+    >
+      <div class="col-12">
+        <div class="card mb-5 ml-5" style="width: 18rem;">
+          <img src="../../assets/users3.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">aclopes2000</h5>
+            <p class="card-text d-flex justify-content-left">Data:</p>
+            <p class="card-text d-flex justify-content-left">Hora:</p>
+            <button
+              type="button"
+              class="btn btn-info mb-2"
+              data-toggle="modal"
+              data-target="#myModal"
+            >
+              Ver mais
+            </button>
+            <div class="">
+              <button type="button" id="check" class="btn btn-primary mr-4">
+                Confirmar
+              </button>
+              <button type="button" id="cancel" class="btn btn-primary">
+                Cancelar
+              </button>
             </div>
           </div>
+        </div>
       </div>
     </div>
     <AdminFooter />
@@ -50,9 +63,9 @@ div {
   height: 150px;
 }
 
-.card{
+.card {
   background-color: #2980b9;
-  color:white;
+  color: white;
 }
 
 .row {

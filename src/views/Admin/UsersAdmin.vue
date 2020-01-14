@@ -15,8 +15,12 @@
               <div class="form-group">
                 <label for="stlOrder" class="filter mr-3">Filtrar Por:</label>
                 <select class="form-control mr-3" id="stlOrder">
-                  <option value="A-Z" selected>Utilizador - Ordem Alfabética Crescente</option>
-                  <option value="Z-A">Utilizador - Ordem Alfabética Decrescente</option>
+                  <option value="A-Z" selected
+                    >Utilizador - Ordem Alfabética Crescente</option
+                  >
+                  <option value="Z-A"
+                    >Utilizador - Ordem Alfabética Decrescente</option
+                  >
                 </select>
               </div>
               <div class="form-group">
@@ -29,12 +33,17 @@
                   maxlength="20"
                 />
               </div>
-              <button type="button" class="btn btn-primary filterUsers">Filtrar</button>
+              <button type="button" class="btn btn-primary filterUsers">
+                Filtrar
+              </button>
             </div>
             <div class="col-4 d-flex justify-content-center">
-              <button type="button" id="addUser" class="btn btn-primary filterUsers">
-                Adicionar
-                Utilizador
+              <button
+                type="button"
+                id="addUser"
+                class="btn btn-primary filterUsers"
+              >
+                Adicionar Utilizador
               </button>
             </div>
           </form>

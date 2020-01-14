@@ -7,24 +7,35 @@
         <h1 class="display-5">Reservas por Data</h1>
       </div>
     </div>
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center mt-4">
-      <div class="">
-
-      </div>
-        <div class="col-12">
-          <div class="card mb-5 ml-5" style="width: 18rem;">
-            <img src="../../assets/users3.png" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">02/03/2020</h5>
-              <p class="card-text d-flex justify-content-left">Utilizador:</p>
-              <p class="card-text d-flex justify-content-left">Hora:</p>
-              <button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#myModal">Ver mais</button>
-              <div class="">
-                <button type="button" id="check1" class="btn btn-primary mr-4">Confirmar</button>
-                <button type="button" id="cancel1" class="btn btn-primary">Cancelar</button>
-              </div>
+    <div
+      class="imgContainer position-relative d-flex align-items-center justify-content-center mt-4"
+    >
+      <div class=""></div>
+      <div class="col-12">
+        <div class="card mb-5 ml-5" style="width: 18rem;">
+          <img src="../../assets/users3.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">02/03/2020</h5>
+            <p class="card-text d-flex justify-content-left">Utilizador:</p>
+            <p class="card-text d-flex justify-content-left">Hora:</p>
+            <button
+              type="button"
+              class="btn btn-info mb-2"
+              data-toggle="modal"
+              data-target="#myModal"
+            >
+              Ver mais
+            </button>
+            <div class="">
+              <button type="button" id="check1" class="btn btn-primary mr-4">
+                Confirmar
+              </button>
+              <button type="button" id="cancel1" class="btn btn-primary">
+                Cancelar
+              </button>
             </div>
           </div>
+        </div>
       </div>
     </div>
     <AdminFooter />
@@ -53,9 +64,9 @@ div {
   height: 150px;
 }
 
-.card{
+.card {
   background-color: #2980b9;
-  color:white;
+  color: white;
 }
 
 #check1:hover {

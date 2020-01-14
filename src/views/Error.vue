@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <NavBar />
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
+    <div
+      class="imgContainer position-relative d-flex align-items-center justify-content-center"
+    >
       <img src="../assets/404.jpg" id="bg" alt class="img-fluid" />
       <div class="barra d-flex justify-content-center">
         <div class="row">
@@ -18,16 +20,16 @@
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue"
-import NavBar from "@/components/NavBar.vue"
+import Footer from "@/components/Footer.vue";
+import NavBar from "@/components/NavBar.vue";
 
 export default {
   name: "about",
-  components:{
+  components: {
     Footer,
     NavBar
   }
-}
+};
 </script>
 
 <style scoped>
@@ -47,17 +49,17 @@ a:hover {
 }
 
 #welcome {
-  font-size: 30px
+  font-size: 30px;
 }
 
 .btn {
-  background-color: #2c3e50 ;
-  border-color: #2c3e50 ;
+  background-color: #2c3e50;
+  border-color: #2c3e50;
   color: white;
   margin-top: 645px;
 }
 
-.btn:hover{
+.btn:hover {
   border: 1px solid white !important;
   background-color: #707070;
   color: white;
@@ -87,7 +89,7 @@ img#bg {
   height: auto;
 }
 
-hr{
+hr {
   height: 1px;
   width: 20rem;
   background-color: #2c3e50;

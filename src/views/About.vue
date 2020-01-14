@@ -1,41 +1,60 @@
 <template>
   <div class="home">
     <NavBar />
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
-      <div class="imgContainer position-relative d-flex align-items-center justify-content-center">
-      <div class="barra d-flex justify-content-center">
-        <div class="row">
-          <div class="col-12">
-            <br>
-            <br>
-            <p id="welcome" class="welcomeText mt-5">
-              Equipa de Desenvolvimento
-            </p>
+    <div
+      class="imgContainer position-relative d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="imgContainer position-relative d-flex align-items-center justify-content-center"
+      >
+        <div class="barra d-flex justify-content-center">
+          <div class="row">
             <div class="col-12">
-              <img src="../assets/andre.png" id="logo" alt class="img-fluid pt-5 pb-3" />
-              <img src="../assets/goncalo.png" id="logo" alt class="img-fluid pt-5 pb-3" />
-              <img src="../assets/jorge.png" id="logo" alt class="img-fluid pt-5 pb-3" />
-              <div class="d-flex justify-content-center mb-4">
-                <p class="names mr-2 ml-2">André Lopes</p>
-                <p class="names mr-2 ml-2">|</p>
-                <p class="names mr-2 ml-2"> Gonçalo Moreira</p>
-                <p class="names mr-2 ml-2">|</p>
-                <p class="names mr-2 ml-2"> Jorge Martins</p>
+              <br />
+              <br />
+              <p id="welcome" class="welcomeText mt-5">
+                Equipa de Desenvolvimento
+              </p>
+              <div class="col-12">
+                <img
+                  src="../assets/andre.png"
+                  id="logo"
+                  alt
+                  class="img-fluid pt-5 pb-3"
+                />
+                <img
+                  src="../assets/goncalo.png"
+                  id="logo"
+                  alt
+                  class="img-fluid pt-5 pb-3"
+                />
+                <img
+                  src="../assets/jorge.png"
+                  id="logo"
+                  alt
+                  class="img-fluid pt-5 pb-3"
+                />
+                <div class="d-flex justify-content-center mb-4">
+                  <p class="names mr-2 ml-2">André Lopes</p>
+                  <p class="names mr-2 ml-2">|</p>
+                  <p class="names mr-2 ml-2">Gonçalo Moreira</p>
+                  <p class="names mr-2 ml-2">|</p>
+                  <p class="names mr-2 ml-2">Jorge Martins</p>
+                </div>
               </div>
+              <hr />
+              <p
+                class="welcomeText pb-4 mb-4 mt-4 pt-4 text-justify pl-lg-5 pr-lg-5 pl-5 pr-5"
+              >
+                Este projeto foi realizado em prol da aprovação às disciplinas
+                P2, PW1, BD e AMS, contando com a ajuda do professor José
+                António sendo que o objetivo é implementar um website para o
+                restaurante da Escola Superior de Hotelaria e Turismo que
+                brevemente irá ser inaugurado.
+              </p>
             </div>
-            <hr>
-            <p class="welcomeText pb-4 mb-4 mt-4 pt-4 text-justify pl-lg-5 pr-lg-5 pl-5 pr-5">
-              Este projeto foi realizado em prol
-              da aprovação às disciplinas P2,
-              PW1, BD e AMS, contando com a
-              ajuda do professor José António
-              sendo que o objetivo é implementar
-              um website para o restaurante da
-              Escola Superior de Hotelaria e
-              Turismo que brevemente irá ser inaugurado.</p>
           </div>
         </div>
-      </div>
       </div>
     </div>
     <Footer />
@@ -43,16 +62,16 @@
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue"
-import NavBar from "@/components/NavBar.vue"
+import Footer from "@/components/Footer.vue";
+import NavBar from "@/components/NavBar.vue";
 
 export default {
   name: "about",
-  components:{
+  components: {
     Footer,
     NavBar
   }
-}
+};
 </script>
 
 <style scoped>
@@ -72,7 +91,7 @@ a:hover {
 }
 
 #welcome {
-  font-size: 30px
+  font-size: 30px;
 }
 
 .barra {
@@ -99,7 +118,7 @@ img#bg {
   height: auto;
 }
 
-hr{
+hr {
   height: 1px;
   width: 20rem;
   background-color: #2c3e50;
@@ -117,7 +136,6 @@ small {
   background-color: #707070;
   border-color: #707070;
 }
-
 
 input:focus {
   background-color: #707070;

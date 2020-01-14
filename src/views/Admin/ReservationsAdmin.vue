@@ -7,7 +7,9 @@
         <h1 class="display-5">Reservas</h1>
       </div>
     </div>
-    <div class="imgContainer position-relative d-flex align-items-center justify-content-center mt-4">
+    <div
+      class="imgContainer position-relative d-flex align-items-center justify-content-center mt-4"
+    >
       <div class="btn1 mr-lg-5 pl-sm-5 pl-lg-0 mt-5 mb-5">
         <router-link to="/reservationByDateAdmin">
           <img class="img" src="../../assets/calendar.png" />
@@ -41,9 +43,8 @@ export default {
 </script>
 
 <style scoped>
-
-.home{
-    overflow-x: hidden;
+.home {
+  overflow-x: hidden;
 }
 
 .img-fluid {
@@ -68,7 +69,7 @@ export default {
   width: 500px;
   height: 600px;
   float: left;
-  background-color:#2980B9;
+  background-color: #2980b9;
   margin-top: 125px;
   margin-left: 40px;
   padding: 10px;
@@ -76,28 +77,28 @@ export default {
   overflow-y: hidden;
 }
 
-.img{
-    width: 400px;
-    height: 400px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.img {
+  width: 400px;
+  height: 400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.img:hover{
-    width: 410px;
-    height: 410px;
-    margin-top: 40px;
-    margin-bottom: 50px;
+.img:hover {
+  width: 410px;
+  height: 410px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 
-p{
+p {
   height: 50px;
   color: white;
   font-size: 25px;
   position: relative;
 }
 
-p:hover{
+p:hover {
   height: 50px;
   color: white;
   font-size: 28px;

@@ -16,7 +16,9 @@
               </div>
               <div class="d-flex justify-content-center">
                 <div class="btn btn-mdb-color btn-rounded float-left">
-                  <span class="span">Escolha a sua fotografia de Perfil...</span>
+                  <span class="span"
+                    >Escolha a sua fotografia de Perfil...</span
+                  >
                   <br />
                   <input type="file" id="avatar" accept="image/*" />
                 </div>
@@ -26,7 +28,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12 position-relative d-flex align-items-center justify-content-center">
+        <div
+          class="col-12 position-relative d-flex align-items-center justify-content-center"
+        >
           <form @submit.prevent="changeProfile()">
             <div class="form-group pt-4">
               <input
@@ -89,7 +93,9 @@
               />
             </div>
             <div class="col-12 mt-4">
-              <button type="button" id="save" class="btn btn-success mb-3">Guardar Alterações</button>
+              <button type="button" id="save" class="btn btn-success mb-3">
+                Guardar Alterações
+              </button>
             </div>
           </form>
         </div>

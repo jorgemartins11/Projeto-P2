@@ -21,10 +21,9 @@
           </a>
           <br />
           <br />
-          <a
-            id="copyright"
-            class="list-inline-item"
-          >&copy; André Lopes, Gonçalo Moreira e Jorge Martins</a>
+          <a id="copyright" class="list-inline-item"
+            >&copy; André Lopes, Gonçalo Moreira e Jorge Martins</a
+          >
         </ul>
       </div>
       <div class="col-xs-12 col-md-5 col-lg-4 text-center pt-5">
@@ -69,6 +68,4 @@ a:hover {
   color: white !important;
   font-weight: bolder;
 }
-
-
 </style>
