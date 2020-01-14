@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-12 position-relative d-flex align-items-center justify-content-center">
           <form @submit.prevent="changeProfile()">
-            <div class="form-group pt-5">
+            <div class="form-group pt-4">
               <input
                 type="text"
                 class="form-control"
@@ -44,7 +44,17 @@
                 class="form-control"
                 id="exampleInputUsername"
                 placeholder="Nome de Utilizador"
-                required
+                disabled
+                v-model="username"
+              />
+            </div>
+            <div class="form-group pt-1">
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail"
+                placeholder="Email"
+                disabled
                 v-model="username"
               />
             </div>
@@ -74,16 +84,14 @@
                 id="exampleInputBirthDate"
                 placeholder="Data de Nascimento"
                 onfocus="(this.type='date')"
-                required
+                disabled
                 v-model="birthDate"
               />
             </div>
+            <div class="col-12 mt-4">
+              <button type="button" id="save" class="btn btn-success mb-3">Guardar Alterações</button>
+            </div>
           </form>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-12">
-          <button type="button" id="save" class="btn btn-success mb-3">Guardar Alterações</button>
         </div>
       </div>
     </div>
@@ -118,32 +126,34 @@ export default {
       });
     }
   },
-  // methods: {
-  //   showUserProfileData() {
-  //     if (this.$store.getters.getLoggedUser(this.id)) {
-  //       for (const user of users) {
-  //         if (user._id == id) {
-  //           document.querySelector("#exampleInputName").value = user.name;
-  //           document.querySelector("#exampleInputUsername").value = user._username;
-  //           document.querySelector("#exampleInputPassword1").value = user._password1;
-   //          document.querySelector("#exampleInputPassword2").value = user._password2;
-  //           document.querySelector("#profilePic").src = user._photo;
-  //         }
-  //       }
-  //     }
-  //   },
-  //   changeProfile() {
-  //     var profilePic = document.getElementById("#profilePic");
-  //     var avatar = document.getElementById("#avatar");
+  methods: {
+    // showUserProfileData() {
+    //   if (this.$store.getters.getLoggedUser(this.id)) {
+    //     for (const user of users) {
+    //       if (user.id == this.id) {
+    //         document.querySelector("#exampleInputName").value = user.name;
+    //         document.querySelector("#exampleInputUsername").value = user.username;
+    //         document.querySelector("#exampleInputEmail").value = user.email;
+    //         document.querySelector("#exampleInputPassword1").value = user.password1;
+    //         document.querySelector("#exampleInputPassword2").value = user.password2;
+    //         document.querySelector("#exampleInputBirthDate").value = user.birthDate;
+    //         document.querySelector("#profilePic").src = user.photo;
+    //       }
+    //     }
+    //   }
+    // },
+    changeProfile() {
+      var profilePic = document.getElementById("#profilePic").value;
+      var avatar = document.getElementById("#avatar").value;
 
-  //     if (avatar.value == "") {
-  //       profilePic.src =
-  //         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png";
-  //     } else {
-  //       profilePic.src = avatar.value;
-  //     }
-  //   }
-  // }
+      if (avatar == "") {
+        profilePic.src =
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png";
+      } else {
+        profilePic.src = avatar;
+      }
+    }
+  }
 };
 </script>
 
