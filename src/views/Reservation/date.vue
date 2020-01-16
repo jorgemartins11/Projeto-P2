@@ -4,13 +4,15 @@
     <div
       class="imgContainer position-relative d-flex align-items-center justify-content-center"
     >
-      <img src="../../assets/polvo.jpg" id="bg" alt class="img-fluid" />
       <div class="barra d-flex justify-content-center">
         <div class="row">
-          <div class="col-12">
-            <p id="Chosing" class="p">Escolha a Data da Reserva</p>
+          <div class="col-1 2">
+            <div class="row">
+              <p id="Chosing" class="p">Escolha a Data da Reserva</p>
+            </div>
+            <input type="date" id="reservationDate" v-model="reservationDate" />
             <!-- DATE PICKER -->
-            <div id="date-picker" class="date-picker mt-5">
+            <!-- <div id="date-picker" class="date-picker mt-5">
               <div>
                 <p class="header mt-3">MÊS DE OUTUBRO</p>
                 <div id="date-picker-header">
@@ -82,7 +84,7 @@
                   </table>
                 </div>
               </div>
-            </div>
+            </div>-->
             <!-- DATE PICKER -->
             <router-link to="/table">
               <img
@@ -90,6 +92,7 @@
                 id="arrow"
                 alt
                 class="img-fluid"
+                @click="setReservationDate()"
               />
             </router-link>
           </div>
@@ -109,6 +112,18 @@ export default {
   components: {
     Footer,
     NavBar
+  },
+  data() {
+    return {
+      reservationDate: ""
+    };
+  },
+  methods: {
+    setReservationDate() {
+      this.$store.commit("SET_RESERVATION_DATE", {
+        date: this.reservationDate
+      });
+    }
   }
 };
 </script>

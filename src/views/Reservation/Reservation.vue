@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-12">
             <p id="reservationText" class="reservationText pt-5 pb-5">
-              RESERVAR MESA
+              Reservar Mesa
             </p>
             <router-link to="/data">
               <img
@@ -41,8 +41,10 @@ export default {
 </script>
 
 <style scoped>
-@import url(//db.onlinewebfonts.com/c/3ddbc782020026a9a930f7a134dce21d?family=Garamont+Amsterdam+Expert+BQ);
-
+@font-face {
+  font-family: Amsterdam;
+  src: url(../../fonts/Amsterdam.ttf);
+}
 .imgContainer {
   width: 100%;
   height: 100vh;
@@ -61,8 +63,8 @@ export default {
   color: white;
   font-size: 50px;
   margin-top: 400px;
-  font-family: "Garamont Amsterdam Expert BQ";
-  src: url("//db.onlinewebfonts.com/t/3ddbc782020026a9a930f7a134dce21d.eot");
+  font-family: Amsterdam;
+  letter-spacing: 0.2rem;
 }
 
 img#bg {

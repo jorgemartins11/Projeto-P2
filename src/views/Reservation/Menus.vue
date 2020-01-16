@@ -14,15 +14,22 @@
                 id="arrow"
                 alt
                 class="img-fluid"
+                @click="setReservationMenu()"
               />
             </router-link>
             <p id="Chosing3" class="p">Escolha o(s) Menú(s)</p>
+            <select id="sltMenu" v-model="reservationMenu">
+              <option value="meat">Carne</option>
+              <option value="fish">Peixe</option>
+              <option value="vegetarian">Vegetariano</option>
+            </select>
             <router-link to="/observation">
               <img
                 src="../../assets/arrow2.png"
                 id="arrow"
                 alt
                 class="img-fluid"
+                @click="setReservationMenu()"
               />
             </router-link>
           </div>
@@ -42,6 +49,18 @@ export default {
   components: {
     Footer,
     NavBar
+  },
+  data() {
+    return {
+      reservationMenu: ""
+    };
+  },
+  methods: {
+    setReservationMenu() {
+      this.$store.commit("SET_RESERVATION_MENU", {
+        menu: this.reservationMenu
+      });
+    }
   }
 };
 </script>

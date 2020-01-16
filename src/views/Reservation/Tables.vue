@@ -14,15 +14,29 @@
                 id="arrow"
                 alt
                 class="img-fluid"
+                @click="setReservationTable()"
               />
             </router-link>
             <p id="Chosing2" class="p">Escolha a Mesa</p>
+            <select id="sltTable" v-model="reservationTable">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            <br />
             <router-link to="/menu">
               <img
                 src="../../assets/arrow2.png"
                 id="arrow"
                 alt
                 class="img-fluid"
+                @click="setReservationTable()"
               />
             </router-link>
           </div>
@@ -42,6 +56,18 @@ export default {
   components: {
     Footer,
     NavBar
+  },
+  data() {
+    return {
+      reservationTable: ""
+    };
+  },
+  methods: {
+    setReservationTable() {
+      this.$store.commit("SET_RESERVATION_TABLE", {
+        table: this.reservationTable
+      });
+    }
   }
 };
 </script>

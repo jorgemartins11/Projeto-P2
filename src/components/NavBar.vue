@@ -91,7 +91,6 @@ export default {
 
 .navbar-custom {
   background-color: #2c3e50;
-  height: 80px;
   font-family: "Muli", sans-serif;
   font-size: 1rem;
 }

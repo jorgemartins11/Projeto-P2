@@ -25,12 +25,14 @@
                 class="textbox mb-4"
                 maxlength="1000"
                 placeholder="Caso queira avisar de alguma intolerância ou pretenda escrever qualquer indicação adicional que gostaria de acrescentar ao seu pedido, sinta-se livre de nos avisar através deste campo de observações..."
+                v-model="reservationObservation"
               ></textarea
               ><br />
               <button
                 type="submit"
                 id="submitReservation"
                 class="btn btn-primary btn-lg mr-2"
+                @click="addReservation()"
               >
                 Confirmar Reserva
               </button>
@@ -59,6 +61,41 @@ export default {
   components: {
     Footer,
     NavBar
+  },
+  data() {
+    return {
+      reservationDate: "",
+      reservationTable: "",
+      reservationMenu: "",
+      reservationObservation: ""
+    };
+  },
+  created() {
+    this.reservationDate = this.$store.getters.getReservationDate;
+    this.reservationTable = this.$store.getters.getReservationTable;
+    this.reservationMenu = this.$store.getters.getReservationMenu;
+  },
+  methods: {
+    addReservation() {
+      if (
+        this.reservationDate != "" &&
+        this.reservationTable != "" &&
+        this.reservationMenu != ""
+      ) {
+        if (confirm("Tem certeza que pretende fazer a reserva?")) {
+          this.$store.commit("NEW_RESERVATION", {
+            date: this.reservationDate,
+            table: this.reservationTable,
+            menu: this.reservationMenu,
+            observation: this.reservationObservation
+          });
+        }
+      } else {
+        alert(
+          "Por favor preencha todos os campos! (Campo de Observações não é obrigatório)"
+        );
+      }
+    }
   }
 };
 </script>
