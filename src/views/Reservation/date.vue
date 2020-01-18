@@ -2,93 +2,77 @@
   <div class="home">
     <NavBar />
     <div
-      class="imgContainer position-relative d-flex align-items-center justify-content-center"
+      class="container position-relative d-flex align-items-center justify-content-center"
     >
-      <div class="barra d-flex justify-content-center">
+      <div class="d-flex justify-content-center">
         <div class="row">
-          <div class="col-1 2">
-            <div class="row">
-              <p id="Chosing" class="p">Escolha a Data da Reserva</p>
-            </div>
-            <input type="date" id="reservationDate" v-model="reservationDate" />
-            <!-- DATE PICKER -->
-            <!-- <div id="date-picker" class="date-picker mt-5">
-              <div>
-                <p class="header mt-3">MÊS DE OUTUBRO</p>
-                <div id="date-picker-header">
-                  <div id="date-picker-dow"></div>
-                  <div id="date-picker-month"></div>
-                  <div id="date-picker-day"></div>
-                  <div id="date-picker-year"></div>
-                </div>
-                <div id="date-picker-cal-wrapper">
-                  <table id="date-picker-cal" class="table borderless">
-                    <thead>
-                      <tr class="header">
-                        <td>Segunda</td>
-                        <td>Terça</td>
-                        <td>Quarta</td>
-                        <td>Quinta</td>
-                        <td>Sexta</td>
-                        <td>Sábado</td>
-                        <td>Domingo</td>
-                      </tr>
-                    </thead>
-                    <tbody class="dayPicker">
-                      <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                      </tr>
-                      <tr>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                      </tr>
-                      <tr>
-                        <td>15</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                      </tr>
-                      <tr>
-                        <td>22</td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                      </tr>
-                      <tr>
-                        <td>29</td>
-                        <td>30</td>
-                        <td>31</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+          <div class="col-12">
+            <p id="chosing">Escolha a Data da Reserva</p>
+            <!-- <input type="date" id="reservationDate" v-model="reservationDate" /> -->
+            <div class="col-12 pt-5">
+              <div class="month">
+                <ul>
+                  <li class="prev">&#10094;</li>
+                  <li class="next">&#10095;</li>
+                  <li id="month">
+                    August <br /><span style="font-size:18px" id="year"
+                      >2017</span
+                    >
+                  </li>
+                </ul>
               </div>
-            </div>-->
-            <!-- DATE PICKER -->
+
+              <ul class="weekdays">
+                <li>Mo</li>
+                <li>Tu</li>
+                <li>We</li>
+                <li>Th</li>
+                <li>Fr</li>
+                <li>Sa</li>
+                <li>Su</li>
+              </ul>
+
+              <ul class="days">
+                <li id="1" @click="selectDay(1)"><span class="active">1</span></li>
+                <li id="2" @click="selectDay(2)">2</li>
+                <li id="3" @click="selectDay(3)">3</li>
+                <li id="4" @click="selectDay(4)">4</li>
+                <li id="5" @click="selectDay(5)">5</li>
+                <li id="6" @click="selectDay(6)">6</li>
+                <li id="7" @click="selectDay(7)">7</li>
+                <li id="8" @click="selectDay(8)">8</li>
+                <li id="9" @click="selectDay(9)">9</li>
+                <li id="10" @click="selectDay(10)">10</li>
+                <li id="11" @click="selectDay(11)">11</li>
+                <li id="12" @click="selectDay(12)">12</li>
+                <li id="13" @click="selectDay(13)">13</li>
+                <li id="14" @click="selectDay(14)">14</li>
+                <li id="15" @click="selectDay(15)">15</li>
+                <li id="16" @click="selectDay(16)">16</li>
+                <li id="17" @click="selectDay(17)">17</li>
+                <li id="18" @click="selectDay(18)">18</li>
+                <li id="19" @click="selectDay(19)">19</li>
+                <li id="20" @click="selectDay(20)">20</li>
+                <li id="21" @click="selectDay(21)">21</li>
+                <li id="22" @click="selectDay(22)">22</li>
+                <li id="23" @click="selectDay(23)">23</li>
+                <li id="24" @click="selectDay(24)">24</li>
+                <li id="25" @click="selectDay(25)">25</li>
+                <li id="26" @click="selectDay(26)">26</li>
+                <li id="27" @click="selectDay(27)">27</li>
+                <li id="28" @click="selectDay(28)">28</li>
+                <li id="29" @click="selectDay(29)">29</li>
+                <li id="30" @click="selectDay(30)">30</li>
+                <li id="31" @click="selectDay(31)">31</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
             <router-link to="/table">
               <img
-                src="../../assets/arrow2.png"
+                src="../../assets/arrowDown.png"
                 id="arrow"
                 alt
                 class="img-fluid"
@@ -115,38 +99,51 @@ export default {
   },
   data() {
     return {
-      reservationDate: ""
+      selectedDay: 0
     };
   },
   methods: {
     setReservationDate() {
       this.$store.commit("SET_RESERVATION_DATE", {
-        date: this.reservationDate
+        date: this.selectedDay + " " + this.getMonthAndYear
       });
+    },
+    selectDay(id) {
+      // this.selectedDay = id;
+      if (this.selectedDay == 0) {
+        this.selectedDay = id;
+        document.getElementById(
+          id
+        ).innerHTML = `<span class="active">${id}</span>`;
+        alert(document.getElementById(id).innerHTML);
+      } else {
+        document.getElementById(this.selectedDay).innerHTML = this.selectedDay;
+        alert(document.getElementById(this.selectedDay).innerHTML);
+        document.getElementById(
+          id
+        ).innerHTML = `<span class="active">${id}</span>`;
+        alert(document.getElementById(id).innerHTML);
+        this.selectedDay = id;
+      }
+    }
+  },
+  computed: {
+    getMonthAndYear() {
+      return (
+        document.getElementById("month").innerHTML.split(" ")[1] +
+        " " +
+        document.getElementById("year").innerHTML
+      );
     }
   }
 };
 </script>
 
 <style scoped>
-#Chosing {
+#chosing {
   margin-top: 120px;
   font-size: 30px;
   color: #2c3e50;
-}
-
-.imgContainer {
-  width: 100%;
-  height: 100vh;
-}
-
-.barra {
-  background-color: white;
-  opacity: 0.8;
-  height: 100%;
-  width: 70rem;
-  top: 0;
-  position: absolute;
 }
 
 img#bg {
@@ -186,5 +183,83 @@ img#arrow {
 
 #date-picker {
   background-color: #2c3e50;
+}
+
+ul {
+  list-style-type: none;
+}
+body {
+  font-family: Verdana, sans-serif;
+}
+
+/* Month header */
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #2c3e50;
+  text-align: center;
+}
+
+/* Month list */
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+  padding: 5px;
+  background: #2c3e50;
+  color: white !important;
 }
 </style>
