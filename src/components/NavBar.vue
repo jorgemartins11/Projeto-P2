@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-custom position-relative fixed-top">
     <a class="navbar-brand pl-5" href="#">
       <router-link to="/home">
         <img src="../assets/logo.png" />
@@ -39,9 +39,9 @@
         >
           <img
             src="../assets/profile_icon.png"
-            class="mr-lg-5 pl-sm-5 pl-lg-0"
-            width="30px"
-            height="30px"
+            class="mr-lg-4 pl-sm-5 pl-lg-0"
+            width="25px"
+            height="25px"
           />
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
