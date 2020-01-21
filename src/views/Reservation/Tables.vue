@@ -2,22 +2,24 @@
   <div class="home">
     <NavBar />
     <div
-      class="imgContainer position-relative d-flex align-items-center justify-content-center"
+      class="container position-relative d-flex align-items-center justify-content-center"
     >
-      <img src="../../assets/polvo.jpg" id="bg" alt class="img-fluid" />
-      <div class="barra d-flex justify-content-center">
+      <div class="d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
             <router-link to="/data">
               <img
-                src="../../assets/arrow.png"
+                src="../../assets/arrowUp.png"
                 id="arrow"
-                alt
                 class="img-fluid"
                 @click="setReservationTable()"
               />
             </router-link>
-            <p id="Chosing2" class="p">Escolha a Mesa</p>
+          </div>
+          <div class="col-12">
+            <p id="chosing" class="p">Escolha a Mesa</p>
+          </div>
+          <div class="col-12">
             <select id="sltTable" v-model="reservationTable">
               <option value="1">1</option>
               <option value="2">2</option>
@@ -29,10 +31,11 @@
               <option value="8">8</option>
               <option value="9">9</option>
             </select>
-            <br />
+          </div>
+          <div class="col-12">
             <router-link to="/menu">
               <img
-                src="../../assets/arrow2.png"
+                src="../../assets/arrowDown.png"
                 id="arrow"
                 alt
                 class="img-fluid"
@@ -73,7 +76,7 @@ export default {
 </script>
 
 <style scoped>
-#Chosing2 {
+#chosing {
   margin-top: 10px;
   font-size: 30px;
   color: #2c3e50;
@@ -82,22 +85,6 @@ export default {
 .imgContainer {
   width: 100%;
   height: 100vh;
-}
-
-.barra {
-  background-color: white;
-  opacity: 0.8;
-  height: 100%;
-  width: 70rem;
-  top: 0;
-  position: absolute;
-}
-
-img#bg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  filter: brightness(75%);
 }
 
 img#arrow {
