@@ -1,22 +1,21 @@
 <template>
-  <div class="home">
+  <div class="home position-relative">
     <NavBar />
-    <div
-      class="container position-relative d-flex align-items-center justify-content-center"
-    >
-      <div class="d-flex justify-content-center">
-        <div class="row">
-          <div class="col-12">
-            <router-link to="/data">
+    <div class="container d-flex align-items-center justify-content-center">
+      <div class="row">
+        <div class="col-12">
+          <div class="position-relative pt-5">
+            <router-link to="/date" class="text-center">
               <img
                 src="../../assets/arrowUp.png"
                 id="arrow"
+                alt
                 class="img-fluid"
                 @click="setReservationTable()"
               />
             </router-link>
           </div>
-          <div class="col-12">
+          <div class="col-12 pt-5">
             <p id="chosing" class="p">Escolha a Mesa</p>
           </div>
           <div class="col-12">
@@ -32,8 +31,8 @@
               <option value="9">9</option>
             </select>
           </div>
-          <div class="col-12">
-            <router-link to="/menu">
+          <div class="position-relative pt-5">
+            <router-link to="/menu" class="text-center">
               <img
                 src="../../assets/arrowDown.png"
                 id="arrow"
@@ -77,21 +76,16 @@ export default {
 
 <style scoped>
 #chosing {
-  margin-top: 10px;
-  font-size: 30px;
+  font-family: "Muli", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
   color: #2c3e50;
 }
 
-.imgContainer {
-  width: 100%;
-  height: 100vh;
-}
-
 img#arrow {
-  height: 60px;
-  width: 60px;
+  height: 30px;
+  width: 30px;
   margin-bottom: auto;
-  margin-top: 100px;
 }
 
 .img-fluid {

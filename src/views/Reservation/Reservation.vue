@@ -5,7 +5,7 @@
       class="imgContainer position-relative d-flex align-items-center justify-content-center"
     >
       <img src="../../assets/polvo.jpg" id="bg" alt class="img-fluid" />
-      <div class="barra d-flex justify-content-center">
+      <div class="d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
             <p id="reservationText" class="reservationText pt-5 pb-5">
@@ -62,7 +62,6 @@ export default {
 #reservationText {
   color: white;
   font-size: 50px;
-  margin-top: 400px;
   font-family: Amsterdam;
   letter-spacing: 0.2rem;
 }

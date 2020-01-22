@@ -1,41 +1,42 @@
 <template>
-  <div class="home">
+  <div class="home position-relative">
     <NavBar />
-    <div
-      class="container position-relative d-flex align-items-center justify-content-center"
-    >
+    <div class="container d-flex align-items-center justify-content-center">
       <div class="d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <router-link to="/table">
-              <img
-                src="../../assets/arrowUp.png"
-                id="arrow"
-                class="img-fluid"
-                @click="setReservationMenu()"
-              />
-            </router-link>
-          </div>
-          <div class="col-12">
-            <p id="chosing" class="p">Escolha o(s) Menú(s)</p>
-          </div>
-          <div class="col-12">
-            <select id="sltMenu" v-model="reservationMenu">
-              <option value="meat">Carne</option>
-              <option value="fish">Peixe</option>
-              <option value="vegetarian">Vegetariano</option>
-            </select>
-          </div>
-          <div class="col-12">
-            <router-link to="/observation">
-              <img
-                src="../../assets/arrowDown.png"
-                id="arrow"
-                alt
-                class="img-fluid"
-                @click="setReservationMenu()"
-              />
-            </router-link>
+            <div class="position-relative pt-5">
+              <router-link to="/table" class="text-center">
+                <img
+                  src="../../assets/arrowUp.png"
+                  id="arrow"
+                  alt
+                  class="img-fluid"
+                  @click="setReservationMenu()"
+                />
+              </router-link>
+            </div>
+            <div class="col-12 pt-5">
+              <p id="chosing" class="p">Escolha o(s) Menú(s)</p>
+            </div>
+            <div class="col-12">
+              <select id="sltMenu" v-model="reservationMenu">
+                <option value="meat">Carne</option>
+                <option value="fish">Peixe</option>
+                <option value="vegetarian">Vegetariano</option>
+              </select>
+            </div>
+            <div class="position-relative pt-5">
+              <router-link to="/observation" class="text-center">
+                <img
+                  src="../../assets/arrowDown.png"
+                  id="arrow"
+                  alt
+                  class="img-fluid"
+                  @click="setReservationMenu()"
+                />
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -71,16 +72,16 @@ export default {
 
 <style scoped>
 #chosing {
-  margin-top: 10px;
-  font-size: 30px;
+  font-family: "Muli", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
   color: #2c3e50;
 }
 
 img#arrow {
-  height: 60px;
-  width: 60px;
+  height: 30px;
+  width: 30px;
   margin-bottom: auto;
-  margin-top: 100px;
 }
 
 .img-fluid {

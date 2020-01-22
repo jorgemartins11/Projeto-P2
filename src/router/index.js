@@ -69,8 +69,8 @@ const routes = [
     }
   },
   {
-    path: "/data",
-    name: "data",
+    path: "/date",
+    name: "date",
     component: () => import("../views/Reservation/Date.vue"),
     meta: {
       requiresAuth: true
