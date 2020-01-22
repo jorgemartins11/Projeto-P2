@@ -41,7 +41,7 @@
         </div>
       </div>
     </nav>
-    ´
+
     <div class="row1">
       <div class="col-12 text-center users pb-2 pt-5">
         <img src="../../assets/admin.png" class="img-fluid mb-4 mt-5" />

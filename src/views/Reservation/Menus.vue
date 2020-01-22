@@ -19,13 +19,7 @@
             <div class="col-12 pt-3">
               <p id="chosing" class="p">Escolha o(s) Menú(s)</p>
             </div>
-            <div class="col-12">
-              <select id="sltMenu" v-model="reservationMenu">
-                <option value="meat">Carne</option>
-                <option value="fish">Peixe</option>
-                <option value="vegetarian">Vegetariano</option>
-              </select>
-            </div>
+            <div class="col-12"></div>
             <div class="position-relative pt-5">
               <router-link to="/observation" class="text-center">
                 <img
@@ -57,8 +51,12 @@ export default {
   },
   data() {
     return {
-      reservationMenu: ""
+      reservationMenu: "",
+      reservationTable: {}
     };
+  },
+  created() {
+    this.reservationTable = this.$store.getters.getReservationTable;
   },
   methods: {
     setReservationMenu() {

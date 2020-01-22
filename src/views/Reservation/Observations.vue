@@ -5,13 +5,13 @@
       <div class="row">
         <div class="col-12">
           <div class="position-relative pt-5">
-            <router-link to="/table" class="text-center">
+            <router-link to="/menu" class="text-center">
               <img
                 src="../../assets/arrowUp.png"
                 id="arrow"
                 alt
                 class="img-fluid"
-                @click="setReservationMenu()"
+                @click="setReservationObservation()"
               />
             </router-link>
           </div>
@@ -76,6 +76,7 @@ export default {
     this.reservationDate = this.$store.getters.getReservationDate;
     this.reservationTable = this.$store.getters.getReservationTable;
     this.reservationMenu = this.$store.getters.getReservationMenu;
+    this.reservationObservation = this.$store.getters.getReservationObservation;
   },
   methods: {
     addReservation() {
@@ -97,6 +98,11 @@ export default {
           "Por favor preencha todos os campos! (Campo de Observações não é obrigatório)"
         );
       }
+    },
+    setReservationObservation() {
+      this.$store.commit("SET_RESERVATION_OBSERVATION", {
+        observation: this.reservationObservation
+      });
     }
   }
 };

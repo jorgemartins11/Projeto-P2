@@ -91,13 +91,32 @@
             </div>
           </div>
           <div class="row justify-content-center pt-5">
-            <button type="button" class="btn btn-secondary">Parede</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="setLocationSelected('wall')"
+              v-bind:style="buttonLocation1"
+            >
+              Parede
+            </button>
             <div class="pr-5 pl-5">
-              <button type="button" class="btn btn-secondary">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                @click="setLocationSelected('middle')"
+                v-bind:style="buttonLocation2"
+              >
                 Meio da Sala
               </button>
             </div>
-            <button type="button" class="btn btn-secondary">Janela</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="setLocationSelected('window')"
+              v-bind:style="buttonLocation3"
+            >
+              Janela
+            </button>
           </div>
           <!-- Seta para baixo -->
           <div class="position-relative pt-5">
@@ -130,20 +149,25 @@ export default {
   },
   data() {
     return {
-      reservationTable: "",
       nSeats: 0,
       divTableSelected1: {},
       divTableSelected2: {},
       divTableSelected3: {},
       divTableSelected4: {},
       nPeople: 1,
-      hour: "12_13"
+      hour: "12_13",
+      location: "",
+      buttonLocation1: {},
+      buttonLocation2: {},
+      buttonLocation3: {}
     };
   },
   methods: {
     setReservationTable() {
       this.$store.commit("SET_RESERVATION_TABLE", {
-        table: this.reservationTable
+        table: this.nSeats + " " + this.location,
+        nPeople: this.nPeople,
+        hour: this.hour
       });
     },
     setSelectedNSeats(nSeats) {
@@ -194,6 +218,36 @@ export default {
         this.divTableSelected1 = {};
         this.divTableSelected2 = {};
         this.divTableSelected3 = {};
+      }
+    },
+    setLocationSelected(locat) {
+      this.location = locat;
+      this.setStyleSelectedLocation(locat);
+    },
+    setStyleSelectedLocation(locat) {
+      if (locat == "wall") {
+        this.buttonLocation1 = {
+          "background-color": "#2c3e50",
+          color: "white"
+        };
+        this.buttonLocation2 = {};
+        this.buttonLocation3 = {};
+      }
+      if (locat == "middle") {
+        this.buttonLocation2 = {
+          "background-color": "#2c3e50",
+          color: "white"
+        };
+        this.buttonLocation1 = {};
+        this.buttonLocation3 = {};
+      }
+      if (locat == "window") {
+        this.buttonLocation3 = {
+          "background-color": "#2c3e50",
+          color: "white"
+        };
+        this.buttonLocation1 = {};
+        this.buttonLocation2 = {};
       }
     }
   }
