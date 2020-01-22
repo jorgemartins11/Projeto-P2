@@ -22,7 +22,7 @@
           <br />
           <br />
           <a id="copyright" class="list-inline-item"
-            >&copy; André Lopes, Gonçalo Moreira e Jorge Martins</a
+            >&copy;Gonçalo Moreira e Jorge Martins</a
           >
         </ul>
       </div>

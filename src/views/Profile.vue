@@ -1,52 +1,48 @@
 <template>
   <div class="home">
     <NavBar />
-    <div class="row mt-3">
-      <div class="col-6">
-        <div class="d-inline-block mr-4">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png"
-            id="logo"
-            class="img-fluid pt-5 mt-5"
-          />
+    <div class="container">
+      <div class="row my-auto mt-3">
+        <div class="col-6">
+          <div class="d-inline-block my-auto mr-4 pb-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Missing_avatar.svg/1024px-Missing_avatar.svg.png"
+              id="logo"
+              class="img-fluid pb-5 mt-4"
+            />
+          </div>
+            <div class="d-inline-block">
+              <p class="name">Gonçalo Jorge</p>
+              <p class="email">9180216@esmad.ipp.pt</p>
+            </div>
         </div>
-        <div class="d-inline-block">
-          <p class="name">André Lopes</p>
-          <p class="email">9180544@esmad.ipp.pt</p>
+        <div class="col-6 d-flex align-items-center justify-content-center pb-5">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary">
+              <router-link to="/editProfile">Editar Perfil</router-link>
+            </button>
+            <button type="button" id="settingButton" class="btn btn-link">
+              <router-link to="/editProfile">
+                <img src="../assets/settings.png" id="setting" />
+              </router-link>
+            </button>
+          </div>
         </div>
       </div>
-      <div class="col-6 d-flex align-items-center justify-content-center">
-        <div class="btn-group" role="group">
-          <button type="button" class="btn btn-primary">
-            <router-link to="/editProfile">Editar Perfil</router-link>
-          </button>
-          <button type="button" id="settingButton" class="btn btn-link">
-            <router-link to="/editProfile">
-              <img src="../assets/settings.png" id="setting" />
-            </router-link>
-          </button>
+      <div class="row text-center mt-3">
+        <div class="d-inline-block col-4 text-right">
+          <button type="button" class="names col-4 text-right">Histórico de Reservas</button>
+        </div>
+        <div class="d-inline-block col-4 text-center">
+          <button type="button" class="names col-4 text-center">Próximas Refeições</button>
+        </div>
+        <div class="d-inline-block col-4 text-left">
+          <button type="button" class="names col-4 text-left">Avaliações Realizadas</button>
         </div>
       </div>
-    </div>
-    <div class="row text-center mt-5">
-      <div class="bar col-4 text-right">
-        <button type="button" class="names col-4 text-right">
-          Histórico de Reservas
-        </button>
+      <div class="row text-center mt-4">
+        <div class="bg col-12"></div>
       </div>
-      <div class="bar col-4 text-center">
-        <button type="button" class="names col-4 text-center">
-          Próximas Refeições
-        </button>
-      </div>
-      <div class="bar col-4 text-left">
-        <button type="button" class="names col-4 text-left">
-          Avaliações Realizadas
-        </button>
-      </div>
-    </div>
-    <div class="row text-center mt-4">
-      <div class="bg col-12"></div>
     </div>
     <Footer />
   </div>
@@ -110,7 +106,7 @@ export default {
   background-color: transparent;
   border: none;
   color: #2c3e50;
-  font-size: 19px;
+  font-size: 14px;
   font-weight: bolder;
 }
 
@@ -156,7 +152,7 @@ a:hover {
 
 img#logo {
   height: auto;
-  width: 180px;
+  width: 110px;
   background-color: transparent;
 }
 

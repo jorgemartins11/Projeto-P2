@@ -41,9 +41,9 @@
         >
           <img
             src="../assets/profile_icon.png"
-            class="mr-lg-5 pl-sm-5 pl-lg-0"
-            width="30px"
-            height="30px"
+            class="mr-lg-4 pl-sm-5 pl-lg-0"
+            width="25px"
+            height="25px"
           />
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
