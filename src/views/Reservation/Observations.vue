@@ -15,36 +15,37 @@
               />
             </router-link>
           </div>
-          <div class="col-12 pt-5">
+          <div class="col-12 pt-3">
             <p id="chosing" class="p">Observações</p>
           </div>
-          <form>
-            <p id="chosing" class="p">Observações</p>
-            <textarea
-              type="text"
-              id="observacao"
-              name="fname"
-              class="textbox mb-4"
-              maxlength="1000"
-              placeholder="Caso queira avisar de alguma intolerância ou pretenda escrever qualquer indicação adicional que gostaria de acrescentar ao seu pedido, sinta-se livre de nos avisar através deste campo de observações..."
-              v-model="reservationObservation"
-            ></textarea
-            ><br />
-            <button
-              type="submit"
-              id="submitReservation"
-              class="btn btn-primary btn-lg mr-2"
-              @click="addReservation()"
-            >
-              Confirmar Reserva
-            </button>
-            <button
-              type="submit"
-              id="cancelReservation"
-              class="btn btn-danger btn-lg ml-2"
-            >
-              Cancelar Reserva
-            </button>
+          <form class="pt-3">
+            <div class="col-12">
+              <textarea
+                type="text"
+                id="observacao"
+                class="textbox"
+                maxlength="1000"
+                placeholder="Caso queira avisar de alguma intolerância ou pretenda escrever qualquer indicação adicional que gostaria de acrescentar ao seu pedido, sinta-se livre de nos avisar através deste campo de observações..."
+                v-model="reservationObservation"
+              ></textarea>
+            </div>
+            <div class="col-12 pt-5">
+              <button
+                type="submit"
+                id="submitReservation"
+                class="btn btn-primary btn-lg mr-2"
+                @click="addReservation()"
+              >
+                Confirmar Reserva
+              </button>
+              <button
+                type="submit"
+                id="cancelReservation"
+                class="btn btn-danger btn-lg ml-2"
+              >
+                Cancelar Reserva
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -109,44 +110,20 @@ export default {
   color: #2c3e50;
 }
 
-#info {
-  font-size: 18px;
-  color: #2c3e50;
-}
-
 img#arrow {
   height: 30px;
   width: 30px;
-  margin-bottom: auto;
 }
 
 .textbox {
-  width: 600px;
-  height: 400px;
+  width: 39rem;
+  height: 17rem;
   resize: none;
-  border: 3px solid #2c3e50;
+  border: 1px solid #2c3e50;
   color: #2c3e50;
-}
-
-.textbox::placeholder {
-  color: #2c3e50;
-  font-size: 20px;
-}
-
-.btn {
-  background-color: #2c3e50;
-  border-color: black;
-  opacity: 1;
-}
-
-#submitReservation:hover {
-  border: 3px solid black !important;
-  background-color: #007bff;
-}
-
-#cancelReservation:hover {
-  border: 3px solid black !important;
-  background-color: #dc3545;
+  font-family: "Muli", sans-serif;
+  font-size: 1rem;
+  border-radius: 1rem;
 }
 
 .imgContainer {
@@ -161,20 +138,6 @@ img#arrow {
   width: 70rem;
   top: 0;
   position: absolute;
-}
-
-img#bg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  filter: brightness(75%);
-}
-
-img#arrow {
-  height: 60px;
-  width: 60px;
-  margin-bottom: auto;
-  margin-top: 100px;
 }
 
 .img-fluid {

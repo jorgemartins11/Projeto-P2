@@ -16,7 +16,7 @@
                 />
               </router-link>
             </div>
-            <div class="col-12 pt-5">
+            <div class="col-12 pt-3">
               <p id="chosing" class="p">Escolha o(s) Menú(s)</p>
             </div>
             <div class="col-12">
@@ -81,7 +81,6 @@ export default {
 img#arrow {
   height: 30px;
   width: 30px;
-  margin-bottom: auto;
 }
 
 .img-fluid {

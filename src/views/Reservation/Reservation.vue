@@ -2,23 +2,27 @@
   <div class="home">
     <NavBar />
     <div
-      class="imgContainer position-relative d-flex align-items-center justify-content-center"
+      class="container imgContainer position-relative d-flex align-items-center justify-content-center"
     >
       <img src="../../assets/polvo.jpg" id="bg" alt class="img-fluid" />
       <div class="d-flex justify-content-center">
         <div class="row">
           <div class="col-12">
-            <p id="reservationText" class="reservationText pt-5 pb-5">
-              Reservar Mesa
-            </p>
-            <router-link to="/data">
-              <img
-                src="../../assets/seta.png"
-                id="arrow"
-                alt
-                class="img-fluid"
-              />
-            </router-link>
+            <div class="col-12">
+              <p id="reservationText" class="reservationText pb-5">
+                Reservar Mesa
+              </p>
+            </div>
+            <div class="position-relative pt-5">
+              <router-link to="/date" class="text-center">
+                <img
+                  src="../../assets/arrowDownWhite.png"
+                  id="arrow"
+                  alt
+                  class="img-fluid"
+                />
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -45,6 +49,7 @@ export default {
   font-family: Amsterdam;
   src: url(../../fonts/Amsterdam.ttf);
 }
+
 .imgContainer {
   width: 100%;
   height: 100vh;
@@ -74,10 +79,9 @@ img#bg {
 }
 
 img#arrow {
-  height: 60px;
-  width: 60px;
+  height: 30px;
+  width: 30px;
   margin-bottom: auto;
-  margin-top: 100px;
 }
 
 .img-fluid {

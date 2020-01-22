@@ -6,7 +6,7 @@
     >
       <div class="col-12">
         <div class="col-6 ml-5">
-          <div id="map"></div>
+          <div id="map" class="google-map"></div>
         </div>
       </div>
     </div>
@@ -14,10 +14,6 @@
   </div>
 </template>
 
-<script
-  async
-  src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"
-></script>
 <script>
 import Footer from "@/components/Footer.vue";
 import NavBar from "@/components/NavBar.vue";
@@ -27,15 +23,15 @@ export default {
   components: {
     Footer,
     NavBar
-  }
+  },
+  data() {
+    return {
+      ola: "2"
+    };
+  },
+  mounted() {},
+  methods: {}
 };
-
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 41.366178, lng: -8.7418871 }, //our campus coordinates
-    zoom: 15
-  });
-}
 </script>
 
 <style scoped>
