@@ -1,5 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-custom position-relative fixed-top">
+  <nav
+    class="navbar navbar-expand-lg navbar-custom position-relative fixed-top"
+  >
     <a class="navbar-brand pl-5" href="#">
       <router-link to="/home">
         <img src="../assets/logo.png" />

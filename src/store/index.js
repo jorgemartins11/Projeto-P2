@@ -10,8 +10,9 @@ export default new Vuex.Store({
     loggedUser: {},
     reservations: [],
     reservationDate: "",
-    reservationTable: "",
-    reservationMenu: ""
+    reservationTable: {},
+    reservationMenu: "",
+    reservationObservation: ""
   },
   getters: {
     getAllUser: state => {
@@ -44,6 +45,9 @@ export default new Vuex.Store({
     },
     getReservationMenu: state => {
       return state.reservationMenu
+    },
+    getReservationObservation: state => {
+      return state.reservationObservation
     }
   },
   mutations: {
@@ -63,10 +67,13 @@ export default new Vuex.Store({
       state.reservationDate = payload.date
     },
     SET_RESERVATION_TABLE(state, payload){
-      state.reservationTable = payload.table
+      state.reservationTable = payload
     },
     SET_RESERVATION_MENU(state, payload){
       state.reservationMenu = payload.menu
+    },
+    SET_RESERVATION_OBSERVATION(state, payload){
+      state.reservationObservation = payload.observation
     },
     NEW_RESERVATION(state, payload){
       state.reservations.push(payload)
