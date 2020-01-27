@@ -12,7 +12,7 @@
             />
           </div>
             <div class="d-inline-block">
-              <p class="name">Gonçalo Jorge</p>
+              <p class="name">Gonçalo e Jorge</p>
               <p class="email">9180216@esmad.ipp.pt</p>
             </div>
         </div>
