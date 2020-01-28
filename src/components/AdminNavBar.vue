@@ -19,33 +19,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto text-center">
         <a class="list-inline-item pr-3">
-          <router-link to="/ReservationsAdmin">Reservas</router-link>
+          <router-link to="/reservationsAdmin">Reservas</router-link>
         </a>
         <a class="list-inline-item pr-3">
-          <router-link to="/UsersAdmin">Utilizadores</router-link>
+          <router-link to="/usersAdmin">Utilizadores</router-link>
         </a>
         <a class="list-inline-item pr-3">
-          <router-link to="/StockAdmin">Gestão de Stock</router-link>
+          <router-link to="/stockAdmin">Stock</router-link>
         </a>
       </ul>
-    </div>
-    <div class="dropdown mr-5">
-      <button
-        class="btn btn-secondary btn-lg dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <img
-          src="../assets/profile_icon.png"
-          class="mr-lg-5 pl-sm-5 pl-lg-0"
-          width="30px"
-          height="30px"
-        />
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown mr-5">
         <a @click="logOut()" class="router ml-3">Terminar Sessão</a>
       </div>
     </div>
@@ -55,30 +38,6 @@
 <script>
 export default {
   name: "AdminNavBar",
-
-  data: function() {
-    return {
-      user: {}
-    };
-  },
-
-  computed: {
-    getLoggedUser: "getLoggedUser"
-  },
-
-  created() {
-    this.$store.commit("SET_USERS", {
-      users: JSON.parse(localStorage.getItem("users"))
-    });
-
-    this.$store.commit(
-      "SET_LOGGED_USER",
-      JSON.parse(localStorage.getItem("loggedUser"))
-    );
-
-    this.user = this.getLoggedUser;
-  },
-
   methods: {
     logOut() {
       localStorage.removeItem("loggedUser");
@@ -109,6 +68,7 @@ export default {
 
 a {
   color: white;
+  cursor: pointer;
 }
 
 a:hover {

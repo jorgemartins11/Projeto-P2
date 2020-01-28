@@ -76,7 +76,7 @@
               <div class="form-group pt-1">
                 <input
                   class="form-control"
-                  id="exampleInputBirthDate"
+                  id="birthDate"
                   name="birthDate"
                   placeholder="Data de Nascimento"
                   onfocus="(this.type='date')"
@@ -93,9 +93,9 @@
                   v-model="userType"
                 >
                   <option value select disabled>Tipo de Utilizador</option>
-                  <option value="aluno">Aluno</option>
-                  <option value="docente">Docente</option>
-                  <option value="funcionario">Funcionário</option>
+                  <option value="Aluno">Aluno</option>
+                  <option value="Professor">Professor</option>
+                  <option value="Outro">Outro</option>
                 </select>
               </div>
               <button id="criarConta" class="btn btn-primary btn-lg mt-4 mb-1">

@@ -109,7 +109,8 @@ export default {
             email: "admin@admin",
             password: "admin",
             birthDate: "",
-            userType: "administrador"
+            userType: "Admin",
+            blocked: false
           },
           {
             id: 2,
@@ -118,7 +119,8 @@ export default {
             email: "9180266@esmad.ipp.pt",
             password: "123",
             birthDate: "2000-05-11",
-            userType: "aluno"
+            userType: "Aluno",
+            blocked: false
           },
           {
             id: 3,
@@ -127,7 +129,8 @@ export default {
             email: "9180544@esmad.ipp.pt",
             password: "123",
             birthDate: "2000-08-05",
-            userTyoe: "aluno"
+            userType: "Aluno",
+            blocked: false
           },
           {
             id: 4,
@@ -136,7 +139,46 @@ export default {
             email: "9180216@esmad.ipp.pt",
             password: "123",
             birthDate: "",
-            userType: "aluno"
+            userType: "Aluno",
+            blocked: false
+          }
+        ]
+      });
+    }
+    if (JSON.parse(localStorage.getItem("products"))) {
+      this.$store.commit("SET_PRODUCTS", {
+        products: JSON.parse(localStorage.getItem("products"))
+      });
+    } else {
+      this.$store.commit("SET_PRODUCTS", {
+        products: [
+          {
+            id: 1,
+            name: "Batata",
+            category: "Vegetal",
+            quantity: 50,
+            minQuantity: 10
+          },
+          {
+            id: 2,
+            name: "Bife",
+            category: "Carne Vermelha",
+            quantity: 20,
+            minQuantity: 5
+          },
+          {
+            id: 3,
+            name: "Peito de Frango",
+            category: "Carne Branca",
+            quantity: 34,
+            minQuantity: 12
+          },
+          {
+            id: 4,
+            name: "Feijão",
+            category: "Vegetal",
+            quantity: 50,
+            minQuantity: 10
           }
         ]
       });
@@ -158,12 +200,16 @@ export default {
           );
           this.$store.commit("SET_LOGGED_USER", this.loggedUser);
 
-          if (this.loggedUser.userType === "administrador") {
-            this.$router.push({ name: "HomeAdmin" });
+          if (this.loggedUser.blocked == false) {
+            if (this.loggedUser.userType === "Admin") {
+              this.$router.push({ name: "HomeAdmin" });
+            } else {
+              alert("Login Efetuado com sucesso!");
+              this.emptyForm();
+              this.$router.push({ name: "homeLoged" });
+            }
           } else {
-            alert("Login Efetuado com sucesso!");
-            this.emptyForm();
-            this.$router.push({ name: "homeLoged" });
+            alert("Utilizador Bloqueado!");
           }
         }
       } else {

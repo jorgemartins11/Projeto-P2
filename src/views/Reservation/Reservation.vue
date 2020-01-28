@@ -1,8 +1,8 @@
 <template>
-  <div class="home position-relative">
+  <div class="home">
     <NavBar />
     <div
-      class="container imgContainer d-flex align-items-center justify-content-center"
+      class="imgContainer position-fixed d-flex align-items-center justify-content-center"
     >
       <img src="../../assets/polvo.jpg" id="bg" alt class="img-fluid" />
       <div class="d-flex justify-content-center">

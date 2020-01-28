@@ -1,32 +1,21 @@
 <template>
-  <div class="container-fluid-footer Footer-custom pb-3 pt-3">
+  <div class="container-fluid Footer-custom">
     <div class="row row-no-gutters" id="bottom-footer">
-      <div class="col-xs-12 col-md-5 col-lg-4 text-center">
-        <ul class="vertical-aligned small pt-5 mr-5">
+      <div class="col-xs-12 col-md-5 col-lg-4 text-center pt-4">
+        <ul class="vertical-aligned small mr-5">
           <a href="https://www.ipp.pt/" class="mr-5">
             <img src="../assets/ipplogo-white.svg" />
           </a>
         </ul>
       </div>
-      <div class="col-xs-12 col-md-2 col-lg-4 text-center">
-        <ul class="list-unstyled list-inline pt-2">
-          <a class="list-inline-item pr-3">
-            <router-link to="/ReservationsAdmin">Reservas</router-link>
-          </a>
-          <a class="list-inline-item pr-3">
-            <router-link to="/UsersAdmin">Utilizadores</router-link>
-          </a>
-          <a class="list-inline-item pr-3">
-            <router-link to="/StockAdmin">Gestão de Stock</router-link>
-          </a>
-          <br />
-          <br />
+      <div class="col-xs-12 col-md-2 col-lg-4 text-center pt-4">
+        <ul class="list-unstyled list-inline">
           <a id="copyright" class="list-inline-item"
-            >&copy; André Lopes, Gonçalo Moreira e Jorge Martins</a
+            >&copy; Gonçalo Moreira e Jorge Martins</a
           >
         </ul>
       </div>
-      <div class="col-xs-12 col-md-5 col-lg-4 text-center pt-5">
+      <div class="col-xs-12 col-md-5 col-lg-4 text-center pt-4">
         <a href="https://www.facebook.com/pporto.esht/" class="pl-2">
           <img src="../assets/facebook.svg" />
         </a>
@@ -42,7 +31,6 @@
       </div>
     </div>
   </div>
-  <!--  end row  -->
 </template>
 
 <!--script-->

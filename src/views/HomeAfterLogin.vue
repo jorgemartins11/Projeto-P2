@@ -2,7 +2,7 @@
   <div class="home">
     <NavBar />
     <div
-      class="imgContainer mt-5 position-relative d-flex align-items-center justify-content-center"
+      class="imgContainer mt-5 position-fixed d-flex align-items-center justify-content-center"
     >
       <img src="../assets/background.jpg" id="bg" alt class="img-fluid" />
       <div class="barra d-flex justify-content-center">
@@ -61,6 +61,7 @@ export default {
 
 <style scoped>
 .imgContainer {
+  top: -1%;
   width: 100%;
   height: 90vh;
 }
