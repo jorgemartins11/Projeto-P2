@@ -25,7 +25,7 @@
           <router-link to="/usersAdmin">Utilizadores</router-link>
         </a>
         <a class="list-inline-item pr-3">
-          <router-link to="/stockAdmin">Stock</router-link>
+          <router-link to="/menusAdmin">Menus</router-link>
         </a>
       </ul>
       <div class="dropdown mr-5">

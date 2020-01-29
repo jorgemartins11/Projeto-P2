@@ -3,8 +3,8 @@
     <AdminNavBar />
     <div class="row divBlue">
       <div class="col-12 text-center pt-5">
-        <img src="../../assets/stock.png" class="img-fluid pb-4 pt-5 mt-1" />
-        <h1 class="title pb-1">Stock</h1>
+        <img src="../../assets/menus.png" class="img-fluid pb-4 pt-5 mt-1" />
+        <h1 class="title pb-1">Prato</h1>
       </div>
     </div>
     <div class="container-fluid pt-5 pb-5">
@@ -113,12 +113,10 @@
                   <thead>
                     <tr>
                       <th scope="col">ID</th>
-                      <th scope="col">Nome do Produto</th>
+                      <th scope="col">Nome</th>
                       <th scope="col">Categoria</th>
-                      <th scope="col">Quantidade Atual (Kg ou L)</th>
-                      <th scope="col">Stock Mínimo</th>
-                      <th scope="col">Incrementar Quantidade</th>
-                      <th scope="col">Decrementar Quantidade</th>
+                      <th scope="col">Ingredientes / Quantidade (Kg ou L)</th>
+                      <th scope="col">Eliminar</th>
                     </tr>
                   </thead>
                   <tbody

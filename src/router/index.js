@@ -149,6 +149,22 @@ const routes = [
     }
   },
   {
+    path: "/menusAdmin",
+    name: "menusAdmin",
+    component: () => import("../views/Admin/MenusAdmin.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/dishesAdmin",
+    name: "dishesAdmin",
+    component: () => import("../views/Admin/DishesAdmin.vue"),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: "*",
     name: "PageNotFound",
     component: PageNotFound

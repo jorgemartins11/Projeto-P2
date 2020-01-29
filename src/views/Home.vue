@@ -15,9 +15,7 @@
             />
             <hr />
             <p id="welcome" class="welcomeText pt-4 pb-4">Bem vindo!</p>
-            <p
-              class="welcomeText pb-4 mb-4 text-justify pl-lg-5 pr-lg-5 pl-5 pr-5"
-            >
+            <p class="welcomeText pb-4 text-justify pl-5 pr-5">
               Este projeto foi realizado em prol da aprovação às disciplinas P2,
               PW1, BD e AMS, contando com a ajuda do professor José António
               sendo que o objetivo é implementar um website para o restaurante
@@ -25,10 +23,7 @@
               inaugurado.
             </p>
             <router-link to="/Login">
-              <button
-                id="register"
-                class="btn btn-primary btn-lg mt-5 mb-5 ml-1"
-              >
+              <button id="register" class="btn btn-primary btn-lg mb-5">
                 Login / Registar
               </button>
             </router-link>
@@ -55,6 +50,13 @@
 </template>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+p {
+  font-family: "Muli", sans-serif;
+  font-size: 14pt;
+}
+
 .imgContainer {
   width: 100%;
   height: 100vh;

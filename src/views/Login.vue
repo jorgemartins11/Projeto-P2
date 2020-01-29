@@ -183,6 +183,44 @@ export default {
         ]
       });
     }
+    if (JSON.parse(localStorage.getItem("dishes"))) {
+      this.$store.commit("SET_DISHES", {
+        dishes: JSON.parse(localStorage.getItem("dishes"))
+      });
+    } else {
+      this.$store.commit("SET_DISHES", {
+        dishes: [
+          {
+            id: 1,
+            name: "Batata",
+            category: "Vegetal",
+            quantity: 50,
+            minQuantity: 10
+          },
+          {
+            id: 2,
+            name: "Bife",
+            category: "Carne Vermelha",
+            quantity: 20,
+            minQuantity: 5
+          },
+          {
+            id: 3,
+            name: "Peito de Frango",
+            category: "Carne Branca",
+            quantity: 34,
+            minQuantity: 12
+          },
+          {
+            id: 4,
+            name: "Feijão",
+            category: "Vegetal",
+            quantity: 50,
+            minQuantity: 10
+          }
+        ]
+      });
+    }
   },
   methods: {
     loginVerifications() {

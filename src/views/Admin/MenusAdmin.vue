@@ -15,40 +15,27 @@
     >
       <div class="row pt-5 mt-5 mb-5">
         <div
-          class="col-md-4 position-relative d-flex align-items-center justify-content-center pb-5"
+          class="col-md-6 position-relative d-flex align-items-center justify-content-center pb-5"
         >
           <div
             class="divBtn position-relative d-flex align-items-center justify-content-center"
           >
-            <router-link to="/reservationsAdmin">
-              <img class="img img-fluid pt-5" src="../../assets/logoBook.png" />
-              <p class="p pt-5">Reservas</p>
-              <br />
-            </router-link>
-          </div>
-        </div>
-        <div
-          class="col-md-4 position-relative d-flex align-items-center justify-content-center pb-5"
-        >
-          <div
-            class="divBtn position-relative d-flex align-items-center justify-content-center"
-          >
-            <router-link to="/usersAdmin">
-              <img class="img img-fluid pt-5" src="../../assets/users2.png" />
-              <p class="p pt-5">Utilizadores</p>
-              <br />
-            </router-link>
-          </div>
-        </div>
-        <div
-          class="col-md-4 position-relative d-flex align-items-center justify-content-center pb-5"
-        >
-          <div
-            class="divBtn position-relative d-flex align-items-center justify-content-center"
-          >
-            <router-link to="/menusAdmin">
+            <router-link to="/dishesAdmin">
               <img class="img img-fluid pt-5" src="../../assets/menus.png" />
-              <p class="p pt-5">Menus</p>
+              <p class="p pt-5">Pratos</p>
+              <br />
+            </router-link>
+          </div>
+        </div>
+        <div
+          class="col-md-6 position-relative d-flex align-items-center justify-content-center pb-5"
+        >
+          <div
+            class="divBtn position-relative d-flex align-items-center justify-content-center"
+          >
+            <router-link to="/stockAdmin">
+              <img class="img img-fluid pt-5" src="../../assets/stock.png" />
+              <p class="p pt-5">Stock</p>
               <br />
             </router-link>
           </div>

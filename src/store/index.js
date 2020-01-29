@@ -13,7 +13,8 @@ export default new Vuex.Store({
     reservationTable: {},
     reservationMenu: "",
     reservationObservation: "",
-    products: []
+    products: [],
+    dishes: []
   },
   getters: {
     getAllUser: state => {
@@ -117,6 +118,9 @@ export default new Vuex.Store({
         return state.products.filter(product => product.name.includes(input.toLowerCase()))
       }
       return state.products
+    },
+    getAllDishes: state => {
+      return state.dishes
     }
   },
   mutations: {
@@ -155,6 +159,10 @@ export default new Vuex.Store({
     SET_PRODUCTS(state, payload) {
       state.products = payload.products
       localStorage.setItem("products", JSON.stringify(state.products))
+    },
+    SET_DISHES(state, payload) {
+      state.dishes = payload.dishes
+      localStorage.setItem("dishes", JSON.stringify(state.dishes))
     }
   }
 });
