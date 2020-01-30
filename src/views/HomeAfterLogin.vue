@@ -2,7 +2,7 @@
   <div class="home">
     <NavBar />
     <div
-      class="imgContainer mt-5 position-fixed d-flex align-items-center justify-content-center"
+      class="imgContainer position-relative d-flex align-items-center justify-content-center"
     >
       <img src="../assets/background.jpg" id="bg" alt class="img-fluid" />
       <div class="barra d-flex justify-content-center">
@@ -12,13 +12,11 @@
               src="../assets/logo.png"
               id="logo"
               alt
-              class="img-fluid pt-5 pb-3"
+              class="img-fluid pt-5 pb-4"
             />
             <hr />
-            <p id="welcome" class="welcomeText pt-4 pb-3">Bem vindo!</p>
-            <p
-              class="welcomeText pb-4 mb-4 text-justify pl-lg-5 pr-lg-5 pl-5 pr-5"
-            >
+            <p id="welcome" class="welcomeText pt-4 pb-4">Bem vindo!</p>
+            <p class="welcomeText pb-4 text-justify pl-5 pr-5">
               Este projeto foi realizado em prol da aprovação às disciplinas P2,
               PW1, BD e AMS, contando com a ajuda do professor José António
               sendo que o objetivo é implementar um website para o restaurante
@@ -26,18 +24,20 @@
               inaugurado.
             </p>
             <hr />
-            <img
-              src="../assets/ipplogo.png"
-              id="logo"
-              alt
-              class="img-fluid mt-5 mb-5"
-            />
-            <small class="form-text mt-3"
-              >Escola Superior de Hotelaria e Turismo</small
-            >
-            <small class="form-text">Rua D. Sancho I, n.º 981</small>
-            <small class="form-text">4480-876 Vila do Conde</small>
-            <small class="form-text">Portugal</small>
+            <div class>
+              <img
+                src="../assets/ipplogo.png"
+                id="logo"
+                alt
+                class="img-fluid mt-5 mb-5"
+              />
+              <small class="form-text mt-3"
+                >Escola Superior de Hotelaria e Turismo</small
+              >
+              <small class="form-text">Rua D. Sancho I, n.º 981</small>
+              <small class="form-text">4480-876 Vila do Conde</small>
+              <small class="form-text">Portugal</small>
+            </div>
           </div>
         </div>
       </div>
@@ -60,6 +60,13 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+p {
+  font-family: "Muli", sans-serif;
+  font-size: 14pt;
+}
+
 .imgContainer {
   top: -1%;
   width: 100%;

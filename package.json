@@ -43,7 +43,10 @@
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
-    }
+    },
+    "globals": {
+      "google":{}
+ }
   },
   "browserslist": [
     "> 1%",

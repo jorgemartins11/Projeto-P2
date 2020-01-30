@@ -154,31 +154,67 @@ export default {
         products: [
           {
             id: 1,
-            name: "Batata",
-            category: "Vegetal",
-            quantity: 50,
-            minQuantity: 10
+            name: "Lombo de Porco",
+            category: "Carne Vermelha",
+            quantity: 7000,
+            minQuantity: 1000,
+            quantType: "g"
           },
           {
             id: 2,
-            name: "Bife",
-            category: "Carne Vermelha",
-            quantity: 20,
-            minQuantity: 5
+            name: "Vinho Branco",
+            category: "Bebida",
+            quantity: 3000,
+            minQuantity: 1000,
+            quantType: "ml"
           },
           {
             id: 3,
-            name: "Peito de Frango",
-            category: "Carne Branca",
-            quantity: 34,
-            minQuantity: 12
+            name: "Azeite",
+            category: "Condimento",
+            quantity: 2000,
+            minQuantity: 500,
+            quantType: "ml"
           },
           {
             id: 4,
-            name: "Feijão",
-            category: "Vegetal",
+            name: "Dentes de Alho",
+            category: "Condimento",
             quantity: 50,
-            minQuantity: 10
+            minQuantity: 10,
+            quantType: "unid."
+          },
+          {
+            id: 5,
+            name: "Folhas de Louro",
+            category: "Condimento",
+            quantity: 50,
+            minQuantity: 10,
+            quantType: "unid."
+          },
+          {
+            id: 6,
+            name: "Massa de Pimentão",
+            category: "Condimento",
+            quantity: 5000,
+            minQuantity: 1000,
+            quantType: "g"
+          },
+          {
+            id: 7,
+            name: "Sal",
+            category: "Condimento",
+            quantity: 5000,
+            minQuantity: 1000,
+            quantType: "g"
+          },
+          {
+            id: 8,
+            name: "Banha de Porco",
+            category: "Condimento",
+            quantity: 5000,
+            minQuantity: 1000,
+            quantType: "g"
           }
         ]
       });
@@ -192,31 +228,30 @@ export default {
         dishes: [
           {
             id: 1,
-            name: "Batata",
-            category: "Vegetal",
-            quantity: 50,
-            minQuantity: 10
+            name: "Lombo de Porco Assado",
+            category: "Carne",
+            nPeople: 4,
+            image:
+              "https://portalrbv.com.br/cacanjure/wp-content/uploads/sites/2/2019/12/9166725s1280h960.jpg",
+            ingredients: [1, 2, 3, 4, 5, 6, 7, 8]
           },
           {
             id: 2,
-            name: "Bife",
-            category: "Carne Vermelha",
-            quantity: 20,
-            minQuantity: 5
+            name: "Salmão Assado",
+            category: "Peixe",
+            nPeople: 4,
+            image:
+              "https://www.receitas-sem-fronteiras.com/media/filesalmao_crop.jpg/rh/salmao-assado.jpg",
+            ingredients: [1, 2, 3, 4, 5, 6, 7, 8]
           },
           {
             id: 3,
-            name: "Peito de Frango",
-            category: "Carne Branca",
-            quantity: 34,
-            minQuantity: 12
-          },
-          {
-            id: 4,
-            name: "Feijão",
-            category: "Vegetal",
-            quantity: 50,
-            minQuantity: 10
+            name: "Couscous",
+            category: "Vegetariano",
+            nPeople: 4,
+            image:
+              "https://www.jessicagavin.com/wp-content/uploads/2019/03/mediterranean-couscous-salad-2-1200.jpg",
+            ingredients: [1, 2, 3, 4, 5, 6, 7, 8]
           }
         ]
       });

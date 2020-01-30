@@ -74,7 +74,7 @@
                       <option value="Condimento">Condimento</option>
                       <option value="Especiaria">Especiaria</option>
                       <option value="Doce">Doce</option>
-                      <option value="Líquido">Líquido</option>
+                      <option value="Bebida">Bebida</option>
                       <option value="Aperitivo">Aperitivo</option>
                       <option value="Cereal">Cereal</option>
                       <option value="Outro">Outro</option>
@@ -100,6 +100,20 @@
                       required
                     />
                   </div>
+                  <div class="form-group">
+                    <label for="sltQuantType">Tipo de Quantidade:</label>
+                    <select
+                      class="browser-default custom-select"
+                      id="sltQuantType"
+                      name="sltQuantType"
+                      v-model="sltQuantType"
+                      required
+                    >
+                      <option value="g">g</option>
+                      <option value="ml">ml</option>
+                      <option value="unid.">unid.</option>
+                    </select>
+                  </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
               </b-modal>
@@ -115,7 +129,7 @@
                       <th scope="col">ID</th>
                       <th scope="col">Nome do Produto</th>
                       <th scope="col">Categoria</th>
-                      <th scope="col">Quantidade Atual (Kg ou L)</th>
+                      <th scope="col">Quantidade Atual (g ou ml)</th>
                       <th scope="col">Stock Mínimo</th>
                       <th scope="col">Incrementar Quantidade</th>
                       <th scope="col">Decrementar Quantidade</th>
@@ -129,8 +143,8 @@
                     <td scope="row">{{ product.id }}</td>
                     <td>{{ product.name }}</td>
                     <td>{{ product.category }}</td>
-                    <td>{{ product.quantity }}</td>
-                    <td>{{ product.minQuantity }}</td>
+                    <td>{{ product.quantity }} {{ product.quantType }}</td>
+                    <td>{{ product.minQuantity }} {{ product.quantType }}</td>
                     <td>
                       <button
                         type="button"
@@ -179,7 +193,8 @@ export default {
       txtName: "",
       sltCategory: "",
       quantity: 0,
-      minQuantity: 0
+      minQuantity: 0,
+      sltQuantType: ""
     };
   },
   created() {

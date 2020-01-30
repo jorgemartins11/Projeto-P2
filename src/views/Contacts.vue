@@ -1,12 +1,28 @@
 <template>
   <div class="home">
     <NavBar />
-    <div
-      class="imgContainer position-relative align-items-centre justify-content-center "
-    >
-      <div class="col-12">
-        <div class="col-6 ml-5">
-          <div id="map" class="google-map"></div>
+    <div class="position-relative align-items-center justify-content-center">
+      <div class="row">
+        <div class="col-7">
+          <div class="google-map" id="myMap"></div>
+        </div>
+        <div class="col-5 d-flex align-items-center text-left">
+          <div class="row">
+            <div class="col-2 position-relative">
+              <img src="../assets/contacts.png" />
+            </div>
+            <div class="col-10 position-relative pt-3">
+              <p class="text-nowrap"><b>E-mail:</b> gpse@esht.ipp.pt</p>
+              <p class="text-nowrap pt-4 pb-1">
+                <b>Telefone:</b> +351 252 291 700
+              </p>
+              <p class="text-nowrap pt-4">
+                <b>Direções:</b> Rua D. Sancho I,<br />nº 981 4480-876 Vila do
+                Conde<br />
+                Portugal
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -19,103 +35,47 @@ import Footer from "@/components/Footer.vue";
 import NavBar from "@/components/NavBar.vue";
 
 export default {
-  name: "about",
+  name: "Maps",
   components: {
     Footer,
     NavBar
   },
-  data() {
+  data: function() {
     return {
-      ola: "2"
+      map: "",
+      center: { lat: 41.3661502, lng: -8.7402198 }
     };
   },
-  mounted() {},
-  methods: {}
+  mounted() {
+    this.map = new google.maps.Map(document.querySelector("#myMap"), {
+      center: this.center,
+      zoom: 15,
+      disableDefaultUI: true
+    });
+    this.map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+    const marker = new google.maps.Marker({
+      position: this.center
+    });
+    marker.setMap(this.map);
+  }
 };
 </script>
 
 <style scoped>
-.home {
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 
-.imgContainer {
-  width: 100%;
-  height: 100%;
-}
-
-#map {
-  margin-top: 130px;
-  height: 600px;
-  width: 800px;
-  background-color: #707070;
-}
-
-a {
-  text-decoration: none !important ;
-  color: white !important;
-}
-
-a:hover {
-  text-decoration: none !important ;
-  color: #2c3e50 !important;
-}
-
-#welcome {
-  font-size: 30px;
-}
-
-.barra {
-  background-color: white;
-  height: 100%;
-  width: 30rem;
-  top: 0;
-  position: absolute;
-}
-
-img#logo {
-  height: auto;
-  width: 30%;
-}
-
-img#bg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-hr {
-  height: 1px;
-  width: 20rem;
-  background-color: #2c3e50;
-}
-
-small {
+p {
   font-family: "Muli", sans-serif;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #2c3e50;
-  opacity: 1;
+  font-size: 12pt;
 }
 
-.form-control {
-  background-color: #707070;
-  border-color: #707070;
+.home {
+  overflow: hidden;
 }
 
-input:focus {
-  background-color: #707070;
-  border: 1px solid black !important;
-  box-shadow: unset;
-}
-
-.welcomeText {
-  color: #2c3e50;
+.google-map {
+  width: 100%;
+  height: 85vh;
+  margin: 0 auto;
 }
 </style>

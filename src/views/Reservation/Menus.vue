@@ -17,9 +17,60 @@
               </router-link>
             </div>
             <div class="col-12 pt-3">
-              <p id="chosing" class="p">Escolha o(s) Menú(s)</p>
+              <p id="title">Escolha o(s) Menú(s)</p>
             </div>
-            <div class="col-12"></div>
+            <div class="col-12">
+              <div class="row">
+                <div
+                  class="col-lg-4 d-flex align-items-center justify-content-center pb-3"
+                >
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://portalrbv.com.br/cacanjure/wp-content/uploads/sites/2/2019/12/9166725s1280h960.jpg"
+                      class="card-img-top"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">Lombo de Porco Assado</h5>
+                      <p class="card-text">
+                        Prato de Carne
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-4 d-flex align-items-center justify-content-center pb-3"
+                >
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://www.receitas-sem-fronteiras.com/media/filesalmao_crop.jpg/rh/salmao-assado.jpg"
+                      class="card-img-top"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">Salmão Assado</h5>
+                      <p class="card-text">
+                        Prato de Peixe
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-4 d-flex align-items-center justify-content-center pb-3"
+                >
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://www.jessicagavin.com/wp-content/uploads/2019/03/mediterranean-couscous-salad-2-1200.jpg"
+                      class="card-img-top"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">Couscous</h5>
+                      <p class="card-text">
+                        Prato Vegetariano
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="position-relative pt-5">
               <router-link to="/observation" class="text-center">
                 <img
@@ -69,7 +120,9 @@ export default {
 </script>
 
 <style scoped>
-#chosing {
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+#title {
   font-family: "Muli", sans-serif;
   font-size: 2rem;
   font-weight: bold;
@@ -81,8 +134,26 @@ img#arrow {
   width: 30px;
 }
 
+.card-title,
+.card-text {
+  font-family: "Muli", sans-serif;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
 .img-fluid {
   max-width: 100%;
   height: auto;
+}
+
+.card-img-top {
+  height: 250px;
+  border-radius: 20px 20px 0 0;
+}
+
+.card {
+  border-radius: 20px;
 }
 </style>

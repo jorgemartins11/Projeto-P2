@@ -115,12 +115,49 @@ export default new Vuex.Store({
     },
     getFilteredProducts: state => input => {
       if (input != "") {
-        return state.products.filter(product => product.name.includes(input.toLowerCase()))
+        return state.products.filter(product => product.name.toLowerCase().includes(input.toLowerCase()))
       }
       return state.products
     },
     getAllDishes: state => {
       return state.dishes
+    },
+    getOrderedDishesAZ: state => {
+      return state.dishes.sort(function (a, b) {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      })
+    },
+    getOrderedDishesZA: state => {
+      return state.dishes.sort(function (a, b) {
+        if (a.name > b.name) {
+          return -1;
+        }
+        if (a.name < b.name) {
+          return 1;
+        }
+        return 0;
+      })
+    },
+    getDishByInput: state => input => {
+      return state.dishes.find(dish => dish.name == input)
+    },
+    getLastDishId: state => {
+      return state.dishes.length + 1
+    },
+    getFilteredDishes: state => input => {
+      if (input != "") {
+        return state.dishes.filter(dish => dish.name.toLowerCase().includes(input.toLowerCase()))
+      }
+      return state.dishes
+    },
+    getAllDishesBesidesDeleted: state => id => {
+      return state.dishes.filter(dish => dish.id != id)
     }
   },
   mutations: {
@@ -162,6 +199,10 @@ export default new Vuex.Store({
     },
     SET_DISHES(state, payload) {
       state.dishes = payload.dishes
+      localStorage.setItem("dishes", JSON.stringify(state.dishes))
+    },
+    NEW_DISH(state, payload) {
+      state.dishes.push(payload)
       localStorage.setItem("dishes", JSON.stringify(state.dishes))
     }
   }

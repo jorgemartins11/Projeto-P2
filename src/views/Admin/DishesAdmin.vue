@@ -30,9 +30,9 @@
                   class="text"
                   rows="1"
                   cols="25"
-                  placeholder="Nome do Produto..."
+                  placeholder="Nome do Prato..."
                   maxlength="20"
-                  v-model="txtProductName"
+                  v-model="txtDishName"
                 />
               </div>
             </div>
@@ -40,7 +40,7 @@
               class="col-4 position-relative d-flex align-items-center justify-content-center"
             >
               <b-button class="resizeElement" v-b-modal.modal-1
-                >Adiconar Produto</b-button
+                >Adiconar Prato</b-button
               >
               <b-modal
                 id="modal-1"
@@ -48,9 +48,9 @@
                 title="Adicionar Utilizador"
                 hide-footer
               >
-                <form @submit.prevent="addNewProduct()">
+                <form @submit.prevent="addNewDish()">
                   <div class="form-group">
-                    <label for="txtName">Nome Produto:</label>
+                    <label for="txtName">Nome Prato:</label>
                     <input
                       type="text"
                       class="form-control"
@@ -68,37 +68,49 @@
                       v-model="sltCategory"
                       required
                     >
-                      <option value="Carne Branca">Carne Branca</option>
-                      <option value="Carne Vermelha">Carne Vermelha</option>
-                      <option value="Vegetal">Vegetal</option>
-                      <option value="Condimento">Condimento</option>
-                      <option value="Especiaria">Especiaria</option>
-                      <option value="Doce">Doce</option>
-                      <option value="Líquido">Líquido</option>
-                      <option value="Aperitivo">Aperitivo</option>
-                      <option value="Cereal">Cereal</option>
-                      <option value="Outro">Outro</option>
+                      <option value="Carne">Carne</option>
+                      <option value="Peixe">Peixe</option>
+                      <option value="Vegetariano">Vegetariano</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="quantity">Quantidade:</label>
+                    <label for="nPeople">Prato para "X" pessoas:</label>
                     <input
                       type="number"
                       class="form-control"
-                      id="quantity"
-                      v-model="quantity"
+                      id="nPeople"
+                      v-model="nPeople"
                       required
                     />
                   </div>
                   <div class="form-group">
-                    <label for="minQuantity">Quantidade Mínima:</label>
+                    <label for="img">Imagem:</label>
                     <input
-                      type="number"
+                      type="url"
                       class="form-control"
-                      id="minQuantity"
-                      v-model="minQuantity"
+                      id="img"
+                      v-model="img"
                       required
                     />
+                  </div>
+                  <div class="form-group">
+                    <label for="sltIngredients">Ingredients:</label>
+                    <select
+                      class="browser-default custom-select"
+                      id="sltIngredients"
+                      name="sltIngredients"
+                      v-model="sltIngredients"
+                      multiple
+                      required
+                    >
+                      <option v-for="product in products" :key="product.id">{{
+                        product.name
+                      }}</option>
+                    </select>
+                    <p>
+                      Para selecionar vários valores, pressione ctrl quando
+                      seleciona
+                    </p>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -115,36 +127,28 @@
                       <th scope="col">ID</th>
                       <th scope="col">Nome</th>
                       <th scope="col">Categoria</th>
-                      <th scope="col">Ingredientes / Quantidade (Kg ou L)</th>
+                      <th scope="col">Para "X" Pessoas</th>
+                      <th scope="col">Ingredientes</th>
                       <th scope="col">Eliminar</th>
                     </tr>
                   </thead>
                   <tbody
                     id="usersTableBody"
-                    v-for="product of filteredProducts"
-                    :key="product.id"
+                    v-for="dish of filteredDishes"
+                    :key="dish.id"
                   >
-                    <td scope="row">{{ product.id }}</td>
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.category }}</td>
-                    <td>{{ product.quantity }}</td>
-                    <td>{{ product.minQuantity }}</td>
-                    <td>
-                      <button
-                        type="button"
-                        class="btn btn-success"
-                        @click="incrementProductStock(product.id)"
-                      >
-                        +
-                      </button>
-                    </td>
+                    <td scope="row">{{ dish.id }}</td>
+                    <td>{{ dish.name }}</td>
+                    <td>{{ dish.category }}</td>
+                    <td>{{ dish.nPeople }}</td>
+                    <td>{{ dishIngredients(dish.id) }}</td>
                     <td>
                       <button
                         type="button"
                         class="btn btn-danger"
-                        @click="decrementProductStock(product.id)"
+                        @click="deleteDish(dish.id)"
                       >
-                        -
+                        Eliminar
                       </button>
                     </td>
                   </tbody>
@@ -172,12 +176,15 @@ export default {
   data() {
     return {
       products: [],
+      dishes: [],
       order: "A-Z",
-      txtProductName: "",
+      txtDishName: "",
       txtName: "",
       sltCategory: "",
-      quantity: 0,
-      minQuantity: 0
+      nPeople: 0,
+      img: "",
+      sltIngredients: [],
+      sltIngredientsId: []
     };
   },
   created() {
@@ -185,47 +192,67 @@ export default {
       products: JSON.parse(localStorage.getItem("products"))
     });
     this.products = this.$store.getters.getAllProducts;
+    this.$store.commit("SET_DISHES", {
+      dishes: JSON.parse(localStorage.getItem("dishes"))
+    });
+    this.dishes = this.$store.getters.getAllDishes;
   },
   methods: {
     orderProducts() {
       if (this.order == "A-Z") {
-        this.products = this.$store.getters.getOrderedProductsAZ;
+        this.dishes = this.$store.getters.getOrderedDishesAZ;
         this.order = "Z-A";
       } else {
-        this.products = this.$store.getters.getOrderedProductsZA;
+        this.dishes = this.$store.getters.getOrderedDishesZA;
         this.order = "A-Z";
       }
     },
-    addNewProduct() {
-      if (!this.$store.getters.getProductByInput(this.txtName)) {
-        this.$store.commit("NEW_PRODUCT", {
-          id: this.$store.getters.getLastProductId,
+    addNewDish() {
+      if (!this.$store.getters.getDishByInput(this.txtName)) {
+        this.$store.commit("NEW_DISH", {
+          id: this.$store.getters.getLastDishId,
           name: this.txtName,
           category: this.sltCategory,
-          quantity: parseInt(this.quantity),
-          minQuantity: parseInt(this.minQuantity)
+          nPeople: parseInt(this.nPeople),
+          image: this.img,
+          ingredients: this.sltIngredientsToId()
         });
         this.$refs["modal-1"].hide();
       }
     },
-    incrementProductStock(id) {
-      for (const product of this.products) {
-        if (product.id == id) {
-          product.quantity += 1;
+    dishIngredients(id) {
+      for (const dish of this.dishes) {
+        if (dish.id == id) {
+          let ingred = "";
+          for (const product of this.products) {
+            if (dish.ingredients.includes(product.id)) {
+              ingred += `${product.name}; `;
+            }
+          }
+          return ingred;
         }
       }
     },
-    decrementProductStock(id) {
-      for (const product of this.products) {
-        if (product.id == id) {
-          product.quantity -= 1;
+    deleteDish(id) {
+      for (const dish of this.dishes) {
+        if (dish.id == id && confirm("Deseja eliminar este prato?")) {
+          this.dishes = this.$store.getters.getAllDishesBesidesDeleted(id);
+          this.$store.commit("SET_DISHES", { dishes: this.dishes });
         }
       }
+    },
+    sltIngredientsToId() {
+      for (const product of this.products) {
+        if (this.sltIngredients.includes(product.name)) {
+          this.sltIngredientsId.push(product.id);
+        }
+      }
+      return this.sltIngredientsId;
     }
   },
   computed: {
-    filteredProducts() {
-      return this.$store.getters.getFilteredProducts(this.txtProductName);
+    filteredDishes() {
+      return this.$store.getters.getFilteredDishes(this.txtDishName);
     }
   }
 };
