@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid Footer-custom fixed-bottom">
+  <div class="container-fluid Footer-custom">
     <div class="row row-no-gutters" id="bottom-footer">
       <div class="col-xs-12 col-md-5 col-lg-4 text-center pt-4">
         <ul class="vertical-aligned small mr-5">

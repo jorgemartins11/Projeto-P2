@@ -45,8 +45,8 @@
       "parser": "babel-eslint"
     },
     "globals": {
-      "google":{}
- }
+      "google": {}
+    }
   },
   "browserslist": [
     "> 1%",

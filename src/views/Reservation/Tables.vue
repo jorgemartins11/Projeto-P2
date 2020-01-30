@@ -119,7 +119,7 @@
             </button>
           </div>
           <!-- Seta para baixo -->
-          <div class="position-relative pt-5">
+          <div class="position-relative pt-5 pb-5">
             <router-link to="/menu" class="text-center">
               <img
                 src="../../assets/arrowDown.png"

@@ -17,13 +17,11 @@
               </router-link>
             </div>
             <div class="col-12 pt-3">
-              <p id="title">Escolha o(s) Menú(s)</p>
+              <p id="title" v-html="title"></p>
             </div>
             <div class="col-12">
               <div class="row">
-                <div
-                  class="col-lg-4 d-flex align-items-center justify-content-center pb-3"
-                >
+                <div class="col-lg-4 d-flex align-items-center justify-content-center pb-3">
                   <div class="card" style="width: 18rem;">
                     <img
                       src="https://portalrbv.com.br/cacanjure/wp-content/uploads/sites/2/2019/12/9166725s1280h960.jpg"
@@ -31,15 +29,20 @@
                     />
                     <div class="card-body">
                       <h5 class="card-title">Lombo de Porco Assado</h5>
-                      <p class="card-text">
-                        Prato de Carne
-                      </p>
+                      <p class="card-text">Prato de Carne</p>
+                      <div class="d-inline-block d-flex align-items-center justify-content-center">
+                        <div class="pr-3">
+                          <button type="button" class="btn btn-success pr-3 pl-3" @click="addMenuCount('meat')">+</button>
+                        </div>
+                        {{ nMeat }}
+                        <div class="pl-3">
+                          <button type="button" class="btn btn-danger pr-3 pl-3" @click="removeMenuCount('meat')">-</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="col-lg-4 d-flex align-items-center justify-content-center pb-3"
-                >
+                <div class="col-lg-4 d-flex align-items-center justify-content-center pb-3">
                   <div class="card" style="width: 18rem;">
                     <img
                       src="https://www.receitas-sem-fronteiras.com/media/filesalmao_crop.jpg/rh/salmao-assado.jpg"
@@ -47,15 +50,20 @@
                     />
                     <div class="card-body">
                       <h5 class="card-title">Salmão Assado</h5>
-                      <p class="card-text">
-                        Prato de Peixe
-                      </p>
+                      <p class="card-text">Prato de Peixe</p>
+                      <div class="d-inline-block d-flex align-items-center justify-content-center">
+                        <div class="pr-3">
+                          <button type="button" class="btn btn-success pr-3 pl-3" @click="addMenuCount('fish')">+</button>
+                        </div>
+                        {{ nFish }}
+                        <div class="pl-3">
+                          <button type="button" class="btn btn-danger pr-3 pl-3" @click="removeMenuCount('fish')">-</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="col-lg-4 d-flex align-items-center justify-content-center pb-3"
-                >
+                <div class="col-lg-4 d-flex align-items-center justify-content-center pb-3">
                   <div class="card" style="width: 18rem;">
                     <img
                       src="https://www.jessicagavin.com/wp-content/uploads/2019/03/mediterranean-couscous-salad-2-1200.jpg"
@@ -63,15 +71,22 @@
                     />
                     <div class="card-body">
                       <h5 class="card-title">Couscous</h5>
-                      <p class="card-text">
-                        Prato Vegetariano
-                      </p>
+                      <p class="card-text">Prato Vegetariano</p>
+                      <div class="d-inline-block d-flex align-items-center justify-content-center">
+                        <div class="pr-3">
+                          <button type="button" class="btn btn-success pr-3 pl-3" @click="addMenuCount('veg')">+</button>
+                        </div>
+                        {{ nVeg }}
+                        <div class="pl-3">
+                          <button type="button" class="btn btn-danger pr-3 pl-3" @click="removeMenuCount('veg')">-</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="position-relative pt-5">
+            <div class="position-relative pt-5 pb-5">
               <router-link to="/observation" class="text-center">
                 <img
                   src="../../assets/arrowDown.png"
@@ -102,18 +117,50 @@ export default {
   },
   data() {
     return {
+      title: "",
       reservationMenu: "",
-      reservationTable: {}
+      reservationTable: {},
+      nMeat: 0,
+      nFish: 0,
+      nVeg: 0
     };
   },
   created() {
     this.reservationTable = this.$store.getters.getReservationTable;
+
+    if (this.reservationTable.nPeople > 1) {
+      this.title = `Escolha os Menús (${this.reservationTable.nPeople})`;
+    } else {
+      this.title = `Escolha o Menú`;
+    }
   },
   methods: {
     setReservationMenu() {
       this.$store.commit("SET_RESERVATION_MENU", {
         menu: this.reservationMenu
       });
+    },
+    addMenuCount(menu) {
+      if (this.reservationTable.nPeople > (this.nMeat + this.nFish + this.nVeg)) {
+        if (menu == "meat") {
+          this.nMeat += 1;
+        } else if (menu == "fish") {
+          this.nFish += 1;
+        } else if (menu == "veg") {
+          this.nVeg += 1;
+        }
+      }
+    },
+    removeMenuCount(menu) {
+      if (this.reservationTable.nPeople >= (this.nMeat + this.nFish + this.nVeg) && (this.nMeat + this.nFish + this.nVeg) > 0) {
+        if (menu == "meat") {
+          this.nMeat -= 1;
+        } else if (menu == "fish") {
+          this.nFish -= 1;
+        } else if (menu == "veg") {
+          this.nVeg -= 1;
+        }
+      }
     }
   }
 };

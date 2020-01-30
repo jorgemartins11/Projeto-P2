@@ -15,7 +15,7 @@
               <p class="name">Gonçalo e Jorge</p>
               <p class="email">9180216@esmad.ipp.pt</p>
             </div>
-        </div>
+x        </div>
         <div class="col-6 d-flex align-items-center justify-content-center pb-5">
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-primary">
