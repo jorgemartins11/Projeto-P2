@@ -178,24 +178,36 @@ export default {
             blocked: this.blocked
           });
           this.emptyForm();
-          alert("Conta criada com sucesso!");
+          this.$swal({
+            icon: "success",
+            title: "Conta criada com sucesso!"
+          });
           this.$router.push({
             name: "login"
           });
         } else {
-          alert(
-            "Username indisponível! Já se encontra uma conta registada com este username"
-          );
+          this.$swal({
+            icon: "error",
+            title: "Já existe uma conta criada com o username inserido!",
+            text: "Por favor tente novamente."
+          });
         }
       } else if (this.checkPasswords()) {
-        alert("Já existe uma conta registada com o email introduzido!");
+        this.$swal({
+          icon: "error",
+          title: "Já existe uma conta criada com o email inserido!",
+          text: "Por favor tente novamente."
+        });
       }
     },
     checkPasswords() {
       if (this.password == this.repeatedPassword) {
         return true;
       } else {
-        alert("Palavras passe não coincidem!");
+        this.$swal({
+          icon: "error",
+          title: "Palavras passe não coincidem!"
+        });
         return false;
       }
     },

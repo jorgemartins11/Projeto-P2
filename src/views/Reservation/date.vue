@@ -33,36 +33,36 @@
 
             <ul class="days">
               <li @click="selectDayOnClick(1), advanceToNext(), date()">1</li>
-              <li @click="selectDayOnClick(2)">2</li>
-              <li @click="selectDayOnClick(3)">3</li>
-              <li @click="selectDayOnClick(4)">4</li>
-              <li @click="selectDayOnClick(5)">5</li>
-              <li @click="selectDayOnClick(6)">6</li>
-              <li @click="selectDayOnClick(7)">7</li>
-              <li @click="selectDayOnClick(8)">8</li>
-              <li @click="selectDayOnClick(9)">9</li>
-              <li @click="selectDayOnClick(10)">10</li>
-              <li @click="selectDayOnClick(11)">11</li>
-              <li @click="selectDayOnClick(12)">12</li>
-              <li @click="selectDayOnClick(13)">13</li>
-              <li @click="selectDayOnClick(14)">14</li>
-              <li @click="selectDayOnClick(15)">15</li>
-              <li @click="selectDayOnClick(16)">16</li>
-              <li @click="selectDayOnClick(17)">17</li>
-              <li @click="selectDayOnClick(18)">18</li>
-              <li @click="selectDayOnClick(19)">19</li>
-              <li @click="selectDayOnClick(20)">20</li>
-              <li @click="selectDayOnClick(21)">21</li>
-              <li @click="selectDayOnClick(22)">22</li>
-              <li @click="selectDayOnClick(23)">23</li>
-              <li @click="selectDayOnClick(24)">24</li>
-              <li @click="selectDayOnClick(25)">25</li>
-              <li @click="selectDayOnClick(26)">26</li>
-              <li @click="selectDayOnClick(27)">27</li>
-              <li @click="selectDayOnClick(28)">28</li>
-              <li @click="selectDayOnClick(29)">29</li>
-              <li @click="selectDayOnClick(30)">30</li>
-              <li @click="selectDayOnClick(31)">31</li>
+              <li @click="selectDayOnClick(2), advanceToNext(), date()">2</li>
+              <li @click="selectDayOnClick(3), advanceToNext(), date()">3</li>
+              <li @click="selectDayOnClick(4), advanceToNext(), date()">4</li>
+              <li @click="selectDayOnClick(5), advanceToNext(), date()">5</li>
+              <li @click="selectDayOnClick(6), advanceToNext(), date()">6</li>
+              <li @click="selectDayOnClick(7), advanceToNext(), date()">7</li>
+              <li @click="selectDayOnClick(8), advanceToNext(), date()">8</li>
+              <li @click="selectDayOnClick(9), advanceToNext(), date()">9</li>
+              <li @click="selectDayOnClick(10), advanceToNext(), date()">10</li>
+              <li @click="selectDayOnClick(11), advanceToNext(), date()">11</li>
+              <li @click="selectDayOnClick(12), advanceToNext(), date()">12</li>
+              <li @click="selectDayOnClick(13), advanceToNext(), date()">13</li>
+              <li @click="selectDayOnClick(14), advanceToNext(), date()">14</li>
+              <li @click="selectDayOnClick(15), advanceToNext(), date()">15</li>
+              <li @click="selectDayOnClick(16), advanceToNext(), date()">16</li>
+              <li @click="selectDayOnClick(17), advanceToNext(), date()">17</li>
+              <li @click="selectDayOnClick(18), advanceToNext(), date()">18</li>
+              <li @click="selectDayOnClick(19), advanceToNext(), date()">19</li>
+              <li @click="selectDayOnClick(20), advanceToNext(), date()">20</li>
+              <li @click="selectDayOnClick(21), advanceToNext(), date()">21</li>
+              <li @click="selectDayOnClick(22), advanceToNext(), date()">22</li>
+              <li @click="selectDayOnClick(23), advanceToNext(), date()">23</li>
+              <li @click="selectDayOnClick(24), advanceToNext(), date()">24</li>
+              <li @click="selectDayOnClick(25), advanceToNext(), date()">25</li>
+              <li @click="selectDayOnClick(26), advanceToNext(), date()">26</li>
+              <li @click="selectDayOnClick(27), advanceToNext(), date()">27</li>
+              <li @click="selectDayOnClick(28), advanceToNext(), date()">28</li>
+              <li @click="selectDayOnClick(29), advanceToNext(), date()">29</li>
+              <li @click="selectDayOnClick(30), advanceToNext(), date()">30</li>
+              <li @click="selectDayOnClick(31), advanceToNext(), date()">31</li>
               <li></li>
               <li></li>
               <li></li>
@@ -70,7 +70,7 @@
             </ul>
           </div>
           <div
-            class="position-relative pt-3 mt-5"
+            class="position-relative pt-3 mt-5 pb-4"
             :style="{ visibility: hidden }"
           >
             <router-link to="/table" class="text-center">
@@ -86,7 +86,7 @@
         </div>
       </div>
     </div>
-    <Footer class="fixed-bottom" />
+    <Footer />
   </div>
 </template>
 
@@ -103,7 +103,6 @@ export default {
   data() {
     return {
       selectedDay: 0,
-      calendar: "",
       hidden: "hidden",
       todaysYear: new Date().getFullYear(),
       todaysMonth: 0,
@@ -124,7 +123,6 @@ export default {
     };
   },
   created() {
-    this.renderCalendar();
     this.todaysMonth = new Date().getMonth();
   },
   methods: {
@@ -133,44 +131,17 @@ export default {
         date: this.selectedDay + " " + this.getMonthAndYear
       });
     },
-    renderCalendar() {
-      if (this.selectedDay == 0) {
-        for (let i = 0; i < 35; i++) {
-          if (i < 31) {
-            this.calendar += `<li style="list-style-type: none;
-              display: inline-block;
-              width: 13.6%; text-align: center;
-              margin-bottom: 5px; font-size: 12px;
-              color: #777;
-              cursor: pointer;
-              font-family: "Muli", sans-serif;"
-              id="${i + 1}" @click="selectDayOnClick(${i + 1})">${i + 1}</li>`;
-          } else {
-            this.calendar += `<li style="list-style-type: none;
-              display: inline-block;
-              width: 13.6%;
-              text-align: center;
-              margin-bottom: 5px;
-              font-size: 12px;
-              color: #777;"></li>`;
-          }
-        }
-      }
-    },
     selectDayOnClick(id) {
       this.selectedDay = id;
-      alert(id);
     },
     advanceToNext() {
       this.hidden = "visible";
     },
     date() {
       var today = new Date();
-      alert("Last day of 2015: " + today.toISOString());
       var nextDay = new Date(+today);
       var dateValue = nextDay.getDate() + 1;
       nextDay.setDate(dateValue);
-      alert("Resulting date: " + nextDay.toISOString());
     },
     nextMonth() {
       this.todaysMonth += 1;
@@ -214,6 +185,10 @@ img#arrow {
 
 .arrowDown {
   visibility: hidden;
+}
+
+p {
+  font-family: "Muli", sans-serif;
 }
 
 /* ******************************************** CALENDARIO ****************************************** */

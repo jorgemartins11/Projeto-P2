@@ -94,7 +94,7 @@ p {
 }
 
 p:not(.names) {
-  font-size: 14pt;
+  font-size: 12pt;
 }
 
 .andre {

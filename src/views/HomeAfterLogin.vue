@@ -29,7 +29,7 @@
                 src="../assets/ipplogo.png"
                 id="logo"
                 alt
-                class="img-fluid mt-5 mb-5"
+                class="img-fluid"
               />
               <small class="form-text mt-3"
                 >Escola Superior de Hotelaria e Turismo</small
@@ -64,7 +64,7 @@ export default {
 
 p {
   font-family: "Muli", sans-serif;
-  font-size: 14pt;
+  font-size: 12pt;
 }
 
 .imgContainer {

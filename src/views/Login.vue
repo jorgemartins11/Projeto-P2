@@ -263,7 +263,10 @@ export default {
             this.password
           )
         ) {
-          alert("Email/Username ou password errada!");
+          this.$swal({
+            icon: "error",
+            title: "Credênciais inválidas!"
+          });
         } else {
           this.loggedUser = this.$store.getters.getUserByInput(
             this.usernameOrEmail
@@ -274,16 +277,25 @@ export default {
             if (this.loggedUser.userType === "Admin") {
               this.$router.push({ name: "HomeAdmin" });
             } else {
-              alert("Login Efetuado com sucesso!");
+              this.$swal({
+                icon: "success",
+                title: "Login Efetuado!"
+              });
               this.emptyForm();
               this.$router.push({ name: "homeLoged" });
             }
           } else {
-            alert("Utilizador Bloqueado!");
+            this.$swal({
+              icon: "error",
+              title: "Utilizador Bloqueado!"
+            });
           }
         }
       } else {
-        alert("Credênciais inválidas!");
+        this.$swal({
+          icon: "error",
+          title: "Credênciais inválidas!"
+        });
       }
     },
     emptyForm() {

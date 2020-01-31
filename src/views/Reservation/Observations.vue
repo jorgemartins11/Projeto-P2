@@ -75,21 +75,26 @@ export default {
         this.reservationTable != "" &&
         this.reservationMenu != ""
       ) {
-        if (confirm("Tem certeza que pretende fazer a reserva?")) {
-          this.$store.commit("NEW_RESERVATION", {
-            id: this.$store.getters.getLastReservationId,
-            idUser: this.loggedUser.id,
-            date: this.reservationDate,
-            table: this.reservationTable,
-            menu: this.reservationMenu,
-            observation: this.reservationObservation
-          });
-          this.$router.push({ name: "profile" });
-        }
-      } else {
-        alert(
-          "Por favor preencha todos os campos! (Campo de Observações não é obrigatório)"
-        );
+        this.$swal({
+          title: "Tem certeza que pretende fazer a reserva?",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Reservar!",
+          cancelButtonText: "Cancelar"
+        }).then(result => {
+          if (result.value) {
+            this.$store.commit("NEW_RESERVATION", {
+              id: this.$store.getters.getLastReservationId,
+              idUser: this.loggedUser.id,
+              date: this.reservationDate,
+              table: this.reservationTable,
+              menu: this.reservationMenu,
+              observation: this.reservationObservation
+            });
+            this.$router.push({ name: "profile" });
+          }
+        });
       }
     },
     setReservationObservation() {
