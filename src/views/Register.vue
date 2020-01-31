@@ -80,7 +80,6 @@
                   name="birthDate"
                   placeholder="Data de Nascimento"
                   onfocus="(this.type='date')"
-                  required
                   v-model="birthDate"
                 />
               </div>

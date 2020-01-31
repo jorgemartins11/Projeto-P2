@@ -4,21 +4,10 @@
     <div class="container d-flex align-items-center justify-content-center">
       <div class="row">
         <div class="col-12">
-          <div class="position-relative pt-5">
-            <router-link to="/menu" class="text-center">
-              <img
-                src="../../assets/arrowUp.png"
-                id="arrow"
-                alt
-                class="img-fluid"
-                @click="setReservationObservation()"
-              />
-            </router-link>
-          </div>
-          <div class="col-12 pt-3">
+          <div class="col-12 pt-5 mt-5">
             <p id="chosing" class="p">Observações</p>
           </div>
-          <form class="pt-3">
+          <form class="pt-3" @submit.prevent="addReservation()">
             <div class="col-12">
               <textarea
                 type="text"
@@ -29,12 +18,11 @@
                 v-model="reservationObservation"
               ></textarea>
             </div>
-            <div class="col-12 pt-5">
+            <div class="col-12 pt-5 mt-5">
               <button
                 type="submit"
                 id="submitReservation"
                 class="btn btn-primary btn-lg mr-2"
-                @click="addReservation()"
               >
                 Confirmar Reserva
               </button>
@@ -50,7 +38,7 @@
         </div>
       </div>
     </div>
-    <Footer />
+    <Footer class="fixed-bottom" />
   </div>
 </template>
 
@@ -66,6 +54,7 @@ export default {
   },
   data() {
     return {
+      loggedUser: {},
       reservationDate: "",
       reservationTable: "",
       reservationMenu: "",
@@ -77,6 +66,7 @@ export default {
     this.reservationTable = this.$store.getters.getReservationTable;
     this.reservationMenu = this.$store.getters.getReservationMenu;
     this.reservationObservation = this.$store.getters.getReservationObservation;
+    this.loggedUser = this.$store.getters.getLoggedUser;
   },
   methods: {
     addReservation() {
@@ -87,11 +77,14 @@ export default {
       ) {
         if (confirm("Tem certeza que pretende fazer a reserva?")) {
           this.$store.commit("NEW_RESERVATION", {
+            id: this.$store.getters.getLastReservationId,
+            idUser: this.loggedUser.id,
             date: this.reservationDate,
             table: this.reservationTable,
             menu: this.reservationMenu,
             observation: this.reservationObservation
           });
+          this.$router.push({ name: "profile" });
         }
       } else {
         alert(

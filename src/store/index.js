@@ -70,6 +70,24 @@ export default new Vuex.Store({
     getLoggedUser: state => {
       return state.loggedUser;
     },
+    getAllReservations: state => {
+      return state.reservations
+    },
+    getFilteredReservations: state => input => {
+      if (input != "") {
+        return state.reservations.filter(reservation => reservation.date.toLowerCase().includes(input.toLowerCase()))
+      }
+      return state.reservations
+    },
+    getLastReservationId: state => {
+      if (state.reservations.length > 0) {
+        return state.reservations.length + 1;
+      }
+      return 1;
+    },
+    getAllReservationsBesidesDeleted: state => id => {
+      return state.reservations.filter(reservation => reservation.id != id)
+    },
     getReservationDate: state => {
       return state.reservationDate
     },
@@ -187,6 +205,10 @@ export default new Vuex.Store({
     },
     NEW_RESERVATION(state, payload) {
       state.reservations.push(payload)
+      localStorage.setItem("reservations", JSON.stringify(state.reservations))
+    },
+    SET_RESERVATIONS(state,payload) {
+      state.reservations = payload.reservations
       localStorage.setItem("reservations", JSON.stringify(state.reservations))
     },
     NEW_PRODUCT(state,payload) {

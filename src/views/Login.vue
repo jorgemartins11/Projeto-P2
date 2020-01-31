@@ -45,9 +45,6 @@
               >
                 Entrar
               </button>
-              <small class="form-text text-muted"
-                >Recuperar Palavra-Passe...</small
-              >
               <div>
                 <button class="btn btn-disabled mt-4 mb-5 btn-lg mr-1" disabled>
                   Login

@@ -9,11 +9,13 @@
           <div class="col-12 pt-3">
             <div class="month">
               <ul>
-                <li class="prev">&#10094;</li>
-                <li class="next">&#10095;</li>
+                <li class="prev" @click="prevMonth()">&#10094;</li>
+                <li class="next" @click="nextMonth()">&#10095;</li>
                 <li id="month">
-                  August <br /><span style="font-size:18px" id="year"
-                    >2017</span
+                  {{ months[todaysMonth] }} <br /><span
+                    style="font-size:18px"
+                    id="year"
+                    >{{ todaysYear }}</span
                   >
                 </li>
               </ul>
@@ -30,7 +32,7 @@
             </ul>
 
             <ul class="days">
-              <li @click="selectDayOnClick(1)">1</li>
+              <li @click="selectDayOnClick(1), advanceToNext(), date()">1</li>
               <li @click="selectDayOnClick(2)">2</li>
               <li @click="selectDayOnClick(3)">3</li>
               <li @click="selectDayOnClick(4)">4</li>
@@ -67,7 +69,10 @@
               <li></li>
             </ul>
           </div>
-          <div class="position-relative arrowDown pt-5 mt-5">
+          <div
+            class="position-relative pt-3 mt-5"
+            :style="{ visibility: hidden }"
+          >
             <router-link to="/table" class="text-center">
               <img
                 src="../../assets/arrowDown.png"
@@ -81,7 +86,7 @@
         </div>
       </div>
     </div>
-    <Footer />
+    <Footer class="fixed-bottom" />
   </div>
 </template>
 
@@ -98,11 +103,29 @@ export default {
   data() {
     return {
       selectedDay: 0,
-      calendar: ""
+      calendar: "",
+      hidden: "hidden",
+      todaysYear: new Date().getFullYear(),
+      todaysMonth: 0,
+      months: [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro"
+      ]
     };
   },
   created() {
     this.renderCalendar();
+    this.todaysMonth = new Date().getMonth();
   },
   methods: {
     setReservationDate() {
@@ -137,6 +160,23 @@ export default {
     selectDayOnClick(id) {
       this.selectedDay = id;
       alert(id);
+    },
+    advanceToNext() {
+      this.hidden = "visible";
+    },
+    date() {
+      var today = new Date();
+      alert("Last day of 2015: " + today.toISOString());
+      var nextDay = new Date(+today);
+      var dateValue = nextDay.getDate() + 1;
+      nextDay.setDate(dateValue);
+      alert("Resulting date: " + nextDay.toISOString());
+    },
+    nextMonth() {
+      this.todaysMonth += 1;
+    },
+    prevMonth() {
+      this.todaysMonth -= 1;
     }
   },
   computed: {
@@ -161,11 +201,6 @@ export default {
   color: #2c3e50;
 }
 
-.arrowDown {
-  top: -10%;
-  z-index: 999;
-}
-
 img#arrow {
   height: 30px;
   width: 30px;
@@ -175,6 +210,10 @@ img#arrow {
   color: white;
   font-size: 20px;
   font-weight: bolder;
+}
+
+.arrowDown {
+  visibility: hidden;
 }
 
 /* ******************************************** CALENDARIO ****************************************** */
@@ -251,6 +290,11 @@ body {
   color: #777;
   cursor: pointer;
   font-family: "Muli", sans-serif;
+}
+
+.prev,
+.next {
+  cursor: pointer !important;
 }
 
 /* Highlight the "current" day */

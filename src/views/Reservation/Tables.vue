@@ -4,20 +4,8 @@
     <div class="container d-flex align-items-center justify-content-center">
       <div class="row">
         <div class="col-12">
-          <!-- Seta para cima -->
-          <div class="position-relative pt-5">
-            <router-link to="/date" class="text-center">
-              <img
-                src="../../assets/arrowUp.png"
-                id="arrow"
-                alt
-                class="img-fluid"
-                @click="setReservationTable()"
-              />
-            </router-link>
-          </div>
           <!-- Titulo -->
-          <div class="col-12 pt-3">
+          <div class="col-12 pt-5">
             <p id="chosing" class="p">Escolha a Mesa</p>
           </div>
           <!-- Detalhes -->
@@ -38,8 +26,8 @@
             <div class="pl-3">
               <label for="txtHour" class="pr-1">Hora de entrada e saída:</label>
               <select id="sltHour" class="pr-1" v-model="hour">
-                <option value="12_13">12h-13h</option>
-                <option value="13_14">13h-14h</option>
+                <option value="12h13h">12h-13h</option>
+                <option value="13h14h">13h-14h</option>
               </select>
             </div>
           </div>
@@ -48,6 +36,7 @@
             <div
               class="col-3 pl-5 pr-5 divTable"
               v-bind:style="divTableSelected4"
+              @click="advanceToNext()"
             >
               <img
                 src="../../assets/table.png"
@@ -59,6 +48,7 @@
             <div
               class="col-3 pl-5 pr-5 divTable"
               v-bind:style="divTableSelected3"
+              @click="advanceToNext()"
             >
               <img
                 src="../../assets/table.png"
@@ -70,6 +60,7 @@
             <div
               class="col-3 pl-5 pr-5 divTable"
               v-bind:style="divTableSelected2"
+              @click="advanceToNext()"
             >
               <img
                 src="../../assets/table.png"
@@ -81,6 +72,7 @@
             <div
               class="col-3 pl-5 pr-5 divTable"
               v-bind:style="divTableSelected1"
+              @click="advanceToNext()"
             >
               <img
                 src="../../assets/table.png"
@@ -94,7 +86,7 @@
             <button
               type="button"
               class="btn btn-secondary"
-              @click="setLocationSelected('wall')"
+              @click="setLocationSelected('wall'), advanceToNext()"
               v-bind:style="buttonLocation1"
             >
               Parede
@@ -103,7 +95,7 @@
               <button
                 type="button"
                 class="btn btn-secondary"
-                @click="setLocationSelected('middle')"
+                @click="setLocationSelected('middle'), advanceToNext()"
                 v-bind:style="buttonLocation2"
               >
                 Meio da Sala
@@ -112,14 +104,17 @@
             <button
               type="button"
               class="btn btn-secondary"
-              @click="setLocationSelected('window')"
+              @click="setLocationSelected('window'), advanceToNext()"
               v-bind:style="buttonLocation3"
             >
               Janela
             </button>
           </div>
           <!-- Seta para baixo -->
-          <div class="position-relative pt-5 pb-5">
+          <div
+            class="position-relative pt-5 pb-5"
+            :style="{ visibility: hidden }"
+          >
             <router-link to="/menu" class="text-center">
               <img
                 src="../../assets/arrowDown.png"
@@ -155,11 +150,12 @@ export default {
       divTableSelected3: {},
       divTableSelected4: {},
       nPeople: 1,
-      hour: "12_13",
+      hour: "12h13h",
       location: "",
       buttonLocation1: {},
       buttonLocation2: {},
-      buttonLocation3: {}
+      buttonLocation3: {},
+      hidden: "hidden"
     };
   },
   methods: {
@@ -248,6 +244,11 @@ export default {
         };
         this.buttonLocation1 = {};
         this.buttonLocation2 = {};
+      }
+    },
+    advanceToNext() {
+      if (this.nSeats != 0 && this.location != "") {
+        this.hidden = "visible";
       }
     }
   }

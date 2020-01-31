@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <Footer />
+    <Footer class="fixed-bottom" />
   </div>
 </template>
 
@@ -70,6 +70,7 @@ export default {
 #title {
   font-family: "Muli", sans-serif;
   font-size: 30px;
+  font-weight: bold;
   color: #2c3e50;
 }
 
